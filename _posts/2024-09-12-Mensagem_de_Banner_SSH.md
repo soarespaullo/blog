@@ -2,7 +2,7 @@
 title: Mensagem de Banner em SSH 
 description: Mensagem de banner em servidores Linux através do SSH.
 author: soarespaullo
-date: 2020-09-16 20:55:00 -0300
+date: 2020-09-16 20:55:00
 categories: [Hacking]
 tags: [Tutoriais]
 pin: true
@@ -27,6 +27,7 @@ Para que possamos obter o mesmo resultados da imagem basta seguir os passos abai
 ```bash
 $ sudo touch /etc/ssh/ssh-banner.txt
 ```
+{: .nolineno }
 
 Após criar o arquivo com touch, basta apenas inserir algum texto dentro do arquivo. Esse texto ira aparecer na tela de login do SSH assim que o usuário tentar o acesso.
 
@@ -47,6 +48,7 @@ Terminado o 1° passo , agora é onde de fato iremos habilitar essa funcionalida
 ```bash
 $ sudo vim /etc/ssh/sshd_config
 ```
+{: .nolineno }
 
 Dentro do arquivo “sshd_config” adicione a seguinte linha “Banner /etc/ssh/ssh-banner.txt”
 
@@ -59,5 +61,6 @@ Para reiniciar o serviço do SSH;
 ```bash
 $ sudo systemctl restart ssh
 ```
+{: .nolineno }
 
 Depois é só testar fazendo um acesso remoto via terminal, putty, cmd etc.. 🙂

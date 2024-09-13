@@ -2,7 +2,7 @@
 title: Meu primeiro post
 description: Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more.
 author: Paulo Soares
-date: 2020-09-16 20:55:00 -0300
+date: 2020-09-16 20:55:00
 categories: [Hacking]
 tags: [Tutoriais]
 pin: true
@@ -18,5 +18,16 @@ Este é meu primeiro post!
 
 
 
-[^footnote]: The footnote source
-[^fn-nth-2]: The 2nd footnote source
+> Este é meu primeiro post!
+{: .prompt-info }
+
+> Este é meu primeiro post!
+{: .prompt-tip }
+
+> Este é meu primeiro post!
+{: .prompt-danger }
+
+> Este é meu primeiro post!
+{: .prompt-warning }
+
+
