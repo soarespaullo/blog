@@ -22,7 +22,7 @@ Trata-se de um banner simples que é apresentado na tela de login do usuário ap
 
 Para que possamos obter o mesmo resultados da imagem basta seguir os passos abaixo:
 
-1° Crie o arquivo <kbd>(ssh-banner.txt)</kbd> dentro do diretório <kbd>/etc/ssh</bkd>
+1° Crie o arquivo <kbd>(ssh-banner.txt)</kbd> dentro do diretório <kbd>/etc/ssh</kbd>
 
 ```bash
 $ sudo touch /etc/ssh/ssh-banner.txt
