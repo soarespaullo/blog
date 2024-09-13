@@ -1,4 +1,4 @@
-#  The contact options.
+#  Opções de contato.
 
 - type: github
   icon: "fab fa-github"
@@ -8,13 +8,13 @@
 
 - type: email
   icon: "fas fa-envelope"
-  noblank: true # open link in current tab
+  noblank: true # Abrir link na guia atual
 
 #- type: rss
 #  icon: "fas fa-rss"
 #  noblank: true
-# Uncomment and complete the url below to enable more contact options
-#
+
+
 # - type: mastodon
 #   icon: 'fab fa-mastodon'   # icons powered by <https://fontawesome.com/>
 #   url:  ''                  # Fill with your Mastodon account page, rel="me" will be applied for verification
