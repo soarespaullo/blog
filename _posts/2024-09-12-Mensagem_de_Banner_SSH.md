@@ -22,7 +22,7 @@ Trata-se de um banner simples que é apresentado na tela de login do usuário ap
 
 Para que possamos obter o mesmo resultados da imagem basta seguir os passos abaixo:
 
-1° Crie o arquivo (ssh-banner.txt) dentro do diretório /etc/ssh
+1° Crie o arquivo <kbd>(ssh-banner.txt)</kbd> dentro do diretório <kbd>/etc/ssh</bkd>
 
 ```bash
 $ sudo touch /etc/ssh/ssh-banner.txt
@@ -43,14 +43,14 @@ Nesse site, você consegue transformar qualquer texto em uma arte simples, depoi
 
 Terminado o 1° passo , agora é onde de fato iremos habilitar essa funcionalidade ao SSH.
 
-2° Acesse o arquivo de configuração do SSH chamado “sshd_config” que fica em /etc/ssh
+2° Acesse o arquivo de configuração do SSH chamado <kbd>“sshd_config”</kbd> que fica em <kbd>/etc/ssh</kbd>
 
 ```bash
 $ sudo vim /etc/ssh/sshd_config
 ```
 {: .nolineno }
 
-Dentro do arquivo “sshd_config” adicione a seguinte linha “Banner /etc/ssh/ssh-banner.txt”
+Dentro do arquivo <kbd>“sshd_config”</kbd> adicione a seguinte linha <kbd>“Banner /etc/ssh/ssh-banner.txt”</kbd>
 
 ![Desktop View](/assets/img/img-blog/ssh.png)
 
