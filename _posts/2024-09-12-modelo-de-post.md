@@ -1,8 +1,8 @@
 ---
-title: Meu primeiro post
+title: Modelo de Postagem
 description: Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more.
-author: Paulo Soares
-date: 2020-09-16 20:55:00
+author: soarespaullo
+date: 2024-09-12 22:18:00
 categories: [Hacking]
 tags: [Tutoriais]
 pin: true
