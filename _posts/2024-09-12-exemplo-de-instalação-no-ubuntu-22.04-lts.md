@@ -73,7 +73,6 @@ md5sum -c nextcloud-x.y.z.zip.md5 < nextcloud-x.y.z.zip
 
 ```bash
 $ sudo rm -rf /var/www/html/
-
 $ sudo unzip nextcloud-x.y.z.zip -d /var/www
 ```
 
@@ -81,7 +80,6 @@ $ sudo unzip nextcloud-x.y.z.zip -d /var/www
 
 ```bash
 $ sudo touch /etc/apache2/sites-available/nextcloud.conf
-
 $ sudo vim /etc/apache2/sites-available/nextcloud.conf
 ```
 
@@ -109,8 +107,56 @@ Para utilizar a instalação <kbd>host virtual</kbd>, coloque o seguinte em seu 
 
 #### Ajustando o Apache
 
+```bash
 $ sudo a2dissite 000-default.conf
-
 $ sudo a2ensite nextcloud.conf
-
 $ sudo systemctl restart apache2
+```
+
+#### Configurações adicionais do Apache
+
+```bash
+$ sudo a2enmod dir env headers mime rewrite ssl
+$ sudo systemctl restart apache2
+```
+
+#### Configurar NextCloud para SSL
+
+> Editando **config** e adicionando parâmetros para forçar o **SSL**.
+
+```bash
+$ sudo vim /var/www/nextcloud/config/config.php
+
+'forcessl' => true,
+
+'forceSSLforSubdomains' => true,
+```
+{: .nolineno}
+
+
+#### Redirecionar HTTP para HTTPS
+
+> Edite o nexcloud.conf e adicione o redirect.
+
+```bash
+$ sudo vim /etc/apache2/sites-available/nextcloud.conf
+
+ [**Redirect permanent** /](https://cloud.nextcloud.com/){:target="_blank"}
+```
+{: .nolineno}
+
+#### Certificado Let's Encrypt
+
+> Para obter um certificado e fazer com que o Certbot edite sua configuração do apache automaticamente.
+
+```bash
+$ sudo apt install certbot certbot-apache2
+$ sudo certbot --apache
+```
+
+#### Renovar Individual
+
+```bash
+$ sudo certbot certonly --manual -d seu.cloud.com
+```
+{: .nolineno}
