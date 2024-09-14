@@ -4,7 +4,7 @@ description: Mensagem de banner em servidores Linux através do SSH.
 author: soarespaullo
 date: 2024-09-12 22:20:00
 categories: [Hacking]
-tags: [Tutoriais]
+tags: [Tutoriais, putty, ssh]
 pin: true
 math: true
 mermaid: true
