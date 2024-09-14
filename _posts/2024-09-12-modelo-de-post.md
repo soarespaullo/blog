@@ -7,7 +7,6 @@ categories: [Hacking]
 tags: [Tutoriais]
 pin: true
 math: true
-comments: true
 mermaid: true
 image:
   path: /assets/img/img-blog/wall.jpg
