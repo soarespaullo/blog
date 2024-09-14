@@ -3,9 +3,9 @@
 # Importe o tema
 theme: jekyll-theme-chirpy
 
-# The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
-# If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
-# otherwise, the layout language will use the default value of 'en'.
+# O idioma da página web › http://www.lingoes.net/en/translator/langcode.htm
+# Se tiver o mesmo nome de um dos arquivos da pasta `_data/locales`, o idioma do layout também será alterado,
+# caso contrário, a linguagem de layout usará o valor padrão 'en'.
 lang: pt-BR
 
 # Mude para o seu fuso horário› https://kevinnovak.github.io/Time-Zone-Picker
@@ -16,51 +16,49 @@ timezone: America/Recife
 
 title: Paulo Soares # O título principal
 
-tagline: CyberSecurity | CTF Player | Bug Bounty | Pentest | Ethical Hacking | Red Team | Bug Hunter | SysAdmin | Linux | Windows # it will display as the subtitle
+tagline: CyberSecurity | CTF Player | Bug Bounty | Pentest | Ethical Hacking | Red Team | Bug Hunter | SysAdmin | Linux | Windows # Ele será exibido como legenda
 
-description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+description: >- # Usado pelo seo meta e pelo feed atom
+  Um tema Jekyll mínimo, responsivo e rico em recursos para redação técnica.
 
-# Fill in the protocol & hostname for your site.
-# E.g. 'https://username.github.io', note that it does not end with a '/'.
+# Preencha o protocolo e o nome do host do seu site.
+# Por exemplo 'https://username.github.io', observe que não termina com '/'.
 url: "https://soarespaullo.github.io"
 
 github:
-  username: soarespaullo # change to your GitHub username
+  username: soarespaullo # Mude para seu nome de usuário do GitHub
 
 twitter:
-  username: twitter_username # change to your Twitter username
+  username: twitter_username # Mude para seu nome de usuário do Twitter
 
   author:
   name: Paulo Soares
   url: https://github.com/soarespaullo/
 
 social:
-  # Change to your full name.
-  # It will be displayed as the default author of the posts and the copyright owner in the Footer
+  # Mude para seu nome completo.
+  # Ele será exibido como autor padrão das postagens e proprietário dos direitos autorais no rodapé
   name: Paulo Soares
-  email: soarespaullo@proton.me # change to your email address
+  email: soarespaullo@proton.me # Mude para seu endereço de e-mail
   links:
-    # The first element serves as the copyright owner's link
-    # - https://twitter.com/username # change to your Twitter homepage
-    - https://github.com/username # change to your GitHub homepage
-    # Uncomment below to add more social links
-    # - https://www.facebook.com/username
-    - https://www.linkedin.com/in/username
+    # O primeiro elemento serve como link do proprietário dos direitos autorais
+    # - https://twitter.com/username # Mude para sua página inicial do Twitter
+    # - https://github.com/username # Mude para sua página inicial do GitHub
+    - https://www.linkedin.com/in/soarespaullo
 
-# Site Verification Settings
+# Configurações de verificação de site
 webmaster_verifications:
-  google: # fill in your Google verification code
-  bing: # fill in your Bing verification code
-  alexa: # fill in your Alexa verification code
-  yandex: # fill in your Yandex verification code
-  baidu: # fill in your Baidu verification code
-  facebook: # fill in your Facebook verification code
-
+  google: # Preencha seu código de verificação do Google
+  bing: # Preencha seu código de verificação do Bing
+  alexa: # Preencha seu código de verificação Alexa
+  yandex: # Preencha seu código de verificação Yandex
+  baidu: # Preencha seu código de verificação do Baidu
+  facebook: # Preencha seu código de verificação do Facebook
+  
 # ↑ --------------------------
-# The end of `jekyll-seo-tag` settings
+# O fim das configurações de `jekyll-seo-tag`
 
-# Web Analytics Settings
+# Configurações de análise da web
 analytics:
   google:
     id: # fill in your Google Analytics ID
@@ -101,23 +99,23 @@ theme_mode: # [light | dark]
 # e.g. 'https://cdn.com'
 cdn:
 
-# the avatar on sidebar, support local or CORS resources
+# Avatar na barra lateral, oferece suporte a recursos locais ou CORS
 avatar: /assets/img/avatar/profile.jpg
 
-# The URL of the site-wide social preview image used in SEO `og:image` meta tag.
-# It can be overridden by a customized `page.image` in front matter.
-social_preview_image: # string, local or CORS resources
+# O URL da imagem de visualização social de todo o site usada na meta tag SEO `og:image`.
+# Ele pode ser substituído por um `page.image` personalizado no início.
+social_preview_image: # Recursos de string, locais ou CORS
 
-# boolean type, the global switch for TOC in posts.
+# Tipo booleano, a opção global para TOC nas postagens
 toc: true
 
 comments:
-  # Global switch for the post-comment system. Keeping it empty means disabled.
+  # Mudança global para o sistema pós-comentário. Mantê-lo vazio significa desabilitado.
   provider: # [disqus | utterances | giscus]
-  # The provider options are as follows:
+  # As opções do provedor são as seguintes:
   disqus:
-    shortname: paulo-soares # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
-  # utterances settings › https://utteranc.es/
+    shortname: soarespaullo # Preencha com o nome abreviado do Disqus. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+  # Configurações de declarações › https://utteranc.es/
   utterances:
     repo: # <gh-username>/<repo>
     issue_term: # < url | pathname | title | ...>
@@ -133,7 +131,7 @@ comments:
     lang: # optional, default to the value of `site.lang`
     reactions_enabled: # optional, default to the value of `1`
 
-# Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
+# Ativos estáticos auto-hospedados, opcionais › https://github.com/cotes2020/chirpy-static-assets
 assets:
   self_host:
     enabled: # boolean, keep empty means false
@@ -142,26 +140,26 @@ assets:
     env: # [development | production]
 
 pwa:
-  enabled: true # The option for PWA feature (installable)
+  enabled: true # A opção de recurso PWA (instalável)
   cache:
-    enabled: true # The option for PWA offline cache
-    # Paths defined here will be excluded from the PWA cache.
-    # Usually its value is the `baseurl` of another website that
-    # shares the same domain name as the current website.
+    enabled: true # A opção de cache offline PWA
+    # Os caminhos definidos aqui serão excluídos do cache do PWA.
+    # Geralmente seu valor é o `baseurl` de outro site que
+    # compartilha o mesmo nome de domínio do site atual.
     deny_paths:
-      # - "/example"  # URLs match `<SITE_URL>/example/*` will not be cached by the PWA
+      # - "/example" # URLs correspondentes a `<SITE_URL>/example/*` não serão armazenados em cache pelo PWA
 
 paginate: 10
 
-# The base URL of your site
+# URL base do seu site
 baseurl: "/blog"
 
-# ------------ The following options are not recommended to be modified ------------------
+# ------------ As seguintes opções não são recomendadas para serem modificadas ------------------
 
 kramdown:
   footnote_backlink: "&#8617;&#xfe0e;"
   syntax_highlighter: rouge
-  syntax_highlighter_opts: # Rouge Options › https://github.com/jneen/rouge#full-options
+  syntax_highlighter_opts: # Opções Rouge › https://github.com/jneen/rouge#full-options
     css_class: highlight
     # default_lang: console
     span:
@@ -181,10 +179,10 @@ defaults:
       type: posts
     values:
       layout: post
-      comments: true # Enable comments in posts.
-      toc: true # Display TOC column in posts.
-      # DO NOT modify the following parameter unless you are confident enough
-      # to update the code of all other post links in this project.
+      comments: true # Habilite comentários nas postagens.
+      toc: true # Exibir coluna TOC nas postagens.
+      # NÃO modifique o seguinte parâmetro a menos que você esteja confiante o suficiente
+      # para atualizar o código de todos os outros links de postagem neste projeto.
       permalink: /posts/:title/
   - scope:
       path: _drafts
