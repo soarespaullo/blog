@@ -1,6 +1,6 @@
 ---
 title: Modelo de Postagem
-description: Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more.
+description: Exemplo de postagem para blog.
 author: soarespaullo
 date: 2024-09-12 22:18:00
 categories: [Hacking]
