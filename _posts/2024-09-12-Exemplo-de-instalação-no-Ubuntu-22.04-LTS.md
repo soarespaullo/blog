@@ -33,6 +33,7 @@ $ sudo mysql
 
 > Em seguida, um prompt <kbd>MariaDB [root]></kbd> aparecerá. Agora insira as seguintes linhas, substituindo o nome de usuário e a senha pelos valores apropriados, e confirme-os com a tecla Enter:
 
+
 CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'P@ssW0rDs2';
 
 CREATE DATABASE IF NOT EXISTS nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
@@ -49,19 +50,20 @@ quit;
 
 #### Agora baixe o arquivo da última versão do Nextcloud
 
-Vá para a [página de download do Nextcloud](https://nextcloud.com/install){:target="_blank"}.
+- Vá para a [página de download do Nextcloud](https://nextcloud.com/install){:target="_blank"}.
 
-Vá para : Get Nextcloud > Nextcloud Server > Community Projects e baixe o arquivo tar.bz2 ou .zip.
-Isso baixa um arquivo chamado nextcloud-xyztar.bz2 ou nextcloud-xyz.zip (onde xyz é o número da versão).
-Baixe seu arquivo de soma de verificação correspondente, por exemplo, nextcloud-xyztar.bz2.md5 ou nextcloud-xyztar.bz2.sha256.
-Verifique a soma MD5 ou SHA256:
-Se preferir, pode baixar usando o wget;
-wget https://download.nextcloud.com/server/releases/nextcloud-27.1.3.zip
-https://download.nextcloud.com/server/releases/nextcloud-27.1.3.zip.md5
+- Vá para : Get Nextcloud > Nextcloud Server > Community Projects e baixe o arquivo tar.bz2 ou .zip.
+- Isso baixa um arquivo chamado nextcloud-xyztar.bz2 ou nextcloud-xyz.zip (onde xyz é o número da versão).
+- Baixe seu arquivo de soma de verificação correspondente, por exemplo, nextcloud-xyztar.bz2.md5 ou nextcloud-xyztar.bz2.sha256.
+- Verifique a soma MD5 ou SHA256:
+- Se preferir, pode baixar usando o wget;
+- wget https://download.nextcloud.com/server/releases/nextcloud-27.1.3.zip
+- https://download.nextcloud.com/server/releases/nextcloud-27.1.3.zip.md5
 
-
-
-
+```bash
+md5sum -c nextcloud-x.y.z.zip.md5 < nextcloud-x.y.z.zip
+```
+{: .nolineno}
 
 
 
