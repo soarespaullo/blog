@@ -49,7 +49,7 @@ quit;
 
 #### Agora baixe o arquivo da última versão do Nextcloud
 
-Vá para a [página de download do Nextcloud](https://nextcloud.com/install).{:target="_blank"}
+Vá para a [página de download do Nextcloud](https://nextcloud.com/install){:target="_blank"}.
 
 Vá para : Get Nextcloud > Nextcloud Server > Community Projects e baixe o arquivo tar.bz2 ou .zip.
 Isso baixa um arquivo chamado nextcloud-xyztar.bz2 ou nextcloud-xyz.zip (onde xyz é o número da versão).
