@@ -104,4 +104,13 @@ Para utilizar a instalação <kbd>host virtual</kbd>, coloque o seguinte em seu 
   </Directory>
 </VirtualHost>
 ```
-{: file='_sass/jekyll-theme-chirpy.scss'}
+{: file='/etc/apache2/sites-available'}
+{: .nolineno}
+
+#### Ajustando o Apache
+
+$ sudo a2dissite 000-default.conf
+
+$ sudo a2ensite nextcloud.conf
+
+$ sudo systemctl restart apache2
