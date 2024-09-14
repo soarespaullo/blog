@@ -37,7 +37,7 @@ Você pode adicionar uma mensagem de alerta para o seu servidor, algo do tipo �
 
 Ou você pode apenas personalizar como eu fiz no exemplo do “Servidor Web”, deixarei o link do site que deixou as letras daquele jeito:
 
-#### [**Text to ASCII**](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20)
+#### [**Texto para ASCII**](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20){:target="_blank"}.
 
 Nesse site, você consegue transformar qualquer texto em uma arte simples, depois é só copiar e colar dentro do seu arquivo (ssh-banner.txt)
 
