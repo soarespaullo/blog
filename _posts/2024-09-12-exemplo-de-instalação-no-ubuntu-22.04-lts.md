@@ -24,14 +24,18 @@ php-curl php-mbstring php-intl php-gmp php-bcmath php-xml php-imagick imagemagic
 ```
 {: .nolineno }
 
+
 > Para iniciar o modo de linha de comando do <kbd>MySQL</kbd>, use o seguinte comando e pressione a tecla Enter quando for solicitada uma senha:
+
 
 ```bash
 $ sudo mysql
 ```
 {: .nolineno }
 
+
 > Em seguida, um prompt <kbd>MariaDB [root]></kbd> aparecerá. Agora insira as seguintes linhas, substituindo o nome de usuário e a senha pelos valores apropriados, e confirme-os com a tecla Enter:
+
 
 
 CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'P@ssW0rDs2';
@@ -65,5 +69,39 @@ md5sum -c nextcloud-x.y.z.zip.md5 < nextcloud-x.y.z.zip
 ```
 {: .nolineno}
 
+> Agora você pode extrair e copiar o conteúdo para o diretório raiz do Apache.
 
+```bash
+$ sudo rm -rf /var/www/html/
 
+$ sudo unzip nextcloud-x.y.z.zip -d /var/www
+```
+
+> Configurar o Apache requer a criação de um único arquivo de configuração. No Debian, Ubuntu e seus derivados, este arquivo será;
+
+```bash
+$ sudo touch /etc/apache2/sites-available/nextcloud.conf
+
+$ sudo vim /etc/apache2/sites-available/nextcloud.conf
+```
+
+Para utilizar a instalação <kbd>host virtual</kbd>, coloque o seguinte em seu <kbd>nextcloud.conf</kbd> substituindo <kbd>ServerName</kbd>, bem como os <kbd>DocumentRoot</kbd> e Diretório com valores apropriados para o seu sistema:
+
+```sass
+<VirtualHost *:80>
+  DocumentRoot /var/www/nextcloud/
+  ServerName  seu.server.com
+
+  <Directory /var/www/nextcloud/>
+    Require all granted
+    AllowOverride All
+    Options FollowSymLinks MultiViews
+
+    <IfModule mod_dav.c>
+      Dav off
+    </IfModule>
+
+  </Directory>
+</VirtualHost>
+```
+{: file='_sass/jekyll-theme-chirpy.scss'}
