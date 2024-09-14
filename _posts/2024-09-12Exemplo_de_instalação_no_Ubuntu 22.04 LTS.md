@@ -8,7 +8,7 @@ tags: [Tutoriais, Cloud, Nextcloud]
 math: true
 mermaid: true
 image:
-  path: /assets/img/img-blog/banner.png
+  path: /assets/img/img-blog/nextcloud.png
   alt: Iniciando a Instalação/Configuração - Ubuntu 22.04 LTS
 
 ---
