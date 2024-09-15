@@ -100,7 +100,8 @@ theme_mode: # [light | dark]
 cdn:
 
 # Avatar na barra lateral, oferece suporte a recursos locais ou CORS
-avatar: /assets/img/avatar/profile.jpg
+# avatar: /assets/img/avatar/profile.jpg
+avatar: https://avatars.githubusercontent.com/soarespaullo
 
 # O URL da imagem de visualização social de todo o site usada na meta tag SEO `og:image`.
 # Ele pode ser substituído por um `page.image` personalizado no início.
