@@ -13,7 +13,7 @@ image:
 
 ---
 
-Iniciando a Instalação/Configuração - Ubuntu 22.04 LTS
+## Iniciando a Instalação/Configuração - Ubuntu 22.04 LTS
 
 ```bash
 $ sudo apt update && sudo apt upgrade
