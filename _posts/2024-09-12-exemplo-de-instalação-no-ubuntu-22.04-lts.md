@@ -232,7 +232,7 @@ $ sudo -u www-data php /var/www/nextcloud/occ maintenance:update:htaccess
 
 #### Crontab
 
-Isso executará o cronjob do Nextcloud a cada 5 minutos.
+Isso executará o cronjob do Nextcloud a cada 5 minutos.</br>
 [**https://crontab.guru/every-5-minutes**](https://crontab.guru/every-5-minutes)
 
 Use o serviço cron do sistema para chamar o arquivo <kbd>cron.php</kbd> a cada 5 minutos. O <kbd>cron.php</kbd> precisa ser executado pelo usuário de sistema "www-data"
@@ -276,16 +276,19 @@ $ sudo vim /etc/redis/redis.conf
 
 Agora, encontre e altere:
 
-`
+```bash
 port 6379 para port 0
-`
+```
+{: .nolineno}
 
 Em seguida, descomente:
 
-`
+```bash
 unixsocket /var/run/redis/redis.sock
-unixsocketperm 700 alterando as permissões para 770 ao mesmo tempo: unixsocketperm 770
-`
+unixsocketperm 700 alterando as permissões para 770 ao mesmo tempo:
+unixsocketperm 770
+```
+{: .nolineno}
 
 Salve e saia, em seguida, adicione o usuário <kbd>Apache www-data ao redis grupo</kbd>:
 
@@ -317,5 +320,134 @@ $ sudo vim /var/www/nextcloud/config/config.php
   'port'   => 0,
 
 ], 
+```
+{: .nolineno}
+
+**AVISO:** Se der algum erro ou não carregar a página, reinicie o  seu servidor...
+
+
+#### Fornecimento de arquivos padrão
+
+Você pode distribuir um conjunto de arquivos e pastas padrão para todos os usuários.
+
+```bash
+$ sudo mkdir -p /media/cloud/core/skeleton
+
+$ sudo mkdir -p /media/cloud/core/templates
+
+$ sudo vim /var/www/nextcloud/config/config.php
+
+'skeletondirectory' => '/media/cloud/core/skeleton',
+```
+{: .nolineno}
+
+
+#### Para arquivos de Modelos.
+
+```bash
+'templatedirectory' => '/media/cloud/core/templates',
+
+$ sudo chown -R www-data:www-data /media/cloud/core/skeleton/
+
+$ sudo systemctl restart apache2.service 
+```
+{: .nolineno}
+
+Deixe em branco para não copiar nenhum arquivo de modelo.
+
+**AVISO:** Substituir os arquivos <kbd>(core/skeleton)</kbd> não é recomendado, porque essas alterações serão substituídas na próxima atualização do servidor Nextcloud.
+
+#### Mover diretório de dados Nextcloud
+
+**AVISO:** Certifique-se de que a pasta “data” no diretório de destino ainda não exista!
+
+```bash
+$ sudo mkdir -p /media/cloud/data
+
+$ sudo cp -a /var/www/nextcloud/data/. /media/cloud/data/
+```
+{: .nolineno}
+
+#### Em seguida, atualize a configuração do Nextcloud para refletir o novo diretório de dados:
+
+```bash
+$ sudo vim /var/www/nextcloud/config/config.php
+
+'datadirectory' => '/media/cloud/data',
+
+$ sudo chown -R www-data:www-data /media/cloud/data
+
+$ sudo rm -rf /var/www/nextcloud/data
+```
+{: .nolineno}
+
+#### Finalizar Sessão
+
+```bash
+$ sudo vim /var/www/nextcloud/config/config.php
+
+'session_lifetime' => 3600,
+
+'session_keepalive' => false,
+
+'remember_login_cookie_lifetime' => 0,
+```
+{: .nolineno}
+
+
+#### Isso define o idioma padrão em seu servidor Nextcloud
+
+```bash
+$ sudo vim /var/www/nextcloud/config/config.php 
+
+'default_language' => 'pt_BR',
+
+'force_language' => 'pt_BR',
+
+'default_locale' => 'pt_BR',
+
+'force_locale' => 'pt_BR',
+```
+{: .nolineno}
+
+**AVISO:** Se a configuração: <kbd>'force_language'</kbd> for forçado, os usuários também não poderão alterar seu idioma nas configurações pessoais. Se os usuários não conseguirem alterar seu idioma, mas os usuários tiverem idiomas diferentes, esse valor pode ser definido como em true vez de um código de idioma.
+
+
+#### Habilitar .htaccess
+
+O <kbd>.htaccess</kbd> arquivo não funciona porque colocamos Nextcloud na <kbd>/var/www/</kbd> principal controlada pelo <kbd>apache2.conf</kbd> arquivo. Por padrão, ele é definido para não permitir <kbd>.htaccess</kbd> substituições e vamos precisar mudar isso:
+
+```bash
+$ sudo vim /etc/apache2/apache2.conf
+```
+{: .nolineno}
+
+De;
+
+```bash
+<Directory /var/www/>     
+
+    Options Indexes FollowSymLinks
+
+    AllowOverride None  
+
+    Require all granted
+
+</Directory>
+```
+{: .nolineno}
+
+Para;
+
+```bash
+<Directory /var/www/>
+
+    Options Indexes FollowSymLinks
+
+    AllowOverride All
+
+    Require all granted
+
+</Directory>
 ```
 {: .nolineno}
