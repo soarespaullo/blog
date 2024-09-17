@@ -232,7 +232,7 @@ $ sudo -u www-data php /var/www/nextcloud/occ maintenance:update:htaccess
 
 #### Crontab
 
-Isso executará o cronjob do Nextcloud a cada 5 minutos.</br>
+Isso executará o cronjob do Nextcloud a cada 5 minutos - 
 [**https://crontab.guru/every-5-minutes**](https://crontab.guru/every-5-minutes)
 
 Use o serviço cron do sistema para chamar o arquivo <kbd>cron.php</kbd> a cada 5 minutos. O <kbd>cron.php</kbd> precisa ser executado pelo usuário de sistema "www-data"
