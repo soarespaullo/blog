@@ -140,10 +140,10 @@ $ sudo vim /var/www/nextcloud/config/config.php
 
 ```bash
 $ sudo vim /etc/apache2/sites-available/nextcloud.conf
-
- [**Redirect permanent** /](https://cloud.nextcloud.com/){:target="_blank"}
 ```
 {: .nolineno}
+
+[**Redirect permanent** /](https://cloud.nextcloud.com/){:target="_blank"}
 
 #### Certificado Let's Encrypt
 
@@ -160,3 +160,98 @@ $ sudo certbot --apache
 $ sudo certbot certonly --manual -d seu.cloud.com
 ```
 {: .nolineno}
+
+#### Arquivo de Configuração de Renovação Automática
+
+**AVISO:** Não precisa configurar, porque já no ato da instalação ele já cria um arquivo no <kbd>cron</kbd>
+
+```bash
+$ sudo vim /etc/cron.d/certbot 
+```
+{: .nolineno}
+
+#### Aplicando as configurações
+
+```bash
+$ sudo a2ensite /etc/apache2/sites-available/nextcloud-le-ssl.conf
+```
+{: .nolineno}
+
+#### Ativar Segurança de Transporte Estrito HTTP
+
+Embora redirecionar todo o tráfego para <kbd>HTTPS</kbd> seja bom, pode não impedir completamente os ataques <kbd>Man-In-The-Middle.</kbd>
+
+Isso pode ser obtido definindo as seguintes configurações no arquivo Apache <kbd>VirtualHost:</kbd>
+
+```bash
+$ sudo vim /etc/apache2/sites-available/nextcloud-le-ssl.conf
+```
+{: .nolineno}
+
+```sass
+<VirtualHost *:443>
+  ServerName seu.nextcloud.com
+    <IfModule mod_headers.c>
+      Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
+    </IfModule>
+ </VirtualHost>
+```
+{: file='/etc/apache2/sites-available/nextcloud-le-ssl.conf'}
+{: .nolineno}
+
+#### Assistente de instalação - Pelo Browser
+
+Após reiniciar o Apache, você deve concluir a instalação executando o Assistente de Instalação gráfico ou na linha de comando com o occ comando. Para habilitar isso, mude a propriedade em seus diretórios Nextcloud para seu usuário HTTP:
+
+```bash
+$ sudo chown -R www-data:www-data /var/www/nextcloud/
+```
+{: .nolineno}
+
+
+> Agora você deve conseguir acessar sua instância **Nextcloud** navegando até <kbd>http://YOUR-SERVER-LOCAL-IP</kbd> ou [https://cloud.nextcloud.com](https://cloud.nextcloud.com)
+
+
+#### URLs Bonitos
+
+Os URLs bonitos removem a (index.php) parte-em todos os URLs do Nextcloud.
+(mod_env) e (mod_rewrite) deve ser instalado/ativados em seu servidor web e .htaccess deve ser gravável pelo usuário HTTP. Então você pode definir as (config.php) duas variáveis:
+
+```bash
+$ sudo vim /var/www/nextcloud/config/config.php
+```
+{: .nolineno}
+
+> 'overwrite.cli.url' => 'https://cloud.nextcloud.com/',
+
+'htaccess.RewriteBase' => '/',
+{: .prompt-info }
+
+Se não estiver instalado em uma subpasta. Por fim, execute este comando <kbd>occ</kbd> para atualizar seu arquivo <kbd>.htaccess:</kbd>
+
+```bash
+$ sudo -u www-data php /var/www/nextcloud/occ maintenance:update:htaccess
+```
+{: .nolineno}
+
+#### Crontab
+
+Isso executará o cronjob do Nextcloud a cada 5 minutos.
+`https://crontab.guru/every-5-minutes`
+
+Use o serviço cron do sistema para chamar o arquivo <kbd>cron.php</kbd> a cada 5 minutos. O <kbd>cron.php</kbd> precisa ser executado pelo usuário de sistema "www-data"
+
+```bash
+$ sudo crontab -u www-data -e
+```
+{: .nolineno}
+
+Se solicitado, pressione “1” para usar o editor nano (que é muito fácil de usar) e adicione a seguinte linha ao seu arquivo crontab:
+
+```bash
+*/5 * * * * php -f /var/www/nextcloud/cron.php
+```
+{: .nolineno}
+
+Depois ir em: <kbd>Configurações</kbd> , configurações básicas e <kbd>cron</kbd.
+
