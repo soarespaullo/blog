@@ -36,8 +36,7 @@ $ sudo mysql
 
 > Em seguida, um prompt <kbd>MariaDB [root]></kbd> aparecerá. Agora insira as seguintes linhas, substituindo o nome de usuário e a senha pelos valores apropriados, e confirme-os com a tecla Enter:
 
-
-
+```bash
 CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'P@ssW0rDs2';
 
 CREATE DATABASE IF NOT EXISTS nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
@@ -45,6 +44,8 @@ CREATE DATABASE IF NOT EXISTS nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_ge
 GRANT ALL PRIVILEGES ON nextcloud.* TO 'nextcloud'@'localhost';
 
 FLUSH PRIVILEGES;
+```
+{: .nolineno}
 
 Você pode sair do <kbd>prompt</kbd> digitando:
 
@@ -143,7 +144,7 @@ $ sudo vim /etc/apache2/sites-available/nextcloud.conf
 ```
 {: .nolineno}
 
-[**Redirect permanent** /](https://cloud.nextcloud.com/){:target="_blank"}
+[**Redirect permanent** / https://cloud.nextcloud.com/](https://cloud.nextcloud.com/){:target="_blank"}
 
 #### Certificado Let's Encrypt
 
@@ -189,7 +190,7 @@ $ sudo vim /etc/apache2/sites-available/nextcloud-le-ssl.conf
 {: .nolineno}
 
 ```sass
-<VirtualHost *:443>
+<VirtualHost*:443>
   ServerName seu.nextcloud.com
     <IfModule mod_headers.c>
       Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
@@ -223,8 +224,9 @@ $ sudo vim /var/www/nextcloud/config/config.php
 {: .nolineno}
 
 > 'overwrite.cli.url' => 'https://cloud.nextcloud.com/',
+{: .prompt-info }
 
-'htaccess.RewriteBase' => '/',
+> 'htaccess.RewriteBase' => '/',
 {: .prompt-info }
 
 Se não estiver instalado em uma subpasta. Por fim, execute este comando <kbd>occ</kbd> para atualizar seu arquivo <kbd>.htaccess:</kbd>
@@ -237,7 +239,7 @@ $ sudo -u www-data php /var/www/nextcloud/occ maintenance:update:htaccess
 #### Crontab
 
 Isso executará o cronjob do Nextcloud a cada 5 minutos.
-`https://crontab.guru/every-5-minutes`
+[**https://crontab.guru/every-5-minutes**](https://crontab.guru/every-5-minutes)
 
 Use o serviço cron do sistema para chamar o arquivo <kbd>cron.php</kbd> a cada 5 minutos. O <kbd>cron.php</kbd> precisa ser executado pelo usuário de sistema "www-data"
 
@@ -253,5 +255,5 @@ Se solicitado, pressione “1” para usar o editor nano (que é muito fácil de
 ```
 {: .nolineno}
 
-Depois ir em: <kbd>Configurações</kbd> , configurações básicas e <kbd>cron</kbd.
+Depois ir em: <kbd>configurações</kbd> , configurações básicas e <kbd>cron</kbd>.
 
