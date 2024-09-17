@@ -24,17 +24,14 @@ php-curl php-mbstring php-intl php-gmp php-bcmath php-xml php-imagick imagemagic
 ```
 {: .nolineno }
 
-
-> Para iniciar o modo de linha de comando do <kbd>MySQL</kbd>, use o seguinte comando e pressione a tecla Enter quando for solicitada uma senha:
-
+Para iniciar o modo de linha de comando do <kbd>MySQL</kbd>, use o seguinte comando e pressione a tecla enter quando for solicitada uma senha:
 
 ```bash
 $ sudo mysql
 ```
 {: .nolineno }
 
-
-> Em seguida, um prompt <kbd>MariaDB [root]></kbd> aparecerá. Agora insira as seguintes linhas, substituindo o nome de usuário e a senha pelos valores apropriados, e confirme-os com a tecla Enter:
+Em seguida, um prompt <kbd>MariaDB [root]></kbd> aparecerá. Agora insira as seguintes linhas, substituindo o nome de usuário e a senha pelos valores apropriados, e confirme-os com a tecla Enter:
 
 ```bash
 CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'P@ssW0rDs2';
@@ -56,7 +53,6 @@ quit;
 #### Agora baixe o arquivo da última versão do Nextcloud
 
 - Vá para a [página de download do Nextcloud](https://nextcloud.com/install){:target="_blank"}.
-
 - Vá para : Get Nextcloud > Nextcloud Server > Community Projects e baixe o arquivo tar.bz2 ou .zip.
 - Isso baixa um arquivo chamado nextcloud-xyztar.bz2 ou nextcloud-xyz.zip (onde xyz é o número da versão).
 - Baixe seu arquivo de soma de verificação correspondente, por exemplo, nextcloud-xyztar.bz2.md5 ou nextcloud-xyztar.bz2.sha256.
@@ -70,14 +66,14 @@ md5sum -c nextcloud-x.y.z.zip.md5 < nextcloud-x.y.z.zip
 ```
 {: .nolineno}
 
-> Agora você pode extrair e copiar o conteúdo para o diretório raiz do Apache.
+Agora você pode extrair e copiar o conteúdo para o diretório raiz do Apache.
 
 ```bash
 $ sudo rm -rf /var/www/html/
 $ sudo unzip nextcloud-x.y.z.zip -d /var/www
 ```
 
-> Configurar o Apache requer a criação de um único arquivo de configuração. No Debian, Ubuntu e seus derivados, este arquivo será;
+Configurar o Apache requer a criação de um único arquivo de configuração. No Debian, Ubuntu e seus derivados, este arquivo será;
 
 ```bash
 $ sudo touch /etc/apache2/sites-available/nextcloud.conf
@@ -123,7 +119,7 @@ $ sudo systemctl restart apache2
 
 #### Configurar NextCloud para SSL
 
-> Editando **config** e adicionando parâmetros para forçar o **SSL**.
+Editando <kbd>config</kbd> e adicionando parâmetros para forçar o <kbd>SSL</kbd>.
 
 ```bash
 $ sudo vim /var/www/nextcloud/config/config.php
@@ -137,7 +133,7 @@ $ sudo vim /var/www/nextcloud/config/config.php
 
 #### Redirecionar HTTP para HTTPS
 
-> Edite o nexcloud.conf e adicione o redirect.
+Edite o <kbd>nexcloud.conf</kbd> e adicione o <kbd>redirect</kbd>.
 
 ```bash
 $ sudo vim /etc/apache2/sites-available/nextcloud.conf
@@ -148,7 +144,7 @@ $ sudo vim /etc/apache2/sites-available/nextcloud.conf
 
 #### Certificado Let's Encrypt
 
-> Para obter um certificado e fazer com que o Certbot edite sua configuração do apache automaticamente.
+Para obter um certificado e fazer com que o Certbot edite sua configuração do apache automaticamente.
 
 ```bash
 $ sudo apt install certbot certbot-apache2
@@ -190,7 +186,7 @@ $ sudo vim /etc/apache2/sites-available/nextcloud-le-ssl.conf
 {: .nolineno}
 
 ```sass
-<VirtualHost*:443>
+<VirtualHost *:443>
   ServerName seu.nextcloud.com
     <IfModule mod_headers.c>
       Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
@@ -202,21 +198,19 @@ $ sudo vim /etc/apache2/sites-available/nextcloud-le-ssl.conf
 
 #### Assistente de instalação - Pelo Browser
 
-Após reiniciar o Apache, você deve concluir a instalação executando o Assistente de Instalação gráfico ou na linha de comando com o occ comando. Para habilitar isso, mude a propriedade em seus diretórios Nextcloud para seu usuário HTTP:
+Após reiniciar o Apache, você deve concluir a instalação executando o Assistente de Instalação gráfico ou na linha de comando com o <kbd>occ</kbd> comando. Para habilitar isso, mude a propriedade em seus diretórios Nextcloud para seu usuário HTTP:
 
 ```bash
 $ sudo chown -R www-data:www-data /var/www/nextcloud/
 ```
 {: .nolineno}
 
-
-> Agora você deve conseguir acessar sua instância **Nextcloud** navegando até <kbd>http://YOUR-SERVER-LOCAL-IP</kbd> ou [https://cloud.nextcloud.com](https://cloud.nextcloud.com)
-
+Agora você deve conseguir acessar sua instância **Nextcloud** navegando até <kbd>http://YOUR-SERVER-LOCAL-IP</kbd> ou [https://cloud.nextcloud.com](https://cloud.nextcloud.com)
 
 #### URLs Bonitos
 
-Os URLs bonitos removem a (index.php) parte-em todos os URLs do Nextcloud.
-(mod_env) e (mod_rewrite) deve ser instalado/ativados em seu servidor web e .htaccess deve ser gravável pelo usuário HTTP. Então você pode definir as (config.php) duas variáveis:
+Os **URLs bonitos** removem a <kbd>(index.php)</kbd> parte-em todos os URLs do Nextcloud.
+<kbd>(mod_env)</kbd> e <kbd>(mod_rewrite)</kbd> deve ser instalado/ativados em seu servidor web e <kbd>.htaccess</kbd> deve ser gravável pelo usuário <kbd>HTTP</kbd>. Então você pode definir as <kbd>(config.php)</kbd> duas variáveis:
 
 ```bash
 $ sudo vim /var/www/nextcloud/config/config.php
@@ -257,3 +251,71 @@ Se solicitado, pressione “1” para usar o editor nano (que é muito fácil de
 
 Depois ir em: <kbd>configurações</kbd> , configurações básicas e <kbd>cron</kbd>.
 
+#### Habilitar Cache - (Redis)
+
+No Debian / Ubuntu / Mint, instale <kbd>redis-server</kbd> e <kbd>php-redis</kbd>. O instalador irá iniciar automaticamente <kbd>redis-servere</kbd> configurá-lo para iniciar na inicialização.
+
+```bash
+$ sudo apt install php-redis redis-server
+```
+{: .nolineno}
+
+Você pode verificar se o daemon Redis está sendo executado com: ps ax
+
+```bash
+$ ps ax | grep redis
+```
+{: .nolineno}
+
+Depois, abra o arquivo de configuração do Redis em /etc/redis/redis.conf
+
+```bash
+$ sudo vim /etc/redis/redis.conf
+```
+{: .nolineno}
+
+Agora, encontre e altere:
+
+`
+port 6379 para port 0
+`
+
+Em seguida, descomente:
+
+`
+unixsocket /var/run/redis/redis.sock
+unixsocketperm 700 alterando as permissões para 770 ao mesmo tempo: unixsocketperm 770
+`
+
+Salve e saia, em seguida, adicione o usuário <kbd>Apache www-data ao redis grupo</kbd>:
+
+```bash
+sudo usermod -a -G redis www-data
+```
+{: .nolineno}
+
+Finalmente, reinicie o Apache com:
+
+```bash
+$ sudo systemctl restart apache2.service
+```
+{: .nolineno}
+
+Com Redis configurado, adicione;
+
+```bash
+$ sudo vim /var/www/nextcloud/config/config.php
+
+'memcache.local' => '\OC\Memcache\Redis',
+
+'memcache.distributed' => '\OC\Memcache\Redis',
+
+'redis' => [
+
+  'host'   => '/var/run/redis/redis-server.sock',
+
+  'port'   => 0,
+
+], 
+```
+{: .nolineno}
