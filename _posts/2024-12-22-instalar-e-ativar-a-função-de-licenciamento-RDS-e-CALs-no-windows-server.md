@@ -1,15 +1,15 @@
 ---
 title: Como instalar e ativar a função de licenciamento RDS e CALs no Windows Server
-description: Instalar e configurar a função de Licenciamento de Área de Trabalho Remota no Windows Server
+description: Instalar a Função de Licenciamento de Área de Trabalho Remota no Windows Server
 author: soarespaullo
 date: 2024-12-22 17:50:00
 categories: [Windows, SysAdmin]
-tags: [Tutoriais, Windows, SysAdmin, RDS, CALs]
+tags: [Tutoriais, Windows,Servidor, SysAdmin, RDS, CALs]
 math: true
 mermaid: true
 image:
   path: /assets/img/img-blog/windows-server.png
-  alt: Instalar e Configurar a Função de Licenciamento de Área de Trabalho Remota no Windows Server
+  alt: Instalar a Função de Licenciamento de Área de Trabalho Remota no Windows Server
 
 ---
 
