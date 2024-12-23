@@ -123,3 +123,4 @@ Se não houver avisos e você vir a mensagem, o servidor RDSH poderá receber CA
 {: .prompt-info }
 
 ![Desktop View](/assets/img/img-blog/diag.png)
+
