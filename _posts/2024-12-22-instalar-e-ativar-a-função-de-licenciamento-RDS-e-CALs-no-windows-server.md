@@ -101,7 +101,7 @@ Especifique a versão do produto **(Windows Server 2022, 2019 ou 2016)**, o tipo
 
 Você pode converter CALs de usuário do RDS em CALs de dispositivo (e vice-versa) usando a opção **Converter licenças** no console do Gerenciador de Licenciamento.
 
-![Desktop View](/assets/img/img-blog/converte.png)
+![Desktop View](/assets/img/img-blog/converter.png)
 
 ## Configurar definições de licenciamento em hosts de sessão RD
 
