@@ -58,13 +58,12 @@ Clique no nome do servidor no console e selecione **Examinar Configurações** .
 
 Agora você precisa instalar o pacote de licença de acesso de cliente de terminal (RDS CAL) que você comprou no servidor de licenças. Existem dois tipos de RDS CALs:
 
-CAL por dispositivo – é a licença permanente atribuída a um computador (dispositivo) que se conecta ao servidor RDS mais de uma vez (um licenciado temporário é emitido quando um dispositivo é conectado pela primeira vez). Essas licenças não são simultâneas, então se você tiver 10 licenças por dispositivo, apenas 10 computadores poderão se conectar ao seu host RDS. A CAL RDS OVL atual é chamada de: Win Remote Desktop Services CAL 2022 SLng OLV NL AP DCAL;
+- **CAL por dispositivo** – é a licença permanente atribuída a um computador (dispositivo) que se conecta ao servidor RDS mais de uma vez (um licenciado temporário é emitido quando um dispositivo é conectado pela primeira vez). Essas licenças não são simultâneas, então se você tiver 10 licenças por dispositivo, apenas 10 computadores poderão se conectar ao seu host RDS. A CAL RDS OVL atual é chamada de: Win Remote Desktop Services CAL 2022 SLng OLV NL AP DCAL;
 
-CAL por usuário – a licença permite que um usuário se conecte ao RDS de qualquer número de computadores/dispositivos. Este tipo de licença é vinculado a uma conta de usuário no Active Directory. É emitido por um período de 52 a 89 dias (número aleatório). A licença Open Value atual deste tipo é chamada Win Remote Desktop Services CAL 2022 SLng OLV NL AP UCAL.
+- **CAL por usuário** – a licença permite que um usuário se conecte ao RDS de qualquer número de computadores/dispositivos. Este tipo de licença é vinculado a uma conta de usuário no Active Directory. É emitido por um período de 52 a 89 dias (número aleatório). A licença Open Value atual deste tipo é chamada Win Remote Desktop Services CAL 2022 SLng OLV NL AP UCAL.
 
 > Se você estiver implantando um HOST RD em um grupo de trabalho **(sem um domínio AD)** , use CALs RDS por dispositivo. Caso contrário, o servidor RDSH encerrará à força a sessão do usuário a cada 60 minutos:
-
-> Problema com a licença da Área de Trabalho Remota: Há um problema com sua licença da Área de Trabalho Remota e sua sessão será desconectada em 60 minutos
+Problema com a licença da Área de Trabalho Remota: Há um problema com sua licença da Área de Trabalho Remota e sua sessão será desconectada em 60 minutos
 {: .prompt-warning }
 
 As RDS CALs que você usa devem ser compatíveis com a versão do Windows Server à qual os usuários ou dispositivos estão se conectando. Para determinar a compatibilidade da RDS CAL com versões do Windows Server no servidor de licença RD, consulte a tabela a seguir:
@@ -81,3 +80,23 @@ As RDS CALs que você usa devem ser compatíveis com a versão do Windows Server
 
 > RDS CALs para novas versões do Windows Server não podem ser instaladas em versões anteriores do WS. Por exemplo, você não poderá instalar as RDS CALs de 2022 em um host de licenciamento do Windows Server 2016.
 {: .prompt-danger }
+
+Clique com o botão direito do mouse no seu host no console do Gerenciador de Licenciamento de Área de Trabalho Remota e selecione Instalar Licenças .
+
+![Desktop View](/assets/img/img-blog/instalar.png)
+
+Selecione o método de ativação (automático, online ou por telefone) e o programa de licença (no nosso caso, é o Contrato de Empresa).
+
+> Vários números de acordos empresariais do RDS vazaram na internet ( 4965437 ), você nem precisa procurar por cracks ou ativadores do RDS.
+
+![Desktop View](/assets/img/img-blog/empresa.png)
+
+As próximas etapas do assistente dependem de qual programa de licença você selecionou. No caso de um Enterprise Agreement, você deve fornecer seu número. Se você escolheu License Pack (Retail Purchase), insira a chave de produto de 25 caracteres que você recebeu da Microsoft ou de um parceiro.
+
+![Desktop View](/assets/img/img-blog/licenca.png)
+
+Especifique a versão do produto **(Windows Server 2022, 2019 ou 2016)**, o tipo de RDS CAL e o número de licenças de terminal a serem instaladas no servidor.
+
+![Desktop View](/assets/img/img-blog/cal.png)
+
+Você pode converter CALs de usuário do RDS em CALs de dispositivo (e vice-versa) usando a opção **Converter licenças** no console do RD Licensing Manager.
