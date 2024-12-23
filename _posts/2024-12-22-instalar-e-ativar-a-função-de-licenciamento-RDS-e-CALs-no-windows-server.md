@@ -58,9 +58,9 @@ Clique no nome do servidor no console e selecione **Examinar Configurações** .
 
 Agora você precisa instalar o pacote de licença de acesso de cliente de terminal (RDS CAL) que você comprou no servidor de licenças. Existem dois tipos de RDS CALs:
 
-- **CAL por dispositivo** – é a licença permanente atribuída a um computador (dispositivo) que se conecta ao servidor RDS mais de uma vez (um licenciado temporário é emitido quando um dispositivo é conectado pela primeira vez). Essas licenças não são simultâneas, então se você tiver 10 licenças por dispositivo, apenas 10 computadores poderão se conectar ao seu host RDS. A CAL RDS OVL atual é chamada de: Win Remote Desktop Services CAL 2022 SLng OLV NL AP DCAL;
+- **CAL por dispositivo** – é a licença permanente atribuída a um computador (dispositivo) que se conecta ao servidor RDS mais de uma vez (um licenciado temporário é emitido quando um dispositivo é conectado pela primeira vez). Essas licenças não são simultâneas, então se você tiver 10 licenças por dispositivo, apenas 10 computadores poderão se conectar ao seu host RDS.
 
-- **CAL por usuário** – a licença permite que um usuário se conecte ao RDS de qualquer número de computadores/dispositivos. Este tipo de licença é vinculado a uma conta de usuário no Active Directory. É emitido por um período de 52 a 89 dias (número aleatório). A licença Open Value atual deste tipo é chamada Win Remote Desktop Services CAL 2022 SLng OLV NL AP UCAL.
+- **CAL por usuário** – a licença permite que um usuário se conecte ao RDS de qualquer número de computadores/dispositivos. Este tipo de licença é vinculado a uma conta de usuário no Active Directory. É emitido por um período de 52 a 89 dias (número aleatório).
 
 > Se você estiver implantando um HOST RD em um grupo de trabalho **(sem um domínio AD)** , use CALs RDS por dispositivo. Caso contrário, o servidor RDSH encerrará à força a sessão do usuário a cada 60 minutos:
 Problema com a licença da Área de Trabalho Remota: Há um problema com sua licença da Área de Trabalho Remota e sua sessão será desconectada em 60 minutos
