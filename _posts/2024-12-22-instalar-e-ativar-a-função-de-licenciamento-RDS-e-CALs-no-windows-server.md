@@ -99,4 +99,27 @@ Especifique a versão do produto **(Windows Server 2022, 2019 ou 2016)**, o tipo
 
 ![Desktop View](/assets/img/img-blog/cal.png)
 
-Você pode converter CALs de usuário do RDS em CALs de dispositivo (e vice-versa) usando a opção **Converter licenças** no console do RD Licensing Manager.
+Você pode converter CALs de usuário do RDS em CALs de dispositivo (e vice-versa) usando a opção **Converter licenças** no console do Gerenciador de Licenciamento.
+
+![Desktop View](/assets/img/img-blog/converte.png)
+
+## Configurar definições de licenciamento em hosts de sessão RD
+
+Vá para Configuração do Computador -> Políticas -> Modelos de Administração -> Componentes do Windows -> Serviços de Área de Trabalho Remota -> Host de Sessão de Área de Trabalho Remota -> Licenciamento e configure as seguintes opções:
+
+- **Use os servidores de licença de Área de Trabalho Remota especificados** – especifique o nome ou o endereço IP do servidor onde a licença RDS está instalada;
+- **Defina o modo de licenciamento da Área de Trabalho Remota** – selecione o tipo de licença para RDS CALs.
+
+![Desktop View](/assets/img/img-blog/gpedit.png)
+
+> Se você instalou o RDSH na edição Windows Server Evaluation , você deve convertê-lo para a versão completa. Sem uma atualização, os serviços RDSH em tal host funcionarão apenas por 120 dias, mesmo se você direcioná-lo para um servidor de licença RDS ativado.
+{: .prompt-danger }
+
+Execute o Remote Desktop Licensing Diagnoser <kbd>lsdiag.msc</kbd> no RDSH e verifique se ele vê o servidor de licenciamento e o número de RDS CALs disponíveis.
+
+Se não houver avisos e você vir a mensagem, o servidor RDSH poderá receber CALs RDS com sucesso para usuários e/ou dispositivos remotos.
+
+> O Diagnóstico de Licenciamento não identificou nenhum problema de licenciamento para o servidor Host de Sessão da Área de Trabalho Remota.
+{: .prompt-info }
+
+![Desktop View](/assets/img/img-blog/diag.png)
