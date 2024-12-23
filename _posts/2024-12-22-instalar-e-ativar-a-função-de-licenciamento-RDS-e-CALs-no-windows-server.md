@@ -68,14 +68,14 @@ Problema com a licença da Área de Trabalho Remota: Há um problema com sua lic
 
 As RDS CALs que você usa devem ser compatíveis com a versão do Windows Server à qual os usuários ou dispositivos estão se conectando. Para determinar a compatibilidade da RDS CAL com versões do Windows Server no servidor de licença RD, consulte a tabela a seguir:
 
-|             | CAL R2 2008  |   CAL 2012   |   CAL 2016   |   CAL 2019   |   CAL 2022   |
-| ----------- | ------------ | ----------   | ------------ | ------------ | ------------ |
-| 2008 R2     |     Sim      |      Não     |      Não     |     Não      |     Não      |
-| 2012        |     Sim      |      Sim     |      Não     |     Não      |     Não      |
-| 2012 R2     |     Sim      |      Sim     |      Não     |     Não      |     Não      |
-| 2016        |     Sim      |      Sim     |      Sim     |     Não      |     Não      |
-| 2019        |     Sim      |      Sim     |      Sim     |     Sim      |     Não      | 
-| 2022        |     Sim      |      Sim     |      Sim     |     Sim      |     Sim      |
+|              | CAL R2 2008  |   CAL 2012   |   CAL 2016   |   CAL 2019   |   CAL 2022   |
+|  ----------- | ------------ | ----------   | ------------ | ------------ | ------------ |
+|  2008 R2     |     Sim      |     Não      |      Não     |     Não      |     Não      |
+|  2012        |     Sim      |     Sim      |      Não     |     Não      |     Não      |
+|  2012 R2     |     Sim      |     Sim      |      Não     |     Não      |     Não      |
+|  2016        |     Sim      |     Sim      |      Sim     |     Não      |     Não      |
+|  2019        |     Sim      |     Sim      |      Sim     |     Sim      |     Não      | 
+|  2022        |     Sim      |     Sim      |      Sim     |     Sim      |     Sim      |
 
 
 > RDS CALs para novas versões do Windows Server não podem ser instaladas em versões anteriores do WS. Por exemplo, você não poderá instalar as RDS CALs de 2022 em um host de licenciamento do Windows Server 2016.
@@ -124,3 +124,4 @@ Se não houver avisos e você vir a mensagem, o servidor RDSH poderá receber CA
 
 ![Desktop View](/assets/img/img-blog/diag.png)
 
+Pronto, finalizamos a instalação e configuração das licenças CALs de RDS no Windows Server..., até breve! =D
