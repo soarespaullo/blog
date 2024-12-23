@@ -46,8 +46,22 @@ Clique no botão Finalizar . A seguinte mensagem deve aparecer:
 
 Clique no nome do servidor no console e selecione **Examinar Configurações** . Neste exemplo, o servidor de licença RD está habilitado e pode emitir licenças para clientes no domínio do AD.
 
-> OEste servidor de licença é um membro do grupo Terminal Server License Servers no Active Directory. Este servidor de licença poderá emitir RDS Per User CALs para usuários no domínio, e você poderá rastrear o uso de RDS Per User CALs.
+> Este servidor de licença é um membro do grupo Terminal Server License Servers no Active Directory. Este servidor de licença poderá emitir RDS Per User CALs para usuários no domínio, e você poderá rastrear o uso de RDS Per User CALs.
 {: .prompt-info }
 
 > Este servidor de licença é registrado como um ponto de conexão de serviço (SCP) nos Serviços de Domínio do Active Directory.
 {: .prompt-info }
+
+![Desktop View](/assets/img/img-blog/pronto.png)
+
+## Instalar licenças de acesso de cliente (CALs) do RDS no Windows Server
+
+Agora você precisa instalar o pacote de licença de acesso de cliente de terminal (RDS CAL) que você comprou no servidor de licenças. Existem dois tipos de RDS CALs:
+
+CAL por dispositivo – é a licença permanente atribuída a um computador (dispositivo) que se conecta ao servidor RDS mais de uma vez (um licenciado temporário é emitido quando um dispositivo é conectado pela primeira vez). Essas licenças não são simultâneas, então se você tiver 10 licenças por dispositivo, apenas 10 computadores poderão se conectar ao seu host RDS. A CAL RDS OVL atual é chamada de: Win Remote Desktop Services CAL 2022 SLng OLV NL AP DCAL;
+
+CAL por usuário – a licença permite que um usuário se conecte ao RDS de qualquer número de computadores/dispositivos. Este tipo de licença é vinculado a uma conta de usuário no Active Directory. É emitido por um período de 52 a 89 dias (número aleatório). A licença Open Value atual deste tipo é chamada Win Remote Desktop Services CAL 2022 SLng OLV NL AP UCAL.
+
+> Se você estiver implantando um HOST RD em um grupo de trabalho **(sem um domínio AD)** , use CALs RDS por dispositivo. Caso contrário, o servidor RDSH encerrará à força a sessão do usuário a cada 60 minutos:
+Problema com a licença da Área de Trabalho Remota: Há um problema com sua licença da Área de Trabalho Remota e sua sessão será desconectada em 60 minutos
+{: .prompt-warning }
