@@ -17,7 +17,7 @@ O **servidor de Licenciamento de Área de Trabalho Remota** é usado para emitir
 
 Instale o serviço de Licenciamento de Área de Trabalho Remota no console do Gerenciador do Servidor <kbd>(Adicionar Funções e Recursos -> Serviços de Área de Trabalho Remota -> Licenciamento de Área de Trabalho Remota).</kbd>
 
-![Desktop View](/assets/img/img-blog/licenciamentoRD.png)
+![Desktop View](/assets/img/img-blog/LicenciamentoRD.png)
 
 ## Ative o Servidor de Licenças dos Serviços de Área de Trabalho Remota
 
