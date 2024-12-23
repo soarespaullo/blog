@@ -115,7 +115,7 @@ Vá para Configuração do Computador -> Políticas -> Modelos de Administraçã
 > Se você instalou o RDSH na edição Windows Server Evaluation , você deve convertê-lo para a versão completa. Sem uma atualização, os serviços RDSH em tal host funcionarão apenas por 120 dias, mesmo se você direcioná-lo para um servidor de licença RDS ativado.
 {: .prompt-danger }
 
-Execute o Remote Desktop Licensing Diagnoser <kbd>lsdiag.msc</kbd> no RDSH e verifique se ele vê o servidor de licenciamento e o número de RDS CALs disponíveis.
+Execute o Diagnosticador de licenciamento de área de trabalho remota <kbd>lsdiag.msc</kbd> no RDSH e verifique se ele vê o servidor de licenciamento e o número de RDS CALs disponíveis.
 
 Se não houver avisos e você vir a mensagem, o servidor RDSH poderá receber CALs RDS com sucesso para usuários e/ou dispositivos remotos.
 
