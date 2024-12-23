@@ -15,12 +15,13 @@ image:
 
 O **servidor de Licenciamento de Área de Trabalho Remota** é usado para emitir e rastrear licenças de acesso de terminal de cliente RDS ( **CALs** ). A política de licenciamento da Microsoft exige que todos os usuários ou dispositivos que se conectam a sessões de área de trabalho no RDS sejam licenciados. Neste artigo, veremos como instalar e ativar a função de servidor de Licenciamento de Área de Trabalho Remota em um host executando o Windows Server 2022, 2019 ou 2016 e como instalar CALs RDS.
 
-Instale o serviço de Licenciamento de Área de Trabalho Remota no console do Gerenciador do Servidor <kbd>(Adicionar Funções e Recursos -> Serviços de Área de Trabalho Remota -> Licenciamento de Área de Trabalho Remota ).</kbd>
+Instale o serviço de Licenciamento de Área de Trabalho Remota no console do Gerenciador do Servidor <kbd>(Adicionar Funções e Recursos -> Serviços de Área de Trabalho Remota -> Licenciamento de Área de Trabalho Remota).</kbd>
 
+![Desktop View](/assets/img/img-blog/licenciamentoRD.png)
 
 ## Ative o Servidor de Licenças dos Serviços de Área de Trabalho Remota
 
-Para emitir licenças para clientes RDP, seu Servidor de Licença RDS deve ser ativado. Abra o **Remote Desktop Licensing Manager** <kbd>(licmgr.exe)</kbd>, clique com o botão direito do mouse no nome do seu servidor e selecione Ativar Servidor .
+Para emitir licenças para clientes RDP, seu Servidor de Licença RDS deve ser ativado. Abra o **Remote Desktop Licensing Manager** <kbd>licmgr.exe</kbd>, clique com o botão direito do mouse no nome do seu servidor e selecione Ativar Servidor .
 
 Imagem aqui
 
