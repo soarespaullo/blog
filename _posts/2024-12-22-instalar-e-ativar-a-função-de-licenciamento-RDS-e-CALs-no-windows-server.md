@@ -87,7 +87,8 @@ Clique com o botão direito do mouse no seu host no console do Gerenciador de Li
 
 Selecione o método de ativação (automático, online ou por telefone) e o programa de licença (no nosso caso, é o Contrato de Empresa).
 
-> Vários números de acordos empresariais do RDS vazaram na internet ( 4965437 ), você nem precisa procurar por cracks ou ativadores do RDS.
+> Vários números de acordos empresariais do RDS vazaram na internet <kbd>4965437</kbd>, você nem precisa procurar por cracks ou ativadores do RDS.
+{: .prompt-warning }
 
 ![Desktop View](/assets/img/img-blog/empresa.png)
 
