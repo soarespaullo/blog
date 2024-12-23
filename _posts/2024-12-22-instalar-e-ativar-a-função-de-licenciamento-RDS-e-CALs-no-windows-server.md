@@ -17,20 +17,37 @@ O **servidor de Licenciamento de Área de Trabalho Remota** é usado para emitir
 
 Instale o serviço de Licenciamento de Área de Trabalho Remota no console do Gerenciador do Servidor <kbd>(Adicionar Funções e Recursos -> Serviços de Área de Trabalho Remota -> Licenciamento de Área de Trabalho Remota).</kbd>
 
-![Desktop View](/assets/img/img-blog/LicenciamentoRD.png)
+![Desktop View](/assets/img/img-blog/licenciamentord.png)
+
+Aguarde a instalação da função.
+
+![Desktop View](/assets/img/img-blog/finalizado.png)
 
 ## Ative o Servidor de Licenças dos Serviços de Área de Trabalho Remota
 
-Para emitir licenças para clientes RDP, seu Servidor de Licença RDS deve ser ativado. Abra o **Remote Desktop Licensing Manager** <kbd>licmgr.exe</kbd>, clique com o botão direito do mouse no nome do seu servidor e selecione Ativar Servidor .
+Para emitir licenças para clientes RDP, seu Servidor de Licença RDS deve ser ativado. Abra o **Gerenciador de Licenciamento de Área de Trabalho Remota** <kbd>licmgr.exe</kbd>, clique com o botão direito do mouse no nome do seu servidor e selecione Ativar Servidor .
 
-Imagem aqui
+![Desktop View](/assets/img/img-blog/ativar.png)
 
 No assistente de ativação do servidor de licenciamento RDS, escolha se deseja ativar o servidor pela Internet, usando um navegador ou por telefone.
 
-Imagem aqui
+![Desktop View](/assets/img/img-blog/ativacao.png)
 
-Em seguida, preencha algumas informações sobre sua empresa (alguns campos são obrigatórios).
+Em seguida, preencha algumas informações sobre sua empresa **(alguns campos são obrigatórios)**.
 
-Imagem aqui
+![Desktop View](/assets/img/img-blog/informacao.png)
 
 Clique no botão Finalizar . A seguinte mensagem deve aparecer:
+
+> O servidor de licença foi ativado com sucesso!
+{: .prompt-info }
+
+![Desktop View](/assets/img/img-blog/concluido.png)
+
+Clique no nome do servidor no console e selecione **Examinar Configurações** . Neste exemplo, o servidor de licença RD está habilitado e pode emitir licenças para clientes no domínio do AD.
+
+> OEste servidor de licença é um membro do grupo Terminal Server License Servers no Active Directory. Este servidor de licença poderá emitir RDS Per User CALs para usuários no domínio, e você poderá rastrear o uso de RDS Per User CALs.
+{: .prompt-info }
+
+> Este servidor de licença é registrado como um ponto de conexão de serviço (SCP) nos Serviços de Domínio do Active Directory.
+{: .prompt-info }
