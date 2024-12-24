@@ -46,9 +46,9 @@ processo para configurar aqui
 
 Após concluir a configuração do Firewall, reinicie o computador ou reinicie o serviço de Área de Trabalho Remota com este comando: <kbd>net stop termservice & net start termservice</kbd>
 
-Imagem aqui
+![Desktop View](/assets/img/img-blog/restart.png)
 
-Para se conectar a este host Windows via Área de Trabalho Remota, você precisa especificar a nova porta de conexão RDP no seu cliente <kbd>mstsc.exe</kbd> usando dois pontos da seguinte forma: RDPComputerName:10050 ou pelo endereço IP: 192.168.1.10:10050 ou no prompt de comando: mstsc.exe /v 192.168.1.10:10050
+Para se conectar a este host Windows via Área de Trabalho Remota, você precisa especificar a nova porta de conexão RDP no seu cliente <kbd>mstsc.exe</kbd> usando dois pontos da seguinte forma: **localhost:10050** ou pelo endereço **IP: 127.0.0.1:10050** ou no prompt de comando: **mstsc.exe /v 127.0.0.1:10050**
 
-Imagem aqui
+![Desktop View](/assets/img/img-blog/mstsc.png)
 
