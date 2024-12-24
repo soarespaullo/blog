@@ -8,7 +8,7 @@ tags: [Tutoriais, Windows,Servidor, SysAdmin, RDP, Port]
 math: true
 mermaid: true
 image:
-  path: /assets/img/img-blog/remote-desktop.png
+  path: /assets/img/img-blog/remote-desktop/remote-desktop.png
   alt: Alterar a porta de escuta da Área de Trabalho Remota em seu computador
 
 ---
@@ -30,7 +30,7 @@ Em nosso exemplo, alteraremos o número da porta na qual o serviço **Remote Des
 2. Encontre o parâmetro **DWORD** com o nome **PortNumber**. Este parâmetro mostra a porta na qual o serviço Remote Desktop está escutando. O padrão é 3389 (decimal);
 3. Altere o valor deste parâmetro. Eu alterei a porta RDP para **10050** (Decimal)
 
-![Desktop View](/assets/img/img-blog/port.png)
+![Desktop View](/assets/img/img-blog/remote-desktop/port.png)
 
 > Alterar a porta **RDP** reduzirá as chances de explorar vulnerabilidades **RDP** (a última vulnerabilidade crítica no **(RDP - BlueKeep)** é descrita em **CVE-2019-0708**, reduzirá o número de ataques de força bruta RDP **(não se esqueça de analisar regularmente os logs de conexão RDP)**, **SYN** e outros tipos de ataques quando o **NLA** estiver desabilitado . Na maioria das vezes, a porta **RDP** é alterada em computadores com conexão direta à Internet **(VPS/ VDS)** ou em redes onde o roteador de borda encaminha a porta **3389/RDP** para um host Windows em sua **LAN**.
 {: .prompt-warning }
@@ -57,14 +57,14 @@ Execute as combinações de teclas <kbd>Win+R</kbd> e escreva <kbd>firewall.cpl<
 
 Após concluir a configuração do Firewall, reinicie o computador <kbd>shutdown -f -t 0 -r</kbd> ou reinicie o serviço de **Área de Trabalho Remota** <kbd>net stop termservice & net start termservice</kbd>
 
-![Desktop View](/assets/img/img-blog/restart.png)
+![Desktop View](/assets/img/img-blog/remote-desktop/restart.png)
 
 Para se conectar a este host Windows via **Área de Trabalho Remota**, você precisa especificar a nova porta de conexão **RDP** no seu cliente <kbd>mstsc.exe</kbd> usando dois pontos da seguinte forma: **localhost:10050** ou pelo endereço **IP: 127.0.0.1:10050** ou no prompt de comando: **mstsc.exe /v 127.0.0.1:10050**
 
-![Desktop View](/assets/img/img-blog/mstsc.png)
+![Desktop View](/assets/img/img-blog/remote-desktop/mstsc.png)
 
 Então você se conectará com sucesso à **Área de Trabalho Remota** de um computador usando a nova porta **RDP**. Você pode usar o comando <kbd>netstat –na | Find “LIST”</kbd> para certificar-se de que seu **Remote Desktop Service** esteja escutando em uma nova porta.
 
-![Desktop View](/assets/img/img-blog/netstat.png)
+![Desktop View](/assets/img/img-blog/remote-desktop/netstat.png)
 
 Este guia para alterar a porta **RDP** padrão é adequado para qualquer versão do Windows, desde o **Windows XP** **(Windows Server 2003)** até as compilações modernas do **Windows 10**, **Windows 11** e **Windows Server 2022**.
