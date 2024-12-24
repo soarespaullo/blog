@@ -13,7 +13,7 @@ image:
 
 ---
 
-Em todos os sistemas operacionais Windows, a porta padrão atribuída ao RDP **(Remote Desktop Protocol)** é TCP 3389.
+Em todos os sistemas operacionais Windows, a porta padrão atribuída ao RDP **(Remote Desktop Protocol)** é **TCP 3389**.
 Após habilitar o RDP no Windows, o <kbd>TermService</kbd> **(Remote Desktop Services)** começa a escutar na porta **3389**. Neste artigo, 
 mostraremos como alterar o número da porta RDP padrão nas edições desktop do Windows (10/11) e Windows Server usando o Editor do Registro do Windows. 
 
@@ -26,7 +26,7 @@ ou qualquer porta no intervalo <kbd>1024 a 49151</kbd> que não esteja em uso po
 
 Em nosso exemplo, alteraremos o número da porta na qual o serviço **Remote Desktop** está escutando para **10050**.
 
-1. Abra o Editor do Registro <kbd>regedit.exe</kbd> e vá até a chave de registro **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp**;
+1. Abra o Editor do Registro <kbd>Win+R</kbd> e escreva <kbd>regedit.exe</kbd> e vá até a chave de registro **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp**;
 2. Encontre o parâmetro **DWORD** com o nome **PortNumber**. Este parâmetro mostra a porta na qual o serviço Remote Desktop está escutando. O padrão é 3389 (decimal);
 3. Altere o valor deste parâmetro. Eu alterei a porta RDP para **10050** (Decimal)
 
@@ -59,12 +59,12 @@ Após concluir a configuração do Firewall, reinicie o computador <kbd>shutdown
 
 ![Desktop View](/assets/img/img-blog/restart.png)
 
-Para se conectar a este host Windows via Área de Trabalho Remota, você precisa especificar a nova porta de conexão RDP no seu cliente <kbd>mstsc.exe</kbd> usando dois pontos da seguinte forma: **localhost:10050** ou pelo endereço **IP: 127.0.0.1:10050** ou no prompt de comando: **mstsc.exe /v 127.0.0.1:10050**
+Para se conectar a este host Windows via **Área de Trabalho Remota**, você precisa especificar a nova porta de conexão **RDP** no seu cliente <kbd>mstsc.exe</kbd> usando dois pontos da seguinte forma: **localhost:10050** ou pelo endereço **IP: 127.0.0.1:10050** ou no prompt de comando: **mstsc.exe /v 127.0.0.1:10050**
 
 ![Desktop View](/assets/img/img-blog/mstsc.png)
 
-Então você se conectará com sucesso à Área de Trabalho Remota de um computador usando a nova porta RDP. Você pode usar o comando: <kbd>netstat –na | Find “LIST”</kbd> para certificar-se de que seu **Remote Desktop Service** esteja escutando em uma nova porta.
+Então você se conectará com sucesso à **Área de Trabalho Remota** de um computador usando a nova porta **RDP**. Você pode usar o comando: <kbd>netstat –na | Find “LIST”</kbd> para certificar-se de que seu **Remote Desktop Service** esteja escutando em uma nova porta.
 
 ![Desktop View](/assets/img/img-blog/netstat.png)
 
-Este guia para alterar a porta RDP padrão é adequado para qualquer versão do Windows, desde o Windows XP (Windows Server 2003) até as compilações modernas do Windows 10, Windows 11 e Windows Server 2022.
+Este guia para alterar a porta **RDP** padrão é adequado para qualquer versão do Windows, desde o **Windows XP** **(Windows Server 2003)** até as compilações modernas do **Windows 10**, **Windows 11** e **Windows Server 2022**.
