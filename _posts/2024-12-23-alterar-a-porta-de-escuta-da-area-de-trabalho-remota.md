@@ -52,7 +52,7 @@ Execute as combinações de teclas: <kbd>Win+R</kbd> e escreva: <kbd>firewall.cp
 - Na página de Perfil, selecione as opções apropriadas para o seu ambiente e clique em Avançar.
 - Na página de Nome, insira o nome da regra, no meu caso, vou colocar **(TS 10050)** e selecione Concluir.
 
-Após concluir a configuração do Firewall, reinicie o computador ou reinicie o serviço de Área de Trabalho Remota com este comando: <kbd>net stop termservice & net start termservice</kbd>
+Após concluir a configuração do Firewall, reinicie o computador <kbd>shutdown -f -t 0 -r</kbd> ou reinicie o serviço de Área de Trabalho Remota <kbd>net stop termservice & net start termservice</kbd>
 
 ![Desktop View](/assets/img/img-blog/restart.png)
 
