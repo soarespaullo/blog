@@ -9,7 +9,7 @@ pin: true
 math: true
 mermaid: true
 image:
-  path: /assets/img/img-blog/banner.png
+  path: /assets/img/img-blog/ssh/banner.png
   alt: Mensagem de banner em servidores Linux através do SSH.
 
 ---
