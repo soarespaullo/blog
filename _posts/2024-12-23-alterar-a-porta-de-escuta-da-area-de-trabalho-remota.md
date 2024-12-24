@@ -32,6 +32,9 @@ Em nosso exemplo, alteraremos o número da porta na qual o serviço **Remote Des
 
 ![Desktop View](/assets/img/img-blog/port.png)
 
+> Alterar a porta RDP reduzirá as chances de explorar vulnerabilidades RDP (a última vulnerabilidade crítica no RDP **BlueKeep** é descrita em **CVE-2019-0708**, reduzirá o número de ataques de força bruta RDP **(não se esqueça de analisar regularmente os logs de conexão RDP)**, SYN e outros tipos de ataques quando o NLA estiver desabilitado . Na maioria das vezes, a porta RDP é alterada em computadores com conexão direta à Internet **(VPS/ VDS)** ou em redes onde o roteador de borda encaminha a porta **3389/RDP** para um host Windows em sua LAN.
+{: .prompt-warning }
+
 ## Atualizando Regras do Firewall do Windows
 
 Se o Firewall do Windows estiver habilitado no seu computador, você terá que criar uma nova regra que permita conexão de entrada para sua nova porta RDP
