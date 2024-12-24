@@ -30,7 +30,7 @@ Em nosso exemplo, alteraremos o número da porta na qual o serviço **Remote Des
 2. Encontre o parâmetro **DWORD** com o nome **PortNumber**. Este parâmetro mostra a porta na qual o serviço Remote Desktop está escutando. O padrão é 3389 (decimal);
 3. Altere o valor deste parâmetro. Eu alterei a porta RDP para **10050** (Decimal)
 
-![Desktop View](/assets/img/img-blog/remote-desktop/port.png)
+![Desktop View](/assets/img/img-blog/remote-desktop/port.png) 
 
 > Alterar a porta **RDP** reduzirá as chances de explorar vulnerabilidades **RDP** (a última vulnerabilidade crítica no **(RDP - BlueKeep)** é descrita em **CVE-2019-0708**, reduzirá o número de ataques de força bruta RDP **(não se esqueça de analisar regularmente os logs de conexão RDP)**, **SYN** e outros tipos de ataques quando o **NLA** estiver desabilitado . Na maioria das vezes, a porta **RDP** é alterada em computadores com conexão direta à Internet **(VPS/ VDS)** ou em redes onde o roteador de borda encaminha a porta **3389/RDP** para um host Windows em sua **LAN**.
 {: .prompt-warning }
