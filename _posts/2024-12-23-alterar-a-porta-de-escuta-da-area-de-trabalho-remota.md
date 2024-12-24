@@ -51,7 +51,6 @@ Execute as combinações de teclas: <kbd>Win+R</kbd> e escreva: <kbd>firewall.cp
 - Na página de Ação, selecione Permitir a conexão e clique em Avançar.
 - Na página de Perfil, selecione as opções apropriadas para o seu ambiente e clique em Avançar.
 - Na página de Nome, insira o nome da regra, no meu caso, vou colocar **(TS 10050)** e selecione Concluir.
-- Reinicie o computador.
 
 Após concluir a configuração do Firewall, reinicie o computador ou reinicie o serviço de Área de Trabalho Remota com este comando: <kbd>net stop termservice & net start termservice</kbd>
 
