@@ -6,6 +6,7 @@ date: 2024-12-22 17:50:00
 categories: [Windows, SysAdmin]
 tags: [Tutoriais, Windows,Servidor, SysAdmin, RDS, CALs]
 math: true
+pin: true
 mermaid: true
 image:
   path: /assets/img/img-blog/windows-server/windows-server.png
