@@ -5,7 +5,6 @@ author: soarespaullo
 date: 2024-09-12 22:18:00
 categories: [Hacking]
 tags: [Tutoriais]
-pin: true
 math: true
 mermaid: true
 image:
