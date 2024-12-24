@@ -47,13 +47,13 @@ Execute as combinações de teclas <kbd>Win+R</kbd> e escreva <kbd>firewall.cpl<
 
 - Selecione **Configurações Avançadas**.
 - Selecione **Regras de Entrada**.
-- No painel Ações, selecione **Nova Regra**.
+- No painel **Ações**, selecione **Nova Regra**.
 - Escolha o **tipo de regra de Porta** e selecione Avançar.
 - Na página **Protocolo e Portas**, escolha **TCP**.
 - Selecione **Portas Locais Específicas**, insira o valor **10050** e clique em Avançar.
-- Na página de Ação, selecione **Permitir a conexão** e clique em Avançar.
-- Na página de Perfil, **selecione as opções apropriadas para o seu ambiente** e clique em Avançar.
-- Na página de Nome, insira o **nome da regra**, no meu caso, vou colocar **(TS 10050)** e selecione Concluir.
+- Na página de **Ação**, selecione **Permitir a conexão** e clique em Avançar.
+- Na página de **Perfil**, **selecione as opções apropriadas para o seu ambiente** e clique em Avançar.
+- Na página de **Nome**, insira o **nome da regra**, no meu caso, vou colocar **(TS 10050)** e selecione Concluir.
 
 Após concluir a configuração do Firewall, reinicie o computador <kbd>shutdown -f -t 0 -r</kbd> ou reinicie o serviço de **Área de Trabalho Remota** <kbd>net stop termservice & net start termservice</kbd>
 
