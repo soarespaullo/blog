@@ -17,32 +17,32 @@ O **servidor de Licenciamento de Área de Trabalho Remota** é usado para emitir
 
 Instale o serviço de Licenciamento de Área de Trabalho Remota no console do Gerenciador do Servidor <kbd>(Adicionar Funções e Recursos -> Serviços de Área de Trabalho Remota -> Licenciamento de Área de Trabalho Remota).</kbd>
 
-![Desktop View](/assets/img/img-blog/licenciamentord.png)
+![Desktop View](/assets/img/img-blog/windows-server/licenciamentord.png)
 
 Aguarde a instalação da função.
 
-![Desktop View](/assets/img/img-blog/finalizado.png)
+![Desktop View](/assets/img/img-blog/windows-server/finalizado.png)
 
 ## Ative o Servidor de Licenças dos Serviços de Área de Trabalho Remota
 
 Para emitir licenças para clientes RDP, seu Servidor de Licença RDS deve ser ativado. Abra o **Gerenciador de Licenciamento de Área de Trabalho Remota** <kbd>licmgr.exe</kbd>, clique com o botão direito do mouse no nome do seu servidor e selecione Ativar Servidor .
 
-![Desktop View](/assets/img/img-blog/ativar.png)
+![Desktop View](/assets/img/img-blog/windows-server/ativar.png)
 
 No assistente de ativação do servidor de licenciamento RDS, escolha se deseja ativar o servidor pela Internet, usando um navegador ou por telefone.
 
-![Desktop View](/assets/img/img-blog/ativacao.png)
+![Desktop View](/assets/img/img-blog/windows-server/ativacao.png)
 
 Em seguida, preencha algumas informações sobre sua empresa **(alguns campos são obrigatórios)**.
 
-![Desktop View](/assets/img/img-blog/informacao.png)
+![Desktop View](/assets/img/img-blog/windows-server/informacao.png)
 
 Clique no botão Finalizar . A seguinte mensagem deve aparecer:
 
 > O servidor de licença foi ativado com sucesso!
 {: .prompt-info }
 
-![Desktop View](/assets/img/img-blog/concluido.png)
+![Desktop View](/assets/img/img-blog/windows-server/concluido.png)
 
 Clique no nome do servidor no console e selecione **Examinar Configurações** . Neste exemplo, o servidor de licença RD está habilitado e pode emitir licenças para clientes no domínio do AD.
 
@@ -52,7 +52,7 @@ Clique no nome do servidor no console e selecione **Examinar Configurações** .
 > Este servidor de licença é registrado como um ponto de conexão de serviço (SCP) nos Serviços de Domínio do Active Directory.
 {: .prompt-info }
 
-![Desktop View](/assets/img/img-blog/pronto.png)
+![Desktop View](/assets/img/img-blog/windows-server/pronto.png)
 
 ## Instalar licenças de acesso de cliente (CALs) do RDS no Windows Server
 
@@ -83,26 +83,26 @@ As RDS CALs que você usa devem ser compatíveis com a versão do Windows Server
 
 Clique com o botão direito do mouse no seu host no console do Gerenciador de Licenciamento de Área de Trabalho Remota e selecione Instalar Licenças .
 
-![Desktop View](/assets/img/img-blog/instalar.png)
+![Desktop View](/assets/img/img-blog/windows-server/instalar.png)
 
 Selecione o método de ativação (automático, online ou por telefone) e o programa de licença (no nosso caso, é o Contrato de Empresa).
 
 > Vários números de acordos empresariais do RDS vazaram na internet <kbd>4965437</kbd>, você nem precisa procurar por cracks ou ativadores do RDS.
 {: .prompt-warning }
 
-![Desktop View](/assets/img/img-blog/empresa.png)
+![Desktop View](/assets/img/img-blog/windows-server/empresa.png)
 
 As próximas etapas do assistente dependem de qual programa de licença você selecionou. No caso de um Enterprise Agreement, você deve fornecer seu número. Se você escolheu License Pack (Retail Purchase), insira a chave de produto de 25 caracteres que você recebeu da Microsoft ou de um parceiro.
 
-![Desktop View](/assets/img/img-blog/licenca.png)
+![Desktop View](/assets/img/img-blog/windows-server/licenca.png)
 
 Especifique a versão do produto **(Windows Server 2022, 2019 ou 2016)**, o tipo de RDS CAL e o número de licenças de terminal a serem instaladas no servidor.
 
-![Desktop View](/assets/img/img-blog/cal.png)
+![Desktop View](/assets/img/img-blog/windows-server/cal.png)
 
 Você pode converter CALs de usuário do RDS em CALs de dispositivo (e vice-versa) usando a opção **Converter licenças** no console do Gerenciador de Licenciamento.
 
-![Desktop View](/assets/img/img-blog/converter.png)
+![Desktop View](/assets/img/img-blog/windows-server/converter.png)
 
 ## Configurar definições de licenciamento em hosts de sessão RD
 
@@ -111,7 +111,7 @@ Vá para Configuração do Computador -> Políticas -> Modelos de Administraçã
 - **Use os servidores de licença de Área de Trabalho Remota especificados** – especifique o nome ou o endereço IP do servidor onde a licença RDS está instalada;
 - **Defina o modo de licenciamento da Área de Trabalho Remota** – selecione o tipo de licença para RDS CALs.
 
-![Desktop View](/assets/img/img-blog/gpedit.png)
+![Desktop View](/assets/img/img-blog/windows-server/gpedit.png)
 
 > Se você instalou o RDSH na edição Windows Server Evaluation , você deve convertê-lo para a versão completa. Sem uma atualização, os serviços RDSH em tal host funcionarão apenas por 120 dias, mesmo se você direcioná-lo para um servidor de licença RDS ativado.
 {: .prompt-danger }
@@ -123,6 +123,6 @@ Se não houver avisos e você vir a mensagem, o servidor RDSH poderá receber CA
 > O Diagnóstico de Licenciamento não identificou nenhum problema de licenciamento para o servidor Host de Sessão da Área de Trabalho Remota.
 {: .prompt-info }
 
-![Desktop View](/assets/img/img-blog/diag.png)
+![Desktop View](/assets/img/img-blog/windows-server/diag.png)
 
 Pronto, finalizamos a instalação e configuração das licenças CALs de RDS no Windows Server..., até breve! =D
