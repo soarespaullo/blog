@@ -62,6 +62,6 @@ Para se conectar a este host Windows via Área de Trabalho Remota, você precisa
 
 Então você se conectará com sucesso à Área de Trabalho Remota de um computador usando a nova porta RDP. Você pode usar o comando: <kbd>netstat –na | Find “LIST”</kbd> comando para certificar-se de que seu **Remote Desktop Service** esteja escutando em uma nova porta.
 
-Imagem aqui
+![Desktop View](/assets/img/img-blog/netstat.png)
 
 Este guia para alterar a porta RDP padrão é adequado para qualquer versão do Windows, desde o Windows XP (Windows Server 2003) até as compilações modernas do Windows 10, Windows 11 e Windows Server 2022.
