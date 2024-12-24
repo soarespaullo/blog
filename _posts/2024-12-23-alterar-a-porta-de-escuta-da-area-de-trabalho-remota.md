@@ -20,7 +20,7 @@ mostraremos como alterar o número da porta RDP padrão nas edições desktop do
 > Ao escolher uma porta RDP não padrão, observe que não é recomendado usar portas no intervalo <kbd>1-1023</kbd> (portas conhecidas). Use uma porta dinâmica no intervalo de portas RPC <kbd>(49152-65535)</kbd> , 
 ou qualquer porta no intervalo <kbd>1024 a 49151</kbd> que não esteja em uso por outro serviço ou aplicativo.
 {: .prompt-warning }
->
+
 
 ## Como alterar a porta da Área de Trabalho Remota no Windows?
 
@@ -29,4 +29,26 @@ Em nosso exemplo, alteraremos o número da porta na qual o serviço **Remote Des
 1. Abra o Editor do Registro <kbd>regedit.exe</kbd> e vá até a chave de registro **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp**;
 2. Encontre o parâmetro **DWORD** com o nome **PortNumber**. Este parâmetro mostra a porta na qual o serviço Remote Desktop está escutando. O padrão é 3389 (decimal);
 3. Altere o valor deste parâmetro. Eu alterei a porta RDP para **10050** (Decimal)
+
+![Desktop View](/assets/img/img-blog/port.png)
+
+## Atualizando Regras do Firewall do Windows
+
+Se o Firewall do Windows estiver habilitado no seu computador, você terá que criar uma nova regra que permita conexão de entrada para sua nova porta RDP
+
+> Se você estiver reconfigurando um host remoto do Windows via RDP, certifique-se de criar regras de permissão no firewall antes de reiniciar o TermService, caso contrário, você perderá o acesso ao servidor
+{: .prompt-warning }
+
+Você pode criar uma regra de permissão de entrada para sua nova porta TCP/UDP RDP manualmente no console do Firewall do Windows
+
+processo para configurar aqui
+
+
+Após concluir a configuração do Firewall, reinicie o computador ou reinicie o serviço de Área de Trabalho Remota com este comando: <kbd>net stop termservice & net start termservice</kbd>
+
+Imagem aqui
+
+Para se conectar a este host Windows via Área de Trabalho Remota, você precisa especificar a nova porta de conexão RDP no seu cliente <kbd>mstsc.exe</kbd> usando dois pontos da seguinte forma: RDPComputerName:10050 ou pelo endereço IP: 192.168.1.10:10050 ou no prompt de comando: mstsc.exe /v 192.168.1.10:10050
+
+Imagem aqui
 
