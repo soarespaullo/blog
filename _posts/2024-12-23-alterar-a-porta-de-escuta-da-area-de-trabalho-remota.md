@@ -39,23 +39,23 @@ Em nosso exemplo, alteraremos o número da porta na qual o serviço **Remote Des
 
 Se o Firewall do Windows estiver habilitado no seu computador, você terá que criar uma nova regra que permita conexão de entrada para sua nova porta RDP
 
-> Se você estiver reconfigurando um host remoto do Windows via RDP, certifique-se de criar regras de permissão no firewall antes de reiniciar o TermService, caso contrário, você perderá o acesso ao servidor
+> Se você estiver reconfigurando um host remoto do Windows via **RDP**, certifique-se de criar regras de permissão no firewall antes de reiniciar o **TermService**, caso contrário, você perderá o acesso ao servidor
 {: .prompt-warning }
 
-Você pode criar uma regra de permissão de entrada para sua nova porta TCP/UDP RDP manualmente no console do Firewall do Windows.
-Execute as combinações de teclas: <kbd>Win+R</kbd> e escreva: <kbd>firewall.cpl</kbd>
+Você pode criar uma regra de permissão de entrada para sua nova porta **TCP/UDP** **(Remote Desktop Protoco)** manualmente no console do Firewall do Windows.
+Execute as combinações de teclas <kbd>Win+R</kbd> e escreva <kbd>firewall.cpl</kbd>
 
-- Selecione Configurações Avançadas.
-- Selecione Regras de Entrada.
-- No painel Ações, selecione Nova Regra.
-- Escolha o tipo de regra de Porta e selecione Avançar.
-- Na página Protocolo e Portas, escolha TCP.
-- Selecione Portas Locais Específicas, insira o valor 10050 e clique em Avançar.
-- Na página de Ação, selecione Permitir a conexão e clique em Avançar.
-- Na página de Perfil, selecione as opções apropriadas para o seu ambiente e clique em Avançar.
-- Na página de Nome, insira o nome da regra, no meu caso, vou colocar **(TS 10050)** e selecione Concluir.
+- Selecione **Configurações Avançadas**.
+- Selecione **Regras de Entrada**.
+- No painel Ações, selecione **Nova Regra**.
+- Escolha o **tipo de regra de Porta** e selecione Avançar.
+- Na página Protocolo e Portas, escolha **TCP**.
+- Selecione Portas Locais Específicas, insira o valor **10050** e clique em Avançar.
+- Na página de Ação, selecione **Permitir a conexão** e clique em Avançar.
+- Na página de Perfil, **selecione as opções apropriadas para o seu ambiente** e clique em Avançar.
+- Na página de Nome, insira o **nome da regra**, no meu caso, vou colocar **(TS 10050)** e selecione Concluir.
 
-Após concluir a configuração do Firewall, reinicie o computador <kbd>shutdown -f -t 0 -r</kbd> ou reinicie o serviço de Área de Trabalho Remota <kbd>net stop termservice & net start termservice</kbd>
+Após concluir a configuração do Firewall, reinicie o computador <kbd>shutdown -f -t 0 -r</kbd> ou reinicie o serviço de **Área de Trabalho Remota** <kbd>net stop termservice & net start termservice</kbd>
 
 ![Desktop View](/assets/img/img-blog/restart.png)
 
