@@ -3,7 +3,7 @@ title: Mensagem de Banner em SSH
 description: Mensagem de banner em servidores Linux através do SSH.
 author: soarespaullo
 date: 2024-09-12 22:20:00
-categories: [Hacking]
+categories: [Linux]
 tags: [Tutoriais, putty, ssh]
 pin: true
 math: true
@@ -18,7 +18,7 @@ Hoje, irei mostrar uma funcionalidade muito bacana e nativa que existe no arquiv
 
 Trata-se de um banner simples que é apresentado na tela de login do usuário após o mesmo tentar se conectar com um servidor Linux utilizando o protocolo SSH.
 
-![Desktop View](/assets/img/img-blog/web.png)
+![Desktop View](/assets/img/img-blog/ssh/web.png)
 
 Para que possamos obter o mesmo resultados da imagem basta seguir os passos abaixo:
 
@@ -52,7 +52,7 @@ $ sudo vim /etc/ssh/sshd_config
 
 Dentro do arquivo <kbd>“sshd_config”</kbd> adicione a seguinte linha <kbd>“Banner /etc/ssh/ssh-banner.txt”</kbd>
 
-![Desktop View](/assets/img/img-blog/ssh.png)
+![Desktop View](/assets/img/img-blog/ssh/ssh.png)
 
 3° Após adicionar a linha basta apenas salvar e reiniciar o serviço do SSH
 
