@@ -3,12 +3,12 @@ title: Exemplo de instalação no Ubuntu 22.04 LTS
 description: Iniciando a Instalação/Configuração - Ubuntu 22.04 LTS
 author: soarespaullo
 date: 2024-09-13 23:20:00
-categories: [Hacking, Cloud, Blog]
+categories: [Cloud]
 tags: [Tutoriais, Cloud, Nextcloud]
 math: true
 mermaid: true
 image:
-  path: /assets/img/img-blog/nextcloud.png
+  path: /assets/img/img-blog/nextcloud/nextcloud.png
   alt: Iniciando a Instalação/Configuração - Ubuntu 22.04 LTS
 
 ---
