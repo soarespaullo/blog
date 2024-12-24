@@ -41,8 +41,17 @@ Se o Firewall do Windows estiver habilitado no seu computador, você terá que c
 
 Você pode criar uma regra de permissão de entrada para sua nova porta TCP/UDP RDP manualmente no console do Firewall do Windows
 
-processo para configurar aqui
-
+Abra as definições de configuração do Firewall do Windows no seu servidor de relatório. Encontre as definições de configuração ao pesquisar no Painel de Controle por Firewall do Windows.
+- Selecione Configurações Avançadas.
+- Selecione Regras de Entrada.
+- No painel Ações, selecione Nova Regra.
+Escolha o tipo de regra de Porta e selecione Avançar.
+- Na página Protocolo e Portas, escolha TCP.
+- Selecione Portas Locais Específicas, insira o valor 80 e clique em Avançar.
+- Na página de Ação, selecione Permitir a conexão e clique em Avançar.
+- Na página de Perfil, selecione as opções apropriadas para o seu ambiente e clique em Avançar.
+- Na página de Nome, insira o nome ReportServer (TCP na porta 80) e selecione Concluir.
+- Reinicie o computador.
 
 Após concluir a configuração do Firewall, reinicie o computador ou reinicie o serviço de Área de Trabalho Remota com este comando: <kbd>net stop termservice & net start termservice</kbd>
 
@@ -52,3 +61,8 @@ Para se conectar a este host Windows via Área de Trabalho Remota, você precisa
 
 ![Desktop View](/assets/img/img-blog/mstsc.png)
 
+Então você se conectará com sucesso à Área de Trabalho Remota de um computador usando a nova porta RDP. Você pode usar o comando: <kbd>netstat –na | Find “LIST”</kbd> comando para certificar-se de que seu **Remote Desktop Service** esteja escutando em uma nova porta.
+
+Imagem aqui
+
+Este guia para alterar a porta RDP padrão é adequado para qualquer versão do Windows, desde o Windows XP (Windows Server 2003) até as compilações modernas do Windows 10, Windows 11 e Windows Server 2022.
