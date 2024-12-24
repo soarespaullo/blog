@@ -60,7 +60,7 @@ Para se conectar a este host Windows via Área de Trabalho Remota, você precisa
 
 ![Desktop View](/assets/img/img-blog/mstsc.png)
 
-Então você se conectará com sucesso à Área de Trabalho Remota de um computador usando a nova porta RDP. Você pode usar o comando: <kbd>netstat –na | Find “LIST”</kbd> comando para certificar-se de que seu **Remote Desktop Service** esteja escutando em uma nova porta.
+Então você se conectará com sucesso à Área de Trabalho Remota de um computador usando a nova porta RDP. Você pode usar o comando: <kbd>netstat –na | Find “LIST”</kbd> para certificar-se de que seu **Remote Desktop Service** esteja escutando em uma nova porta.
 
 ![Desktop View](/assets/img/img-blog/netstat.png)
 
