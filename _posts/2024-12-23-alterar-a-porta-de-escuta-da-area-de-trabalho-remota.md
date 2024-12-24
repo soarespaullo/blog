@@ -17,7 +17,7 @@ Em todos os sistemas operacionais Windows, a porta padrão atribuída ao RDP **(
 Após habilitar o RDP no Windows, o <kbd>TermService</kbd> **(Remote Desktop Services)** começa a escutar na porta **3389**. Neste artigo, 
 mostraremos como alterar o número da porta RDP padrão nas edições desktop do Windows (10/11) e Windows Server usando o Editor do Registro do Windows. 
 
-> Ao escolher uma porta RDP não padrão, observe que não é recomendado usar portas no intervalo <kbd>1-1023</kbd> (portas conhecidas). Use uma porta dinâmica no intervalo de portas RPC <kbd>(49152 a 65535)</kbd> , 
+> Ao escolher uma porta RDP não padrão, observe que não é recomendado usar portas no intervalo <kbd>1-1023</kbd> (portas conhecidas). Use uma porta dinâmica no intervalo de portas RPC <kbd>(49152-65535)</kbd> , 
 ou qualquer porta no intervalo <kbd>1024 a 49151</kbd> que não esteja em uso por outro serviço ou aplicativo.
 {: .prompt-warning }
 >
