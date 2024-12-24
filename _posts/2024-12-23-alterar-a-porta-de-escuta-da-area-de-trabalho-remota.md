@@ -39,18 +39,18 @@ Se o Firewall do Windows estiver habilitado no seu computador, você terá que c
 > Se você estiver reconfigurando um host remoto do Windows via RDP, certifique-se de criar regras de permissão no firewall antes de reiniciar o TermService, caso contrário, você perderá o acesso ao servidor
 {: .prompt-warning }
 
-Você pode criar uma regra de permissão de entrada para sua nova porta TCP/UDP RDP manualmente no console do Firewall do Windows
+Você pode criar uma regra de permissão de entrada para sua nova porta TCP/UDP RDP manualmente no console do Firewall do Windows.
+Execute as combinações de teclas: <kbd>Win+R</kbd> e escreva: <kbd>firewall.cpl</kbd>
 
-Abra as definições de configuração do Firewall do Windows no seu servidor de relatório. Encontre as definições de configuração ao pesquisar no Painel de Controle por Firewall do Windows.
 - Selecione Configurações Avançadas.
 - Selecione Regras de Entrada.
 - No painel Ações, selecione Nova Regra.
-Escolha o tipo de regra de Porta e selecione Avançar.
+- Escolha o tipo de regra de Porta e selecione Avançar.
 - Na página Protocolo e Portas, escolha TCP.
-- Selecione Portas Locais Específicas, insira o valor 80 e clique em Avançar.
+- Selecione Portas Locais Específicas, insira o valor 10050 e clique em Avançar.
 - Na página de Ação, selecione Permitir a conexão e clique em Avançar.
 - Na página de Perfil, selecione as opções apropriadas para o seu ambiente e clique em Avançar.
-- Na página de Nome, insira o nome ReportServer (TCP na porta 80) e selecione Concluir.
+- Na página de Nome, insira o nome da regra, no meu caso, vou colocar **(TS 10050)** e selecione Concluir.
 - Reinicie o computador.
 
 Após concluir a configuração do Firewall, reinicie o computador ou reinicie o serviço de Área de Trabalho Remota com este comando: <kbd>net stop termservice & net start termservice</kbd>
