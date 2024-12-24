@@ -8,7 +8,7 @@ tags: [Tutoriais, Windows,Servidor, SysAdmin, RDS, CALs]
 math: true
 mermaid: true
 image:
-  path: /assets/img/img-blog/windows-server.png
+  path: /assets/img/img-blog/windows-server/windows-server.png
   alt: Instalar a Função de Licenciamento de Área de Trabalho Remota no Windows Server
 
 ---
