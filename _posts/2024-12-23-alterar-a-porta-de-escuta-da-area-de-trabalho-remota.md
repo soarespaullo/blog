@@ -39,18 +39,18 @@ Em nosso exemplo, alteraremos o número da porta na qual o serviço **Remote Des
 
 Se o Firewall do Windows estiver habilitado no seu computador, você terá que criar uma nova regra que permita conexão de entrada para sua nova porta RDP
 
-> Se você estiver reconfigurando um host remoto do Windows via **RDP**, certifique-se de criar regras de permissão no firewall antes de reiniciar o **TermService**, caso contrário, você perderá o acesso ao servidor
+> Se você estiver reconfigurando um host remoto do Windows via **Remote Desktop Protocol**, certifique-se de criar regras de permissão no firewall antes de reiniciar o **TermService**, caso contrário, você perderá o acesso ao servidor
 {: .prompt-warning }
 
-Você pode criar uma regra de permissão de entrada para sua nova porta **TCP/UDP** **(Remote Desktop Protoco)** manualmente no console do Firewall do Windows.
+Você pode criar uma regra de permissão de entrada para sua nova porta **TCP/UDP** **(Remote Desktop Protocol)** manualmente no console do Firewall do Windows.
 Execute as combinações de teclas <kbd>Win+R</kbd> e escreva <kbd>firewall.cpl</kbd>
 
 - Selecione **Configurações Avançadas**.
 - Selecione **Regras de Entrada**.
 - No painel Ações, selecione **Nova Regra**.
 - Escolha o **tipo de regra de Porta** e selecione Avançar.
-- Na página Protocolo e Portas, escolha **TCP**.
-- Selecione Portas Locais Específicas, insira o valor **10050** e clique em Avançar.
+- Na página **Protocolo e Portas**, escolha **TCP**.
+- Selecione **Portas Locais Específicas**, insira o valor **10050** e clique em Avançar.
 - Na página de Ação, selecione **Permitir a conexão** e clique em Avançar.
 - Na página de Perfil, **selecione as opções apropriadas para o seu ambiente** e clique em Avançar.
 - Na página de Nome, insira o **nome da regra**, no meu caso, vou colocar **(TS 10050)** e selecione Concluir.
@@ -63,7 +63,7 @@ Para se conectar a este host Windows via **Área de Trabalho Remota**, você pre
 
 ![Desktop View](/assets/img/img-blog/mstsc.png)
 
-Então você se conectará com sucesso à **Área de Trabalho Remota** de um computador usando a nova porta **RDP**. Você pode usar o comando: <kbd>netstat –na | Find “LIST”</kbd> para certificar-se de que seu **Remote Desktop Service** esteja escutando em uma nova porta.
+Então você se conectará com sucesso à **Área de Trabalho Remota** de um computador usando a nova porta **RDP**. Você pode usar o comando <kbd>netstat –na | Find “LIST”</kbd> para certificar-se de que seu **Remote Desktop Service** esteja escutando em uma nova porta.
 
 ![Desktop View](/assets/img/img-blog/netstat.png)
 
