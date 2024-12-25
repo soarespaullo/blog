@@ -128,4 +128,4 @@ Se não houver avisos e você vir a mensagem, o servidor RDSH poderá receber CA
 
 Pronto, finalizamos a instalação e configuração das licenças CALs de RDS no Windows Server..., até breve! =D
 
-[Referência: **woshub.com** - Acessado em: **22/12/2024.**](https://woshub.com/install-activate-rds-licensing-role-windows-server/){:target="_blank"}.
+[Referência: **woshub.com** - Acessado em: **22/12/2024 .**](https://woshub.com/install-activate-rds-licensing-role-windows-server/){:target="_blank"}
