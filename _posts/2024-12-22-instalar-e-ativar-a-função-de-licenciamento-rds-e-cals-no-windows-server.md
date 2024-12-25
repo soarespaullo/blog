@@ -128,7 +128,7 @@ Se não houver avisos e você vir a mensagem, o servidor RDSH poderá receber CA
 
 Pronto, finalizamos a instalação e configuração das licenças CALs de RDS no Windows Server..., até breve! =D
 
-[Referência: **woshub.com** - Acessado em: **22/12/2024 .**](https://woshub.com/install-activate-rds-licensing-role-windows-server/){:target="_blank"}
+Disponível em: [**woshub.com**](https://woshub.com/install-activate-rds-licensing-role-windows-server/){:target="_blank"}. Acesso em: 22 de dez. de 2024.
 
 
 **How to Install and Activate the RDS Licensing Role and CALs on Windows Server**. WOSHUB. Disponível em: [**woshub.com**](https://woshub.com/install-activate-rds-licensing-role-windows-server/){:target="_blank"} Acesso em: 22 de dez. de 2024.
