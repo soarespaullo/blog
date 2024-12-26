@@ -68,3 +68,5 @@ Então você se conectará com sucesso à **Área de Trabalho Remota** de um com
 ![Desktop View](/assets/img/img-blog/remote-desktop/netstat.png)
 
 Este guia para alterar a porta **RDP** padrão é adequado para qualquer versão do Windows, desde o **Windows XP** **(Windows Server 2003)** até as compilações modernas do **Windows 10**, **Windows 11** e **Windows Server 2022**.
+
+**Change the Default Remote Desktop (RDP) Port 3389 in Windows**. WOSHUB. Disponível em: [**woshub.com**](https://woshub.com/install-activate-rds-licensing-role-windows-server/){:target="_blank"}. Acesso em: 22 de dez. de 2024.
