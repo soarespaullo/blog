@@ -13,7 +13,7 @@ image:
 
 ---
 
-A Microsoft convida todos a explorar os recursos da plataforma Windows Server com as edições de teste **Standard Evaluation** ou **Datacenter Evaluation**. Você pode baixar uma imagem **ISO** ou **VHD** com a versão gratuita do <kbd>Windows Server 2022, 2019, 2016 ou 2012 R2</kbd> no site do [Microsoft Evaluation Center preenchendo um pequeno formulário](https://www.microsoft.com/en-us/evalcenter). Esta edição do Windows Server é apenas para fins de avaliação, teste ou treinamento e não é para uso comercial. Depois de instalar o Windows Server Evaluation, você tem **180 dias** para testar seus recursos.
+A Microsoft convida todos a explorar os recursos da plataforma Windows Server com as edições de teste **Standard Evaluation** ou **Datacenter Evaluation**. Você pode baixar uma imagem **ISO** ou **VHD** com a versão gratuita do <kbd>Windows Server 2022, 2019, 2016 ou 2012 R2</kbd> no site do [**Microsoft Evaluation Center preenchendo um pequeno formulário**](https://www.microsoft.com/en-us/evalcenter). Esta edição do Windows Server é apenas para fins de avaliação, teste ou treinamento e não é para uso comercial. Depois de instalar o Windows Server Evaluation, você tem **180 dias** para testar seus recursos.
 
 
 >Suponha que você esteja executando tarefas de produção no Windows Server Evaluation. Nesse caso, há uma maneira de convertê-lo para uma edição completa do Windows Server, mantendo seus dados e sem reinstalar o sistema operacional.
@@ -72,9 +72,7 @@ Liste as edições do Windows Server para as quais você está qualificado para 
 DISM /online /Get-TargetEditions
 ```
 
->Edições que podem ser atualizadas para: 
-Target Edition: ServerStandard 
-Target Edition: ServerDatacenter
+>Edições que podem ser atualizadas: **ServerStandard** e **ServerDatacenter**.
 {: .prompt-info }
 
 ![Desktop View](/assets/img/img-blog/winserver/edicao.png)
