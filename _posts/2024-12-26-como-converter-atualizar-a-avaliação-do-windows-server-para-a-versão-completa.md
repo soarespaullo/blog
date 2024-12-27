@@ -13,26 +13,26 @@ image:
 
 ---
 
-A Microsoft convida todos a explorar os recursos da plataforma **Windows Server** com as edições de teste **StandardEvaluation** ou **DatacenterEvaluation**. Você pode baixar uma imagem **ISO** ou **VHD** com a versão gratuita do <kbd>Windows Server 2022, 2019, 2016 ou 2012 R2</kbd> no site do [Microsoft Evaluation Center preenchendo um pequeno formulário](https://www.microsoft.com/en-us/evalcenter). Esta edição do Windows Server é apenas para fins de avaliação, teste ou treinamento e não é para uso comercial. Depois de instalar o Windows Server Evaluation, você tem **180 dias** para testar seus recursos.
+A Microsoft convida todos a explorar os recursos da plataforma **Windows Server** com as edições de teste **Standard Evaluation** ou **Datacenter Evaluation**. Você pode baixar uma imagem **ISO** ou **VHD** com a versão gratuita do <kbd>Windows Server 2022, 2019, 2016 ou 2012 R2</kbd> no site do [Microsoft Evaluation Center preenchendo um pequeno formulário](https://www.microsoft.com/en-us/evalcenter). Esta edição do Windows Server é apenas para fins de avaliação, teste ou treinamento e não é para uso comercial. Depois de instalar o Windows Server Evaluation, você tem **180 dias** para testar seus recursos.
 
 
->Suponha que você esteja executando tarefas de produção no Windows Server Evaluation. Nesse caso, há uma maneira de convertê-lo para uma edição completa do Windows Server, mantendo seus dados e sem reinstalar o sistema operacional.
+>Suponha que você esteja executando tarefas de produção no **Windows Server Evaluation**. Nesse caso, há uma maneira de convertê-lo para uma edição completa do **Windows Server**, mantendo seus dados e sem reinstalar o sistema operacional.
 {: .prompt-info }
 
 ## Como estender o período de avaliação gratuita do Windows Server
 
-Se você estiver usando a versão de avaliação do Windows Server, a edição atual e o tempo restante antes do período de carência expirar serão exibidos na área de trabalho <kbd>(Windows License valid for 180 days).</kbd>
+Se você estiver usando a versão de avaliação do **Windows Server**, a edição atual e o tempo restante antes do período de carência expirar serão exibidos na área de trabalho <kbd>(Licença do Windows válida para 176 dias).</kbd>
 
 ![Desktop View](/assets/img/img-blog/winserver/licenca.png)
 
-Você também pode obter o período de carência restante do Windows Server com o comando <kbd>slmgr /dli</kbd>
+Você também pode obter o período de carência restante do **Windows Server** com o comando <kbd>slmgr /dli</kbd>
 
 ![Desktop View](/assets/img/img-blog/winserver/slmgr.png)
 
->Nome: Windows, edição ServerStandardEval 
-Descrição: Sistema operacional Windows, canal TIMEBASED_EVAL 
-Status da licença: Licenciado 
-Expiração da ativação baseada em tempo: xx min (xx dias)
+>Nome: Windows, edição ServerStandardEval
+>Descrição: Sistema operacional Windows, canal TIMEBASED_EVAL
+>Status da licença: Licenciado
+>Expiração da ativação baseada em tempo: xx min (xx dias)
 {: .prompt-warning }
 
 >O período de teste gratuito do Windows Server pode ser legalmente estendido 5 vezes por 180 dias usando o comando <kbd>slmgr /rearm</kbd>
