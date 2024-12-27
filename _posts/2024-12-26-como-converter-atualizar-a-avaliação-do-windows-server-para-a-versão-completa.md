@@ -29,7 +29,7 @@ Você também pode obter o período de carência restante do Windows Server com 
 
 ![Desktop View](/assets/img/img-blog/winserver/slmgr.png)
 
->O período de teste gratuito do Windows Server pode ser legalmente estendido 5 vezes por 180 dias usando o comando <kbd>slmgr /rearm</kbd>
+>O período de teste gratuito do Windows Server pode ser legalmente estendido <kbd>5 vezes por 180 dias</kbd> usando o comando <kbd>slmgr /rearm</kbd>
 {: .prompt-info }
 
 Isso significa que o tempo máximo de uso do Windows Server avaliado é de <kbd>3 anos (180 dias * 6).</kbd>
@@ -66,7 +66,7 @@ Liste as edições do Windows Server para as quais você está qualificado para 
 DISM /online /Get-TargetEditions
 ```
 
->Edições que podem ser atualizadas: **ServerStandard** e **ServerDatacenter**.
+>Edições que podem ser atualizadas: <kbd>ServerStandard e ServerDatacenter.</kbd>
 {: .prompt-info }
 
 ![Desktop View](/assets/img/img-blog/winserver/edicao.png)
