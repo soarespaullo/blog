@@ -29,12 +29,6 @@ Você também pode obter o período de carência restante do Windows Server com 
 
 ![Desktop View](/assets/img/img-blog/winserver/slmgr.png)
 
->Nome: Windows, edição ServerStandardEval
->Descrição: Sistema operacional Windows, canal TIMEBASED_EVAL
->Status da licença: Licenciado
->Expiração da ativação baseada em tempo: xx min (xx dias)
-{: .prompt-warning }
-
 >O período de teste gratuito do Windows Server pode ser legalmente estendido 5 vezes por 180 dias usando o comando <kbd>slmgr /rearm</kbd>
 {: .prompt-info }
 
