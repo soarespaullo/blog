@@ -4,7 +4,7 @@ description: Como converter (atualizar) a avaliação do Windows Server para a v
 author: soarespaullo
 date: 2024-12-26 21:50:00
 categories: [Windows, SysAdmin]
-tags: [Tutoriais, Windows, Servidor, SysAdmin, RDP, DISM]
+tags: [Tutoriais, Windows, Servidor, SysAdmin, DISM]
 math: true
 mermaid: true
 image:
@@ -46,11 +46,11 @@ A Microsoft permite que o Windows Server Evaluation seja atualizado para uma edi
 
 Aqui estão algumas restrições de atualização:
 
-- Você pode atualizar para a mesma edição ou uma edição superior do Windows Server. Por exemplo, ServerStandardEval pode ser atualizado para ServerStandard ou ServerDatacenter;
+- Você pode atualizar para a mesma edição ou uma edição superior do Windows Server. Por exemplo, **Server Standard Eval** pode ser atualizado para **Server Standard** ou **Server Datacenter**;
 
-- Não é recomendado converter um host com a função de controlador de domínio do AD. Você deve primeiro rebaixar o DC para um servidor membro. Isso requer que o domínio tenha pelo menos um DC adicional para o qual você pode mover funções FSMO;
+- Não é recomendado **converter um host com a função de controlador de domínio do AD**. Você deve primeiro **rebaixar o DC para um servidor membro**. Isso requer que o domínio tenha pelo menos um **DC adicional para o qual você pode mover funções FSMO**;
 
-- Se o NIC Teaming estiver configurado no servidor, ele deverá ser desabilitado antes da atualização.
+- Se o **NIC Teaming** estiver configurado no servidor, ele deverá ser desabilitado antes da atualização.
 
 O primeiro passo é garantir que você tenha uma versão de avaliação do Windows Server instalada:
 
