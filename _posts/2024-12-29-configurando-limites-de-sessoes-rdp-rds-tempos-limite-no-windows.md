@@ -34,7 +34,7 @@ Usando o comando <kbd>quser</kbd>, você pode ver quando uma sessão **RDP** do 
 No **Windows Server 2022/2019/2016/2012R2**, você pode definir tempos limite de sessão **RDP** usando **Políticas de Grupo**. Você pode fazer isso no editor de **GPO de Domínio** <kbd>gpmc.msc</kbd> ou no Editor de **Política de Grupo Local** <kbd>gpedit.msc</kbd>
 em um host RDS específico (ou em uma versão desktop do Windows se você tiver permitido várias conexões RDP a ele).
 
-As configurações de tempo limite de sessão RDP estão localizadas na seguinte seção GPO Configuração do Computador -> Políticas -> Modelos Administrativos -> Componentes do Windows -> Serviços de Área de Trabalho Remota -> Host de Sessão da Área de Trabalho Remota -> Limites de Tempo de Sessão.
+As configurações de tempo limite de sessão RDP estão localizadas na seguinte seção GPO **Configuração do Computador -> Políticas -> Modelos Administrativos -> Componentes do Windows -> Serviços de Área de Trabalho Remota -> Host de Sessão da Área de Trabalho Remota -> Limites de Tempo de Sessão**.
 As seguintes configurações de tempo limite de Área de Trabalho Remota estão disponíveis:
 
 - **Definir limite de tempo para sessão desconectada;**
@@ -56,12 +56,12 @@ Salve as alterações e atualize as configurações da **Política de Grupo** no
 >Você não deve tornar os tempos limite das sessões RDP muito curtos, caso contrário, as sessões dos usuários terminarão quase imediatamente após ficarem inativas.
 {: .prompt-warning }
 
-Você pode permitir várias conexões na mesma conta de usuário para o host **RDP** usando a opção <kbd>GPO Restringir usuários dos Serviços de Área de Trabalho Remota a uma única sessão dos Serviços de Área de Trabalho Remota</kbd> = Desativado 
-(em Configuração do Computador -> Modelos Administrativos -> Componentes do Windows -> Serviços de Área de Trabalho Remota -> Host da Sessão da Área de Trabalho Remota -> Conexões).
+Você pode permitir várias conexões na mesma conta de usuário para o host **RDP** usando a opção <kbd>GPO Restringir usuários dos Serviços de Área de Trabalho Remota a uma única sessão dos Serviços de Área de Trabalho Remota</kbd> = <kbd>Desativado</kbd>
+em **(Configuração do Computador -> Modelos Administrativos -> Componentes do Windows -> Serviços de Área de Trabalho Remota -> Host da Sessão da Área de Trabalho Remota -> Conexões)**.
 
 ![Desktop View](/assets/img/img-blog/rdp-rds/user.png)
 
-Você também pode definir os limites de uma sessão RDP na guia Configurações nas propriedades de um <kbd>lusrmgr.msc</kbd> usuário local ( ) ou de domínio <kbd>dsa.msc</kbd> — console Usuários e Computadores do Active Directory). As seguintes opções estão disponíveis aqui;
+Você também pode definir os limites de uma sessão **RDP** na guia Configurações nas propriedades de um <kbd>lusrmgr.msc</kbd> usuário local ou de domínio <kbd>dsa.msc</kbd> (Usuários e Computadores do Active Directory). As seguintes opções estão disponíveis aqui;
 
 - Encerrar uma sessão desconectada;
 - Limite de sessões ativas;
@@ -73,3 +73,5 @@ Você também pode definir os limites de uma sessão RDP na guia Configurações
 
 >Você não deve tornar os tempos limite das sessões RDP muito curtos, caso contrário, as sessões dos usuários terminarão quase imediatamente após ficarem inativas.
 {: .prompt-warning }
+
+**Configuring RDP/RDS Sessions Limits (Timeouts) on Windows**. WOSHUB. Disponível em: [**woshub.com**](https://woshub.com/remote-desktop-session-time-limit/){:target="_blank"}. Acesso em: 29 de dez. de 2024.
