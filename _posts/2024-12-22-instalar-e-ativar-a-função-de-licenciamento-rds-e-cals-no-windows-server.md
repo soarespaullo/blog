@@ -4,7 +4,7 @@ description: Instalar a Função de Licenciamento de Área de Trabalho Remota no
 author: soarespaullo
 date: 2024-12-22 17:50:00
 categories: [Windows, SysAdmin]
-tags: [Tutoriais, Windows,Servidor, SysAdmin, RDS, CALs]
+tags: [Tutoriais, Windows, Servidor, SysAdmin, RDS, CALs]
 math: true
 pin: true
 mermaid: true
