@@ -54,7 +54,7 @@ Aqui estão algumas restrições de atualização:
 
 O primeiro passo é garantir que você tenha uma versão de avaliação do Windows Server instalada:
 
-```cmd
+```text
 DISM /online /Get-CurrentEdition
 ```
 
