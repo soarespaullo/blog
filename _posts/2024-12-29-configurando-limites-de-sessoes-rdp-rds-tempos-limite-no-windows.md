@@ -51,15 +51,7 @@ habilite as políticas **(Definir limite de tempo para sessões desconectadas)**
 ![Desktop View](/assets/img/img-blog/rdp-rds/hora.png)
 
 Salve as alterações e atualize as configurações da **Política de Grupo** no seu host RD <kbd>gpupdate /force</kbd>. As novas configurações de tempo limite serão aplicadas somente a novas sessões **RDP**
-(você terá que encerrar as sessões de usuário atuais no RDSH manualmente).
-
->Você não deve tornar os tempos limite das sessões RDP muito curtos, caso contrário, as sessões dos usuários terminarão quase imediatamente após ficarem inativas.
-{: .prompt-warning }
-
-Você pode permitir várias conexões na mesma conta de usuário para o host **RDP** usando a opção <kbd>GPO Restringir usuários dos Serviços de Área de Trabalho Remota a uma única sessão dos Serviços de Área de Trabalho Remota</kbd> = <kbd>Desativado</kbd>
-em **(Configuração do Computador -> Modelos Administrativos -> Componentes do Windows -> Serviços de Área de Trabalho Remota -> Host da Sessão da Área de Trabalho Remota -> Conexões)**.
-
-![Desktop View](/assets/img/img-blog/rdp-rds/user.png)
+<kbd>você terá que encerrar as sessões de usuário atuais no RDSH manualmente</kbd>.
 
 Você também pode definir os limites de uma sessão **RDP** na guia Configurações nas propriedades de um <kbd>lusrmgr.msc</kbd> usuário local ou de domínio <kbd>dsa.msc</kbd> (Usuários e Computadores do Active Directory). As seguintes opções estão disponíveis aqui;
 
@@ -73,5 +65,10 @@ Você também pode definir os limites de uma sessão **RDP** na guia Configuraç
 
 >Você não deve tornar os tempos limite das sessões RDP muito curtos, caso contrário, as sessões dos usuários terminarão quase imediatamente após ficarem inativas.
 {: .prompt-warning }
+
+Você pode permitir várias conexões na mesma conta de usuário para o host **RDP** usando a opção <kbd>GPO Restringir usuários dos Serviços de Área de Trabalho Remota a uma única sessão dos Serviços de Área de Trabalho Remota</kbd> = <kbd>Desativado</kbd>
+em **(Configuração do Computador -> Modelos Administrativos -> Componentes do Windows -> Serviços de Área de Trabalho Remota -> Host da Sessão da Área de Trabalho Remota -> Conexões)**.
+
+![Desktop View](/assets/img/img-blog/rdp-rds/user.png)
 
 **Configuring RDP/RDS Sessions Limits (Timeouts) on Windows**. WOSHUB. Disponível em: [**woshub.com**](https://woshub.com/remote-desktop-session-time-limit/){:target="_blank"}. Acesso em: 29 de dez. de 2024.
