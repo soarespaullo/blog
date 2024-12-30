@@ -8,7 +8,7 @@ tags: [Tutoriais, Windows, Servidor, SysAdmin, RDS, RDP]
 math: true
 mermaid: true
 image:
-  path: /assets/img/img-blog/winserver/winserver.png
+  path: /assets/img/img-blog/rdp-rdp/rds.png
   alt: Configurando limites de sessões RDP/RDS (tempos limite) no Windows
 
 ---
