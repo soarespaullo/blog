@@ -4,7 +4,7 @@ description: Alterar a porta de escuta da Área de Trabalho Remota em seu comput
 author: soarespaullo
 date: 2024-12-22 17:50:00
 categories: [Windows, SysAdmin]
-tags: [Tutoriais, Windows,Servidor, SysAdmin, RDP, Port]
+tags: [Tutoriais, Windows, Servidor, SysAdmin, RDP, Porta]
 math: true
 mermaid: true
 image:
@@ -69,4 +69,4 @@ Então você se conectará com sucesso à **Área de Trabalho Remota** de um com
 
 Este guia para alterar a porta **RDP** padrão é adequado para qualquer versão do Windows, desde o **Windows XP** **(Windows Server 2003)** até as compilações modernas do **Windows 10**, **Windows 11** e **Windows Server 2022**.
 
-**Change the Default Remote Desktop (RDP) Port 3389 in Windows**. WOSHUB. Disponível em: [**woshub.com**](https://woshub.com/install-activate-rds-licensing-role-windows-server/){:target="_blank"}. Acesso em: 22 de dez. de 2024.
+**Change the Default Remote Desktop (RDP) Port 3389 in Windows**. WOSHUB. Disponível em: [**woshub.com**](https://woshub.com/change-rdp-port-3389-windows/){:target="_blank"}. Acesso em: 22 de dez. de 2024.
