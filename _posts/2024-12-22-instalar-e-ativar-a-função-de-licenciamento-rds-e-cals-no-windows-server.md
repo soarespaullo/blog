@@ -47,10 +47,10 @@ Clique no botão Finalizar . A seguinte mensagem deve aparecer:
 
 Clique no nome do servidor no console e selecione **Examinar Configurações** . Neste exemplo, o servidor de licença RD está habilitado e pode emitir licenças para clientes no domínio do AD.
 
-> Este servidor de licença é um membro do grupo Terminal Server License Servers no Active Directory. Este servidor de licença poderá emitir RDS Per User CALs para usuários no domínio, e você poderá rastrear o uso de RDS Per User CALs.
+> Este servidor de licença é um membro do grupo `Terminal Server License Servers` no `Active Directory.` Este servidor de licença poderá emitir `RDS Per User CALs` para usuários no domínio, e você poderá rastrear o uso de `RDS Per User CALs.`
 {: .prompt-info }
 
-> Este servidor de licença é registrado como um ponto de conexão de serviço (SCP) nos Serviços de Domínio do Active Directory.
+> Este servidor de licença é registrado como um ponto de conexão de serviço `(SCP)` nos Serviços de `Domínio do Active Directory.`
 {: .prompt-info }
 
 ![Desktop View](/assets/img/img-blog/windows-server/pronto.png)
@@ -79,7 +79,7 @@ As RDS CALs que você usa devem ser compatíveis com a versão do Windows Server
 |  2022        |     Sim      |     Sim      |      Sim     |     Sim      |     Sim      |
 
 
-> RDS CALs para novas versões do Windows Server não podem ser instaladas em versões anteriores do WS. Por exemplo, você não poderá instalar as RDS CALs de 2022 em um host de licenciamento do Windows Server 2016.
+> `RDS CALs` para novas versões do Windows Server não podem ser instaladas em versões anteriores do `Windows Server.` Por exemplo, você não poderá instalar as `RDS CALs de 2022` em um host de licenciamento do `Windows Server 2016.`
 {: .prompt-danger }
 
 Clique com o botão direito do mouse no seu host no console do Gerenciador de Licenciamento de Área de Trabalho Remota e selecione Instalar Licenças .
@@ -114,7 +114,7 @@ Vá para Configuração do Computador -> Políticas -> Modelos de Administraçã
 
 ![Desktop View](/assets/img/img-blog/windows-server/gpedit.png)
 
-> Se você instalou o RDSH na edição Windows Server Evaluation , você deve convertê-lo para a versão completa. Sem uma atualização, os serviços RDSH em tal host funcionarão apenas por 120 dias, mesmo se você direcioná-lo para um servidor de licença RDS ativado.
+> Se você instalou o `RDSH` na edição `Windows Server Evaluation`, você deve convertê-lo para a versão completa. Sem uma atualização, os serviços `RDSH` em tal host funcionarão apenas por `120 dias`, mesmo se você direcioná-lo para um servidor de licença `RDS` ativado.
 {: .prompt-danger }
 
 Execute o Diagnosticador de licenciamento de área de trabalho remota <kbd>lsdiag.msc</kbd> no RDSH e verifique se ele vê o servidor de licenciamento e o número de RDS CALs disponíveis.
