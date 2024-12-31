@@ -23,11 +23,13 @@ A Microsoft convida todos a explorar os recursos da plataforma Windows Server co
 
 Se você estiver usando a versão de avaliação do Windows Server, a edição atual e o tempo restante antes do período de carência expirar serão exibidos na área de trabalho <kbd>(Licença do Windows válida para 176 dias).</kbd>
 
-![Desktop View](/assets/img/img-blog/winserver/licenca.png)
+![Desktop View](/assets/img/img-blog/winserver/licenca.png){: width="972" height="589" }
+_Windows Server_
 
 Você também pode obter o período de carência restante do Windows Server com o comando <kbd>slmgr /dli</kbd>
 
-![Desktop View](/assets/img/img-blog/winserver/slmgr.png)
+![Desktop View](/assets/img/img-blog/winserver/slmgr.png){: width="972" height="589" }
+_Windows Server_
 
 >O período de teste gratuito do Windows Server pode ser legalmente estendido <kbd>5 vezes por 180 dias</kbd> usando o comando <kbd>slmgr /rearm</kbd>
 {: .prompt-info }
