@@ -59,14 +59,16 @@ Se você quiser impedir que os usuários alterem a imagem do papel de parede, at
 
 ## Testando se o papel de parede foi aplicado corretamente via GPO
 
-Agora logue em alguma estação e verifique se os usuários estão recebendo a diretiva e se os mesmos conseguem alterar o papel de parede da Área de Trabalho.
+Agora logue em alguma estação e verifique se os usuários estão conseguindo alterar o papel de parede da Área de Trabalho.
+
+![Desktop View](/assets/img/img-blog/gpo/usuario.png)
+
+>Se a Política de Grupo não for aplicada aos computadores dos usuários, execute o `diagnóstico` em um cliente específico usando o comando `gpresult /r`.
+{: .prompt-warning }
+
+Verifique se a nova imagem de papel de parede é exibida na área de trabalho.
 
 ![Desktop View](/assets/img/img-blog/gpo/teste.png)
 
-Verifique se a nova imagem de papel de parede é exibida na área de trabalho. =D
-
 >A `GPO` demora em média `20 minutos` para ser aplicada, e irá atualizar na estação de trabalho após reinicialização do sistema operacional.
-{: .prompt-warning }
-
->Se a Política de Grupo não for aplicada aos computadores dos usuários, execute o `diagnóstico` em um cliente específico usando o comando `gpresult /r`.
 {: .prompt-warning }
