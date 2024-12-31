@@ -38,13 +38,11 @@ Crie uma nova política de grupo, <kbd>GPO - Wallpaper</kbd>, e atribua-a à **U
 
 ![Desktop View](/assets/img/img-blog/gpo/editar.png)
 
-Vá para **Configuração do Usuário -> Políticas -> Modelos administrativos -> Área de Trabalho/Active Desktop**
-
-Habilitar a Política **Papel de parede da Área de Trabalho**
+Vá para **Configuração do Usuário -> Políticas -> Modelos administrativos -> Área de Trabalho -> Active Desktop -> Papel de parede da Área de Trabalho**
 
 ![Desktop View](/assets/img/img-blog/gpo/papel.png)
 
-Em seguida, habilite e configure a política **Papel de parede da Área de Trabalho**. Especifique o caminho **UNC** para o arquivo de imagem **BMP/JPEG**.
+Em seguida, habilite e configure a política **Papel de parede da Área de Trabalho**. Especifique o caminho **UNC (Universal Naming Convention)** para o arquivo de imagem **BMP/JPEG**.
 
 ![Desktop View](/assets/img/img-blog/gpo/habilitar.png)
 
@@ -66,9 +64,20 @@ Agora logue em alguma estação e verifique se os usuários estão conseguindo a
 >Se a Política de Grupo não for aplicada aos computadores dos usuários, execute o `diagnóstico` em um cliente específico usando o comando `gpresult /r`.
 {: .prompt-warning }
 
-Verifique se a nova imagem de papel de parede é exibida na área de trabalho.
+Verifique se a nova imagem de papel de parede é exibida na Área de Trabalho.
 
 ![Desktop View](/assets/img/img-blog/gpo/teste.png)
 
+## Algumas observações caso não funcione a aplicação do papel de parede via GPO
+
+- Verifique se o compartilhamento está OK antes de aplicar a diretiva;
+- Verifique se o(s) usuário(s) estão na(s) OU(s) abaixo(s) da GPO criada;
+- Verifique se há rede na estação;
+- Verifique se o(s) grupo(s) usuários autenticados/dominio/domain users está na na aba Segurança da pasta compartilhada e se o(s) mesmo(s) estão com permissões de leitura.
+
 >A `GPO` demora em média `20 minutos` para ser aplicada, e irá atualizar na estação de trabalho após reinicialização do sistema operacional.
 {: .prompt-warning }
+
+**Como inserir um papel de parede via GPO**. PROFISSIONAISTI. Disponível em: [**profissionaisti.com.br**](https://www.profissionaisti.com.br/wallpaper-papel-parede-gpo/){:target="_blank"}. Acesso em: 31 de dez. de 2024.
+
+**Set Desktop Wallpaper and Logon Screen Background via Group Policy**. WOSHUB. Disponível em: [**woshub.com**](https://woshub.com/setting-desktop-wallpapers-background-using-group-policy/){:target="_blank"}. Acesso em: 31 de dez. de 2024.
