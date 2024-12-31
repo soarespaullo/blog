@@ -15,7 +15,7 @@ image:
 
 A Microsoft convida todos a explorar os recursos da plataforma Windows Server com as edições de teste **Standard Evaluation** ou **Datacenter Evaluation**. Você pode baixar uma imagem **ISO** ou **VHD** com a versão gratuita do <kbd>Windows Server 2022, 2019, 2016 ou 2012 R2</kbd> no site do [**Microsoft Evaluation Center preenchendo um pequeno formulário**](https://www.microsoft.com/en-us/evalcenter). Esta edição do Windows Server é apenas para fins de avaliação, teste ou treinamento e não é para uso comercial. Depois de instalar o Windows Server Evaluation, você tem **180 dias** para testar seus recursos.
 
->Suponha que você esteja executando tarefas de produção no Windows Server Evaluation. Nesse caso, há uma maneira de convertê-lo para uma edição completa do Windows Server, mantendo seus dados e sem reinstalar o sistema operacional.
+>Suponha que você esteja executando tarefas de produção no `Windows Server Evaluation`. Nesse caso, há uma maneira de convertê-lo para uma edição completa do `Windows Server`, mantendo seus dados e sem reinstalar o sistema operacional.
 {: .prompt-info }
 
 ## Como estender o período de avaliação gratuita do Windows Server
@@ -28,7 +28,7 @@ Você também pode obter o período de carência restante do Windows Server com 
 
 ![Desktop View](/assets/img/img-blog/winserver/slmgr.png)
 
->O período de teste gratuito do Windows Server pode ser legalmente estendido <kbd>5 vezes por 180 dias</kbd> usando o comando <kbd>slmgr /rearm</kbd>
+>O período de teste gratuito do Windows Server pode ser legalmente estendido `5 vezes por 180 dias` usando o comando  `slmgr /rearm`
 {: .prompt-info }
 
 Isso significa que o tempo máximo de uso do Windows Server avaliado é de <kbd>3 anos (180 dias * 6).</kbd>
@@ -64,7 +64,7 @@ Liste as edições do Windows Server para as quais você está qualificado para 
 DISM /online /Get-TargetEditions
 ```
 
->Edições que podem ser atualizadas: <kbd>ServerStandard e ServerDatacenter.</kbd>
+>Edições que podem ser atualizadas: `ServerStandard e ServerDatacenter.`
 {: .prompt-info }
 
 ![Desktop View](/assets/img/img-blog/winserver/edicao.png)
@@ -79,7 +79,7 @@ Get-ComputerInfo | select OsName, WindowsEditionId
 
 ![Desktop View](/assets/img/img-blog/winserver/powershell.png)
 
->Você pode converter tanto a versão GUI completa do Windows Server quanto o Windows Server Core.
+>Você pode converter tanto a versão `GUI completa do Windows Server` quanto o `Windows Server Core.`
 {: .prompt-info }
 
 Para converter uma avaliação do **Windows Server** em uma versão completa, você precisará usar a **chave de configuração do cliente KMS pública** (ou Chave de Licença de Volume Genérica, **GVLK**) para sua versão do **Windows Server**. Para obter uma lista completa de chaves **GVLK** para todas as versões do Windows, visite o site da Microsoft [**Key Management Services (KMS) client activation and product keys**](https://learn.microsoft.com/en-us/windows-server/get-started/kms-client-activation-keys?tabs=server2025%2Cwindows1110ltsc%2Cversion1803%2Cwindows81). A lista completa de chaves para todas as versões suportadas do Windows Server pode ser encontrada na tabela abaixo:
@@ -99,7 +99,7 @@ dism /online /set-edition:ServerStandard /productkey:xxxxx-xxxxx-xxxxx-xxxxx-xxx
 
 ![Desktop View](/assets/img/img-blog/winserver/converte.png)
 
->Se você precisar alterar o sistema operacional para a edição **Datacenter**, use o <kbd>/set-edition:ServerDatacenter</kbd> e o **GVLK** apropriado da tabela.
+>Se você precisar alterar o sistema operacional para a edição `Datacenter`, use o <kbd>/set-edition:ServerDatacenter</kbd> e o `GVLK` apropriado da tabela.
 {: .prompt-info }
 
 Reinicie o computador e verifique se sua cópia de avaliação do Windows Server foi convertida para uma edição de varejo completa.
