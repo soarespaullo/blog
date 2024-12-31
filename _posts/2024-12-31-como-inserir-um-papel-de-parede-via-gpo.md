@@ -1,5 +1,3 @@
-2024-12-31-como-inserir-um-papel-de-parede-via-gpo.md
-
 ---
 title: Como inserir um papel de parede via GPO
 description: Como inserir um papel de parede via GPO
