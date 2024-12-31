@@ -19,7 +19,7 @@ sua sessão vai do modo **ativo** para o modo **desconectado**. Neste modo, todo
 Por padrão, uma sessão **RDP** de um usuário no Windows pode permanecer no estado desconectado até ser encerrada pelo usuário ou administrador, ou até que o computador seja reiniciado. É bem conveniente,
 já que um usuário pode a qualquer momento se conectar à sua sessão de área de trabalho remota anterior e continuar trabalhando com aplicativos em execução e arquivos abertos.
 
->A captura de tela a seguir mostra que sessões de usuário desconectadas em um servidor RDS executando o Windows Server 2019 consomem cerca de 20% da RAM do servidor.
+>A captura de tela a seguir mostra que sessões de usuário desconectadas em um servidor `RDS` executando o Windows Server 2019 consomem cerca de 20% da RAM do servidor.
 {: .prompt-warning }
 
 ![Desktop View](/assets/img/img-blog/rdp-rds/ram.png)
