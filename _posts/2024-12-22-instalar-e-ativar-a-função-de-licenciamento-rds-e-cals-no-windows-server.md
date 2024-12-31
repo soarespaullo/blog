@@ -63,8 +63,8 @@ Agora você precisa instalar o pacote de licença de acesso de cliente de termin
 
 - **CAL por usuário** – a licença permite que um usuário se conecte ao RDS de qualquer número de computadores/dispositivos. Este tipo de licença é vinculado a uma conta de usuário no Active Directory. É emitido por um período de 52 a 89 dias (número aleatório).
 
-> Se você estiver implantando um HOST RD em um grupo de trabalho **(sem um domínio AD)** , use CALs RDS por dispositivo. Caso contrário, o servidor RDSH encerrará à força a sessão do usuário a cada 60 minutos:
-Problema com a licença da Área de Trabalho Remota: Há um problema com sua licença da Área de Trabalho Remota e sua sessão será desconectada em 60 minutos
+> Se você estiver implantando um HOST RD em um grupo de trabalho `(sem um domínio AD)` , use `CALs RDS por dispositivo`. Caso contrário, `o servidor RDSH encerrará à força a sessão do usuário a cada 60 minutos:`
+Problema com a licença da Área de Trabalho Remota: Há um problema com sua licença da Área de Trabalho Remota e sua sessão será desconectada em `60 minutos.`
 {: .prompt-warning }
 
 As RDS CALs que você usa devem ser compatíveis com a versão do Windows Server à qual os usuários ou dispositivos estão se conectando. Para determinar a compatibilidade da RDS CAL com versões do Windows Server no servidor de licença RD, consulte a tabela a seguir:
@@ -79,7 +79,7 @@ As RDS CALs que você usa devem ser compatíveis com a versão do Windows Server
 |  2022        |     Sim      |     Sim      |      Sim     |     Sim      |     Sim      |
 
 
-> `RDS CALs` para novas versões do Windows Server não podem ser instaladas em versões anteriores do `Windows Server.` Por exemplo, você não poderá instalar as `RDS CALs de 2022` em um host de licenciamento do `Windows Server 2016.`
+> `RDS CALs` para novas versões do `Windows Server` não podem ser instaladas em versões anteriores do `Windows Server.` Por exemplo, você não poderá instalar as `RDS CALs de 2022` em um host de licenciamento do `Windows Server 2016.`
 {: .prompt-danger }
 
 Clique com o botão direito do mouse no seu host no console do Gerenciador de Licenciamento de Área de Trabalho Remota e selecione Instalar Licenças .
@@ -88,7 +88,7 @@ Clique com o botão direito do mouse no seu host no console do Gerenciador de Li
 
 Selecione o método de ativação (automático, online ou por telefone) e o programa de licença (no nosso caso, é o Contrato de Empresa).
 
-> Vários números de acordos empresariais do RDS vazaram na internet <kbd>4965437</kbd>, você nem precisa procurar por cracks ou ativadores do RDS.
+> Vários números de `acordos empresariais do RDS` vazaram na internet <kbd>4965437</kbd>, você nem precisa procurar por cracks ou ativadores do `RDS.`
 {: .prompt-warning }
 
 ![Desktop View](/assets/img/img-blog/windows-server/empresa.png)
