@@ -2,7 +2,7 @@
 title: Como inserir um papel de parede via GPO
 description: Como inserir um papel de parede via GPO
 author: soarespaullo
-date: 2024-12-31 11:50:00
+date: 2024-12-31 18:50:00
 categories: [Windows, SysAdmin]
 tags: [Tutoriais, Windows, Servidor, SysAdmin, GPO, Wallpaper]
 math: true
@@ -58,7 +58,7 @@ Se você quiser impedir que os usuários alterem a imagem do papel de parede, at
 
 ![Desktop View](/assets/img/img-blog/gpo/proibir.png)
 
-## Testando se o papel de parede foi aplicado corretamente via GPO
+## Verificando se o Usuário consegue alterar o papel de parede
 
 Agora logue em alguma estação e verifique se os usuários estão conseguindo alterar o papel de parede da Área de Trabalho.
 
@@ -66,6 +66,8 @@ Agora logue em alguma estação e verifique se os usuários estão conseguindo a
 
 >Se a Política de Grupo não for aplicada aos computadores dos usuários, execute o `diagnóstico` em um cliente específico usando o comando `gpresult /r`.
 {: .prompt-warning }
+
+## Testando se o papel de parede foi aplicado corretamente via GPO
 
 Verifique se a nova imagem de papel de parede é exibida na Área de Trabalho.
 
