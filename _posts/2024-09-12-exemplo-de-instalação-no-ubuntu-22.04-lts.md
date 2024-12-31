@@ -205,7 +205,7 @@ $ sudo chown -R www-data:www-data /var/www/nextcloud/
 ```
 {: .nolineno}
 
-Agora você deve conseguir acessar sua instância **Nextcloud** navegando até <kbd>http://YOUR-SERVER-LOCAL-IP</kbd> ou [https://cloud.nextcloud.com](https://cloud.nextcloud.com)
+Agora você deve conseguir acessar sua instância **Nextcloud** navegando até <kbd>http://YOUR-SERVER-LOCAL-IP</kbd> ou [https://cloud.nextcloud.com](https://cloud.nextcloud.com){:target="_blank"}.
 
 #### URLs Bonitos
 
