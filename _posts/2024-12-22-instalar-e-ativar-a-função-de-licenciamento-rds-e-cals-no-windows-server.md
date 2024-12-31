@@ -63,7 +63,7 @@ Agora você precisa instalar o pacote de licença de acesso de cliente de termin
 
 - **CAL por usuário** – a licença permite que um usuário se conecte ao RDS de qualquer número de computadores/dispositivos. Este tipo de licença é vinculado a uma conta de usuário no Active Directory. É emitido por um período de 52 a 89 dias (número aleatório).
 
-> Se você estiver implantando um HOST RD em um grupo de trabalho `(sem um domínio AD)` , use `CALs RDS por dispositivo`. Caso contrário, `o servidor RDSH encerrará à força a sessão do usuário a cada 60 minutos:`
+> Se você estiver implantando um `HOST RD` em um grupo de trabalho `(sem um domínio AD)`, use `CALs RDS por dispositivo`. Caso contrário, `o servidor RDSH encerrará à força a sessão do usuário a cada 60 minutos:`
 Problema com a licença da Área de Trabalho Remota: Há um problema com sua licença da Área de Trabalho Remota e sua sessão será desconectada em `60 minutos.`
 {: .prompt-warning }
 
