@@ -10,7 +10,7 @@ mermaid: true
 image:
   path: /assets/img/img-blog/rdp-rds/rds.png 
   alt: Configurando limites de sessões RDP/RDS (tempos limite) no Windows
-
+  
 ---
 
 Quando um usuário fecha a janela de sessão **RDP/RDS** em um cliente de terminal <kbd>mstsc.exe, RDCMan ou cliente web HTML5 do Remote Desktop</kbd> simplesmente clicando na cruz **(X)** no canto superior direito sem fazer logoff,
@@ -19,7 +19,7 @@ sua sessão vai do modo **ativo** para o modo **desconectado**. Neste modo, todo
 Por padrão, uma sessão **RDP** de um usuário no Windows pode permanecer no estado desconectado até ser encerrada pelo usuário ou administrador, ou até que o computador seja reiniciado. É bem conveniente,
 já que um usuário pode a qualquer momento se conectar à sua sessão de área de trabalho remota anterior e continuar trabalhando com aplicativos em execução e arquivos abertos.
 
->A captura de tela a seguir mostra que sessões de usuário desconectadas em um servidor `RDS` executando o Windows Server 2019 consomem cerca de 20% da RAM do servidor.
+>A captura de tela a seguir mostra que sessões de usuário desconectadas em um servidor `RDS` executando o `Windows Server 2019` consomem cerca de `20% da RAM do servidor`.
 {: .prompt-warning }
 
 ![Desktop View](/assets/img/img-blog/rdp-rds/ram.png)
@@ -63,7 +63,7 @@ Você também pode definir os limites de uma sessão **RDP** na guia Configuraç
 
 ![Desktop View](/assets/img/img-blog/rdp-rds/dsa.png)
 
->Você não deve tornar os tempos limite das sessões RDP muito curtos, caso contrário, as sessões dos usuários terminarão quase imediatamente após ficarem inativas.
+>Você não deve tornar os tempos limite das sessões `RDP` muito curtos, caso contrário, as sessões dos usuários terminarão quase imediatamente após ficarem inativas.
 {: .prompt-warning }
 
 Você pode permitir várias conexões na mesma conta de usuário para o host **RDP** usando a opção <kbd>GPO Restringir usuários dos Serviços de Área de Trabalho Remota a uma única sessão dos Serviços de Área de Trabalho Remota</kbd> = <kbd>Desativado</kbd>
