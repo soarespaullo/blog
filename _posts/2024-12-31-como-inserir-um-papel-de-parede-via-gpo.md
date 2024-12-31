@@ -22,7 +22,10 @@ Primeiramente vamos criar uma pasta no servidor. Neste caso, criei uma pasta cha
 
 ![Desktop View](/assets/img/img-blog/gpo/pasta.png)
 
-Em seguida, clique com o botão direito do mouse na pasta, procure pela aba **compartilhamento e compartilhe-a**. No exemplo abaixo, notamos que ela está compartilhada pelo caminho: <kbd>\\\vmserver\wallpapers$</kbd>
+Em seguida, clique com o botão direito do mouse na pasta, procure pela aba **compartilhamento e compartilhe-a**. No exemplo abaixo, notamos que ela está compartilhada pelo caminho: <kbd>\\\vmserver\wallpapers$</kbd>. 
+
+>O símbolo $ `dólar` ao final do nome da pasta, indica que o compartilhamento ficará oculto e não aparecerá em meus `Locais de Rede`.
+{: .prompt-info }
 
 ![Desktop View](/assets/img/img-blog/gpo/caminho.png)
 
