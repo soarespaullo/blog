@@ -8,7 +8,7 @@ tags: [Tutoriais, Windows, Servidor, SysAdmin, GPO, Wallpaper]
 math: true
 mermaid: true
 image:
-  path: /assets/img/img-blog/winserver/winserver.png
+  path: /assets/img/img-blog/gpo/gpo.png
   alt: Como inserir um papel de parede via GPO
 
 ---
