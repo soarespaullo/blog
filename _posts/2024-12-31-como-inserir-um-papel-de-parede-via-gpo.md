@@ -18,7 +18,7 @@ image:
 >As Políticas de Grupo permitem que você defina o mesmo `papel de parede da Área de Trabalho` em todos os computadores do Domínio.
 {: .prompt-info }
 
-Primeiramente vamos criar uma pasta no servidor. Neste caso, criei uma pasta chamada **wallpapers**, dentro do (C:). Dentro dessa pasta, insira o papel de parede que será utilizado.
+Primeiramente, vamos criar uma pasta no servidor. Neste caso, criei uma pasta chamada **wallpapers** dentro do (C:). Dentro dessa pasta, insira o papel de parede que será utilizado.
 
 ![Desktop View](/assets/img/img-blog/gpo/pasta.png)
 
