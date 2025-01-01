@@ -22,7 +22,7 @@ Primeiramente, vamos criar uma pasta no servidor. Neste caso, criei uma pasta ch
 
 ![Desktop View](/assets/img/img-blog/gpo/pasta.png)
 
-Em seguida, clique com o botão direito do mouse na pasta, procure pela aba **compartilhamento e compartilhe-a**. No exemplo abaixo, notamos que ela está compartilhada pelo caminho: <kbd>\\\vmserver\wallpapers$</kbd>. 
+Em seguida, clique com o botão direito do mouse na pasta, procure pela aba **compartilhamento** e **compartilhe-a**. No exemplo abaixo, notamos que ela está compartilhada pelo caminho: <kbd>\\\vmserver\wallpapers$</kbd>. 
 
 >O símbolo $ `dólar` ao final do nome da pasta, indica que o compartilhamento ficará oculto e não aparecerá em meus `Locais de Rede`.
 {: .prompt-info }
@@ -37,7 +37,7 @@ Agora clique na aba **Segurança** editar e adicione o grupo **usuários do dom�
 {: .prompt-info }
 
 Agora abra o console de gerenciamento de GPO de Domínio <kbd>gpmc.msc</kbd>
-Crie uma nova política de grupo, <kbd>GPO - Wallpaper</kbd>, e atribua-a à **UO - Unidade Organizacional** com os usuários aos quais você deseja aplicar o papel de parede. Edite o GPO que você criou;
+crie uma nova política de grupo, <kbd>GPO - Wallpaper</kbd>, e atribua-a à **(UO - Unidade Organizacional)** com os usuários aos quais você deseja aplicar o papel de parede. Edite o GPO que você criou;
 
 ![Desktop View](/assets/img/img-blog/gpo/editar.png)
 
@@ -45,7 +45,7 @@ Vá para **Configuração do Usuário -> Políticas -> Modelos administrativos -
 
 ![Desktop View](/assets/img/img-blog/gpo/papel.png)
 
-Em seguida, habilite e configure a política **Papel de parede da Área de Trabalho**. Especifique o caminho **UNC (Universal Naming Convention)** para o arquivo de imagem **BMP/JPEG**.
+Em seguida, habilite e configure a política **Papel de parede da Área de Trabalho**. Especifique o caminho **(UNC - Universal Naming Convention)** para o arquivo de imagem **.BMP/.JPEG**.
 
 ![Desktop View](/assets/img/img-blog/gpo/habilitar.png)
 
