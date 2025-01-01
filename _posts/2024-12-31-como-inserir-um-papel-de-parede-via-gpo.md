@@ -18,25 +18,25 @@ image:
 >As Políticas de Grupo permitem que você defina o mesmo `papel de parede da Área de Trabalho` em todos os computadores do Domínio.
 {: .prompt-info }
 
-Primeiramente, vamos criar uma pasta no servidor. Neste caso, criei uma pasta chamada **wallpapers** dentro do (C:). Dentro dessa pasta, insira o papel de parede que será utilizado.
+Primeiramente, vamos criar uma pasta no servidor. Neste caso, criei uma pasta chamada **wallpapers** dentro do **(C:)**. Dentro dessa pasta insira o papel de parede que será utilizado.
 
 ![Desktop View](/assets/img/img-blog/gpo/pasta.png)
 
-Em seguida, clique com o botão direito do mouse sobre a pasta criada, acesse **Propriedades**, **Compartilhamento**, **Compartilhamento Avançado** e marque a opção **Compartilhar a pasta**. Em seguida, acesse a opção **Permissões** e removemos **todos** e inserimos o grupo **Usuários do Domínio** e habilitamos **(pelo menos)** a opção **Leitura**. Aplicar e depois OK. No exemplo abaixo, notamos que ela está compartilhada pelo caminho: <kbd>\\\vmserver\wallpapers$</kbd>. 
+Em seguida clique com o botão direito do mouse sobre a pasta criada, acesse **Propriedades -> Compartilhamento -> Compartilhamento Avançado** e marque a opção **Compartilhar a pasta**. Acesse a opção **Permissões** **(removemos todos)**, inserimos o grupo **Usuários do Domínio** e habilitamos **(pelo menos)** a opção **Leitura**. No exemplo abaixo notamos que ela está compartilhada pelo caminho: <kbd>\\\vmserver\wallpapers$</kbd>. 
 
 >O símbolo $ `dólar` ao final do nome da pasta, indica que o compartilhamento ficará oculto e não aparecerá em meus `Locais de Rede`.
 {: .prompt-info }
 
 ![Desktop View](/assets/img/img-blog/gpo/caminho.png)
 
-Agora clique na aba **Segurança**, **Editar** e adicione o grupo **Usuários do Domínio** e dê as permissões de **Ler** & **Executar**, **Listar conteúdo da pasta** e **Leitura**. Defina as permissões, clique em Aplicar e depois OK.
+Agora, clique na aba **Segurança**, **Editar**, adicione o grupo **Usuários do Domínio**, dê as permissões de **Ler** & **Executar**, **Listar conteúdo da pasta** e **Leitura**. Defina as permissões, clique em Aplicar e depois OK.
 
 ![Desktop View](/assets/img/img-blog/gpo/permissao.png)
 
 >Essas permissões são para que os usuários possam `ler` a `foto/papel de parede` a ser aplicada e consigam receber a configuração.
 {: .prompt-info }
 
-Agora abra o console de gerenciamento de GPO de Domínio <kbd>gpmc.msc</kbd>.
+Agora, abra o console de gerenciamento de GPO de Domínio <kbd>gpmc.msc</kbd>.
 Crie uma nova política de grupo <kbd>GPO - Wallpaper</kbd> e atribua-a à **(OU - Unidade Organizacional)** com os usuários aos quais você deseja aplicar o papel de parede. Edite o GPO que você criou;
 
 ![Desktop View](/assets/img/img-blog/gpo/editar.png)
@@ -45,7 +45,7 @@ Vá para **Configuração do Usuário -> Políticas -> Modelos administrativos -
 
 ![Desktop View](/assets/img/img-blog/gpo/papel.png)
 
-Em seguida, habilite e configure a política **Papel de parede da Área de Trabalho**. Especifique o caminho **(UNC - Universal Naming Convention)** para o arquivo de imagem **.BMP/.JPEG**.
+Em seguida habilite e configure a política **Papel de parede da Área de Trabalho**. Especifique o caminho **(UNC - Universal Naming Convention)** para o arquivo de imagem **.BMP/.JPEG**.
 
 ![Desktop View](/assets/img/img-blog/gpo/habilitar.png)
 
@@ -60,7 +60,7 @@ Se você quiser impedir que os usuários alterem a imagem do papel de parede, at
 
 ## Verificando se o Usuário consegue alterar o papel de parede
 
-Agora logue em alguma estação e verifique se os usuários estão conseguindo alterar o papel de parede da Área de Trabalho.
+Agora, logue em alguma estação e verifique se os usuários estão conseguindo alterar o papel de parede da Área de Trabalho.
 
 ![Desktop View](/assets/img/img-blog/gpo/usuario.png)
 
