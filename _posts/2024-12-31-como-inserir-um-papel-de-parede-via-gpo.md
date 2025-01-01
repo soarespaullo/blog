@@ -22,14 +22,14 @@ Primeiramente, vamos criar uma pasta no servidor. Neste caso, criei uma pasta ch
 
 ![Desktop View](/assets/img/img-blog/gpo/pasta.png)
 
-Em seguida, clique com o botão direito do mouse na pasta, procure pela aba **compartilhamento** e **compartilhe-a**. No exemplo abaixo, notamos que ela está compartilhada pelo caminho: <kbd>\\\vmserver\wallpapers$</kbd>. 
+Em seguida, clique com o botão direito do mouse sobre a pasta criada, acesse **Propriedades**, **Compartilhamento**, **Compartilhamento Avançado** e marque a opção **Compartilhar a pasta**. Em seguida, acesse a opção **Permissões** e removemos **todos** e inserimos o grupo **Usuários do Domínio** e habilitamos **(pelo menos)** a opção **Leitura**. Aplicar e depois OK. No exemplo abaixo, notamos que ela está compartilhada pelo caminho: <kbd>\\\vmserver\wallpapers$</kbd>. 
 
 >O símbolo $ `dólar` ao final do nome da pasta, indica que o compartilhamento ficará oculto e não aparecerá em meus `Locais de Rede`.
 {: .prompt-info }
 
 ![Desktop View](/assets/img/img-blog/gpo/caminho.png)
 
-Agora clique na aba **Segurança** editar e adicione o grupo **usuários do domínio** e dê as permissões de **Ler** & **Executar**, **Listar conteúdo da pasta** e **Leitura**. Defina as permissões, clique em Aplicar e depois OK.
+Agora clique na aba **Segurança**, **Editar** e adicione o grupo **Usuários do Domínio** e dê as permissões de **Ler** & **Executar**, **Listar conteúdo da pasta** e **Leitura**. Defina as permissões, clique em Aplicar e depois OK.
 
 ![Desktop View](/assets/img/img-blog/gpo/permissao.png)
 
