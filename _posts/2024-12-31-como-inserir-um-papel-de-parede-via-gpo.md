@@ -37,7 +37,7 @@ Agora clique na aba **Segurança** editar e adicione o grupo **usuários do dom�
 {: .prompt-info }
 
 Agora abra o console de gerenciamento de GPO de Domínio <kbd>gpmc.msc</kbd>
-crie uma nova política de grupo, <kbd>GPO - Wallpaper</kbd>, e atribua-a à **(UO - Unidade Organizacional)** com os usuários aos quais você deseja aplicar o papel de parede. Edite o GPO que você criou;
+crie uma nova política de grupo, <kbd>GPO - Wallpaper</kbd>, e atribua-a à **(OU - Unidade Organizacional)** com os usuários aos quais você deseja aplicar o papel de parede. Edite o GPO que você criou;
 
 ![Desktop View](/assets/img/img-blog/gpo/editar.png)
 
