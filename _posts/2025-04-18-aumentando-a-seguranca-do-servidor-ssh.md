@@ -108,6 +108,13 @@ $ scp -v -P 5050 ~/.ssh/id_rsa.pub root@127.0.0.1:/home/cloud/id_rsa.pub
 ```
 {: .nolineno }
 
+Você pode adicionar o conteúdo do seu arquivo <kbd>id_rsa.pub</kbd> ao final do arquivo <kbd>authorized_keys</kbd>, usando este comando
+
+```bash
+$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+```
+{: .nolineno }
+
 # Reiniciando o Serviço do SSH
 
 Salve e feche o arquivo quando você terminar. Para realmente implementar as alterações que acabamos de fazer, reinicie o serviço.
@@ -137,5 +144,12 @@ $ echo 'alias sh="ssh -p 5050 root@127.0.0.1"' >> ~/.bashrc
 
 ```bash
 $ source ~/.bashrc
+```
+{: .nolineno }
+
+# Basta executar "SH" no terminal que, sua sessão iniciará
+
+```bash
+$ sh
 ```
 {: .nolineno }
