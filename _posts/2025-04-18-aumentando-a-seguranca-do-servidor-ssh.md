@@ -32,9 +32,7 @@ $ sudo sed -i 's/#Port 22/Port 5050/' /etc/ssh/sshd_config
 
 Impeça que o usuário root consiga fazer o login via SSH, tome como boa prática a utilização de um usuário sem privilégio administrativo para acessar o servidor.
 
-Procure no arquivo de configuração o parâmetro PermitRootLogin e defina como “no“.
-
-PermitRootLogin no
+Procure no arquivo de configuração o parâmetro <kbd>PermitRootLogin</kbd> e defina como <kbd>“no“.</kbd>
 
 ```bash
 $ sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin no/' /etc/ssh/sshd_config
@@ -45,15 +43,12 @@ $ sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin no/' /etc/ss
 
 Durante um ataque de força bruta é normal que várias tentativas de acesso sejam feitas, para mitigar esse problema vamos definir como 5. Fique à vontade para definir o número de tentativas que quiser.
 
-Procure no arquivo de configuração o parâmetro MaxAuthTries e defina como “5“.
-
-MaxAuthTries 5
+Procure no arquivo de configuração o parâmetro <kbd>MaxAuthTries<kbd> e defina como <kbd>“5“.</kbd>
 
 ```bash
 $ sudo sed -i 's/#MaxAuthTries 6/MaxAuthTries 5/' /etc/ssh/sshd_config
 ```
 {: .nolineno }
-
 
 # Bloqueando o login de um usuário sem senha
 
@@ -61,7 +56,7 @@ O parâmetro <kbd>PermitEmptyPasswords</kbd> especifica se o servidor SSH vai pe
 
 Para evitar o acesso remoto do shell por contas que possuem uma senha vazia, é preciso modificar o parâmetro da configuração, reduzindo as chances de acesso não autorizado ao sistema.
 
-Procure no arquivo de configuração o parâmetro <kbd>PermitEmptyPasswords</kbd> e defina como “no“.
+Procure no arquivo de configuração o parâmetro <kbd>PermitEmptyPasswords</kbd> e defina como <kbd>“no“.</kbd>
 
 ```bash
 $ sudo sed -i 's/#PermitEmptyPasswords no/PermitEmptyPasswords no/' /etc/ssh/sshd_config
@@ -72,14 +67,14 @@ $ sudo sed -i 's/#PermitEmptyPasswords no/PermitEmptyPasswords no/' /etc/ssh/ssh
 
 O primeiro passo para configurar a autenticação de chaves SSH para seu servidor é gerar um par de chaves SSH no seu computador local.
 
-Para fazer isso, podemos usar um utilitário especial chamado ssh-keygen, que vem incluso com o conjunto padrão de ferramentas do OpenSSH.
+Para fazer isso, podemos usar um utilitário especial chamado <kbd>ssh-keygen</kbd>, que vem incluso com o conjunto padrão de ferramentas do <kbd>OpenSSH.</kbd>
 
 ```bash
 $ ssh-keygen -t rsa -b 4096
 ```
 {: .nolineno }
 
-# Use o comando touch para criar o arquivo authorized_keys no diretório .ssh e defina suas permissões como 600
+# Criando o arquivo arquivo authorized_keys e dando permissão
 
 Dentro da pasta .ssh crie o arquivo authorized_keys. Esse arquivo mantem as chaves publicas autorizadas a fazerem o login.
 
@@ -96,7 +91,9 @@ $ ssh-copy-id -p 5060 admin@127.0.0.1
 {: .nolineno }
 
 
-# Salve e feche o arquivo quando você terminar. Para realmente implementar as alterações que acabamos de fazer, reinicie o serviço.
+# Reiniciando o Serviço do SSH
+
+Salve e feche o arquivo quando você terminar. Para realmente implementar as alterações que acabamos de fazer, reinicie o serviço.
 
 ```bash
 $ sudo systemctl restart ssh
