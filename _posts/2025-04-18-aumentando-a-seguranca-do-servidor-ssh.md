@@ -74,6 +74,15 @@ $ sudo sed -i 's/#X11Forwarding no/X11Forwarding no/' /etc/ssh/sshd_config
 ```
 {: .nolineno }
 
+# Criando o arquivo arquivo authorized_keys no Servidor
+
+Dentro da pasta .ssh crie o arquivo authorized_keys. Esse arquivo mantem as chaves publicas autorizadas a fazerem o login.
+
+```bash
+$ touch ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys
+```
+{: .nolineno }
+
 # Desabilite totalmente o acesso por senhas
 
 O primeiro passo para configurar a autenticação de chaves SSH para seu servidor é gerar um par de chaves SSH no seu computador local.
@@ -82,15 +91,6 @@ Para fazer isso, podemos usar um utilitário especial chamado <kbd>ssh-keygen</k
 
 ```bash
 $ ssh-keygen -t rsa -b 4096
-```
-{: .nolineno }
-
-# Criando o arquivo arquivo authorized_keys no Servidor
-
-Dentro da pasta .ssh crie o arquivo authorized_keys. Esse arquivo mantem as chaves publicas autorizadas a fazerem o login.
-
-```bash
-$ touch ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys
 ```
 {: .nolineno }
 
