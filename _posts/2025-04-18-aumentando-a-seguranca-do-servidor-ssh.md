@@ -90,6 +90,12 @@ $ ssh-copy-id -p 5060 admin@127.0.0.1
 ```
 {: .nolineno }
 
+# Usando SCP para copiar a chave para o Servidor
+
+```bash
+$ scp -v -P 5050 ~/.ssh/id_rsa.pub root@127.0.0.1:/home/cloud/id_rsa.pub
+```
+{: .nolineno }
 
 # Reiniciando o Serviço do SSH
 
