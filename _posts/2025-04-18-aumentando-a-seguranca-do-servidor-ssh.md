@@ -180,12 +180,14 @@ $ echo 'alias sh="ssh -p 5050 root@127.0.0.1"' >> ~/.bashrc
 ```
 {: .nolineno }
 
+Recarregar as configurações do <kbd>.bashrc</kbd> sem sair do sistema.
+
 ```bash
 $ source ~/.bashrc
 ```
 {: .nolineno }
 
-# Basta executar "SH" no terminal que, sua sessão iniciará
+# Basta executar "SH" no terminal que sua sessão iniciará
 
 ```bash
 $ sh
