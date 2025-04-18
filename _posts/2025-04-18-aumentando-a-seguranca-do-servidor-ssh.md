@@ -66,7 +66,7 @@ Procure no arquivo de configuração o parâmetro <kbd>PermitEmptyPasswords</kbd
 ```bash
 $ sudo sed -i 's/#PermitEmptyPasswords no/PermitEmptyPasswords no/' /etc/ssh/sshd_config
 ```
-{: .nolineno
+{: .nolineno }
 
 # Desabilite totalmente o acesso por senhas
 
@@ -77,21 +77,23 @@ Para fazer isso, podemos usar um utilitário especial chamado ssh-keygen, que ve
 ```bash
 $ ssh-keygen -t rsa -b 4096
 ```
-{: .nolineno
+{: .nolineno }
 
-# Dentro da pasta .ssh crie o arquivo authorized_keys. Esse arquivo mantem as chaves publicas autorizadas a fazerem o login.
+# Use o comando touch para criar o arquivo authorized_keys no diretório .ssh e defina suas permissões como 600
+
+Dentro da pasta .ssh crie o arquivo authorized_keys. Esse arquivo mantem as chaves publicas autorizadas a fazerem o login.
 
 ```bash
-$ touch .ssh/authorized_keys
+$ touch ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys
 ```
-{: .nolineno
+{: .nolineno }
 
 # Copiando a chave da Máquina Local para o Servidor
 
 ```bash
 $ ssh-copy-id -p 5060 admin@127.0.0.1
 ```
-{: .nolineno
+{: .nolineno }
 
 
 # Salve e feche o arquivo quando você terminar. Para realmente implementar as alterações que acabamos de fazer, reinicie o serviço.
@@ -99,7 +101,7 @@ $ ssh-copy-id -p 5060 admin@127.0.0.1
 ```bash
 $ sudo systemctl restart ssh
 ```
-{: .nolineno
+{: .nolineno }
 
 # Autenticar-se em seu servidor usando chaves SSH
 
@@ -108,5 +110,5 @@ Se tiver completado todos os procedimentos acima, você deve conseguir fazer log
 ```bash
 $ ssh admin@127.0.0.1
 ```
-{: .nolineno
+{: .nolineno }
 
