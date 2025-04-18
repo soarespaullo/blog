@@ -43,7 +43,7 @@ $ sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin no/' /etc/ss
 
 Durante um ataque de força bruta é normal que várias tentativas de acesso sejam feitas, para mitigar esse problema vamos definir como 5. Fique à vontade para definir o número de tentativas que quiser.
 
-Procure no arquivo de configuração o parâmetro <kbd>MaxAuthTries<kbd> e defina como <kbd>“5“.</kbd>
+Procure no arquivo de configuração o parâmetro <kbd>MaxAuthTries</kbd> e defina como <kbd>“5“.</kbd>
 
 ```bash
 $ sudo sed -i 's/#MaxAuthTries 6/MaxAuthTries 5/' /etc/ssh/sshd_config
@@ -74,7 +74,7 @@ $ ssh-keygen -t rsa -b 4096
 ```
 {: .nolineno }
 
-# Criando o arquivo arquivo authorized_keys e dando permissão
+# Criando o arquivo arquivo authorized_keys no Servidor
 
 Dentro da pasta .ssh crie o arquivo authorized_keys. Esse arquivo mantem as chaves publicas autorizadas a fazerem o login.
 
