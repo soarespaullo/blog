@@ -101,6 +101,17 @@ $ sudo sed -i 's/#MaxSessions 10/MaxSessions 5/' /etc/ssh/sshd_config
 ```
 {: .nolineno }
 
+# Desativar logins com senha
+
+Em comparação com as chaves SSH, os invasores usam força bruta em servidores SSH usando senhas. Desabilite logins baseados em senha para todos os usuários do sistema.
+
+Para desabilitar logins baseados em senha e aceitar apenas chaves SSH, encontre a seguinte linha <kbd>PasswordAuthentication yes</kbd>. Por padrão, ele é definido como yes, altere para <kbd>"no".</kbd>
+ 
+```bash
+$ sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
+```
+{: .nolineno }
+
 # Criando o arquivo authorized_keys no Servidor
 
 Dentro da pasta .ssh crie o arquivo authorized_keys. Esse arquivo mantem as chaves publicas autorizadas a fazerem o login.
@@ -124,7 +135,7 @@ $ ssh-keygen -t rsa -b 4096
 # Copiando a chave da Máquina Local para o Servidor
 
 ```bash
-$ ssh-copy-id -p 5060 admin@127.0.0.1
+$ ssh-copy-id -p 5050 admin@127.0.0.1
 ```
 {: .nolineno }
 
