@@ -74,7 +74,34 @@ $ sudo sed -i 's/#X11Forwarding no/X11Forwarding no/' /etc/ssh/sshd_config
 ```
 {: .nolineno }
 
-# Criando o arquivo arquivo authorized_keys no Servidor
+# Conceder Acesso SSH a Usuários Autorizados
+
+Para permitir apenas os usuários admin e guest efetuem login via SSH, adicione <kbd>AllowUsers</kbd> no final do arquivo
+
+```bash
+AllowUsers admin guest
+```
+{: .nolineno }
+ 
+A regra acima permite admin e guest a fazer login a partir de qualquer endereço IP
+
+Para permitir que usuários específicos efetuem login apenas a partir de endereços IP específicos, adicione a seguinte diretiva
+
+```bash
+AllowUsers admin@127.0.0.1 guest@127.0.0.2 
+```
+{: .nolineno }
+
+# Limitar o Número de Sessões Ativas por Usuário
+
+Às vezes, usuários SSH podem abrir no máximo 5 conexões SSH, dependendo das operações em andamento. No entanto, às vezes, invasores podem iniciar sessões extras durante ataques <kbd>MITM (Man in the Middle).</kbd> Para aumentar a segurança do seu servidor, limite o número de sessões ativas por usuários.
+
+```bash
+$ sudo sed -i 's/#MaxSessions 10/MaxSessions 5/' /etc/ssh/sshd_config
+```
+{: .nolineno }
+
+# Criando o arquivo authorized_keys no Servidor
 
 Dentro da pasta .ssh crie o arquivo authorized_keys. Esse arquivo mantem as chaves publicas autorizadas a fazerem o login.
 
