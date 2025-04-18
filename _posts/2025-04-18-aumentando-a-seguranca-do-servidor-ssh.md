@@ -1,0 +1,112 @@
+---
+title: Aumentando a Segurança do Servidor SSH
+description: Aumentando a Segurança do Servidor SSH
+author: soarespaullo
+date: 2025-04-18 14:50:00
+categories: [Linux, SysAdmin]
+tags: [Tutoriais, Servidor, SysAdmin, SSH, Porta]
+math: true
+mermaid: true
+image:
+  path: /assets/img/img-blog/ssh-key/ssh-key.png
+  alt: Aumentando a Segurança do Servidor SSH
+
+---
+
+O SSH <kbd>(Secure Socket Shell)</kbd> é normalmente o principal meio para acesso aos servidores, especialmente aqueles ambientes que rodam sistemas Unix-like. Apesar de ter um nível de segurança agradável, é necessário o ajuste de alguns parâmetros.
+
+# Alterando a Porta padrão do SSH
+
+A porta padrão do SSH é a 22 e por conta disso muitos ataques vão direto nela, para mitigar esse problema iremos mudar para a porta 5050 (sugestão, podendo ser qualquer outra porta).
+
+> Observação: Essa medida não fará com que a porta nunca seja descoberta, e isso é facilmente demonstrado com um scan. Porém essa alteração já faz com que uma boa parte dos ataques sejam evitados.
+{: .prompt-warning }
+
+```bash
+$ sudo sed -i 's/#Port 22/Port 5050/' /etc/ssh/sshd_config
+```
+{: .nolineno }
+
+
+# Desative o login como ROOT
+
+Impeça que o usuário root consiga fazer o login via SSH, tome como boa prática a utilização de um usuário sem privilégio administrativo para acessar o servidor.
+
+Procure no arquivo de configuração o parâmetro PermitRootLogin e defina como “no“.
+
+PermitRootLogin no
+
+```bash
+$ sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin no/' /etc/ssh/sshd_config
+```
+{: .nolineno }
+
+# Definindo o número máximo das tentativas de acesso
+
+Durante um ataque de força bruta é normal que várias tentativas de acesso sejam feitas, para mitigar esse problema vamos definir como 5. Fique à vontade para definir o número de tentativas que quiser.
+
+Procure no arquivo de configuração o parâmetro MaxAuthTries e defina como “5“.
+
+MaxAuthTries 5
+
+```bash
+$ sudo sed -i 's/#MaxAuthTries 6/MaxAuthTries 5/' /etc/ssh/sshd_config
+```
+{: .nolineno }
+
+
+# Bloqueando o login de um usuário sem senha
+
+O parâmetro <kbd>PermitEmptyPasswords</kbd> especifica se o servidor SSH vai permitir o login de contas com sequências de senha vazias.
+
+Para evitar o acesso remoto do shell por contas que possuem uma senha vazia, é preciso modificar o parâmetro da configuração, reduzindo as chances de acesso não autorizado ao sistema.
+
+Procure no arquivo de configuração o parâmetro <kbd>PermitEmptyPasswords</kbd> e defina como “no“.
+
+```bash
+$ sudo sed -i 's/#PermitEmptyPasswords no/PermitEmptyPasswords no/' /etc/ssh/sshd_config
+```
+{: .nolineno
+
+# Desabilite totalmente o acesso por senhas
+
+O primeiro passo para configurar a autenticação de chaves SSH para seu servidor é gerar um par de chaves SSH no seu computador local.
+
+Para fazer isso, podemos usar um utilitário especial chamado ssh-keygen, que vem incluso com o conjunto padrão de ferramentas do OpenSSH.
+
+```bash
+$ ssh-keygen -t rsa -b 4096
+```
+{: .nolineno
+
+# Dentro da pasta .ssh crie o arquivo authorized_keys. Esse arquivo mantem as chaves publicas autorizadas a fazerem o login.
+
+```bash
+$ touch .ssh/authorized_keys
+```
+{: .nolineno
+
+# Copiando a chave da Máquina Local para o Servidor
+
+```bash
+$ ssh-copy-id -p 5060 admin@127.0.0.1
+```
+{: .nolineno
+
+
+# Salve e feche o arquivo quando você terminar. Para realmente implementar as alterações que acabamos de fazer, reinicie o serviço.
+
+```bash
+$ sudo systemctl restart ssh
+```
+{: .nolineno
+
+# Autenticar-se em seu servidor usando chaves SSH
+
+Se tiver completado todos os procedimentos acima, você deve conseguir fazer login no host remoto sem a senha da conta.
+
+```bash
+$ ssh admin@127.0.0.1
+```
+{: .nolineno
+
