@@ -126,3 +126,16 @@ $ ssh admin@127.0.0.1
 ```
 {: .nolineno }
 
+# Bash Aliases
+
+Um alias no Bash (e na maioria dos shells) é uma maneira de executar um comando longo usando um curto.
+
+```bash
+$ echo 'alias sh="ssh -p 5050 root@127.0.0.1"' >> ~/.bashrc
+```
+{: .nolineno }
+
+```bash
+$ source ~/.bashrc
+```
+{: .nolineno }
