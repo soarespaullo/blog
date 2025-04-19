@@ -15,9 +15,9 @@ image:
 
 O SSH <kbd>(Secure Shell)</kbd> é normalmente o principal meio para acesso aos servidores, especialmente aqueles ambientes que rodam sistemas Unix-like. Apesar de ter um nível de segurança agradável, é necessário o ajuste de alguns parâmetros.
 
-Para alterar e fortalecer as configurações do servidor SSH, você precisa editar o arquivo de configuração principal do OpenSSH <kbd>/etc/ssh/sshd_config.</kbd> Cada linha não comentada no arquivo representa uma configuração ativa que você pode definir para corresponder às suas preferências.
+Para alterar e fortalecer as configurações do servidor SSH, você precisa editar o arquivo de configuração principal do OpenSSH <kbd>/etc/ssh/sshd_config</kbd>. Cada linha não comentada no arquivo representa uma configuração ativa que você pode definir para corresponder às suas preferências.
 
-> Antes de fazer alterações na configuração do servidor SSH, faça backup do arquivo.
+> Antes de fazer alterações na configuração do servidor SSH, faça `backup` do arquivo: `/etc/ssh/sshd_config`.
 {: .prompt-info }
 
 ```bash
@@ -55,7 +55,7 @@ $ ssh-copy-id -p 5050 admin@127.0.0.1
 ```
 {: .nolineno }
 
-Se <kbd>ssh-copy-id</kbd> não estiver disponível, pode usar o comando <kbd>scp</kbd> <kbd>(Secure Copy)</kbd> para transferir o arquivo da chave pública para o servidor e, em seguida, adicionar a chave ao arquivo <kbd>~/.ssh/authorized_keys</kbd> no servidor.
+Se <kbd>ssh-copy-id</kbd> não estiver disponível, pode usar o comando <kbd>scp</kbd> **(Secure Copy)** para transferir o arquivo da chave pública para o servidor e, em seguida, adicionar a chave ao arquivo <kbd>~/.ssh/authorized_keys</kbd> no servidor.
 
 ```bash
 $ scp -v -P 5050 ~/.ssh/id_rsa.pub root@127.0.0.1:/home/cloud/id_rsa.pub
@@ -83,7 +83,7 @@ $ ssh admin@127.0.0.1
 ```
 {: .nolineno }
 
-## Alterando a Porta padrão do SSH
+## Alterando a porta padrão do SSH
 
 A porta padrão do SSH é a 22 e por conta disso muitos ataques são direcionado a ela, para mitigar esse problema, iremos mudar para a porta 5050.
 
@@ -95,7 +95,7 @@ $ sudo sed -i 's/#Port 22/Port 5050/' /etc/ssh/sshd_config
 ```
 {: .nolineno }
 
-## Desative o login como ROOT
+## Desative o login como root
 
 Impeça que o usuário root consiga fazer o login via SSH, tome como boa prática a utilização de um usuário sem privilégio administrativo para acessar o servidor.
 
@@ -141,7 +141,7 @@ $ sudo sed -i 's/#X11Forwarding no/X11Forwarding no/' /etc/ssh/sshd_config
 ```
 {: .nolineno }
 
-## Conceder Acesso SSH a Usuários Autorizados
+## Conceder acesso SSH a usuários autorizados
 
 Para permitir apenas os usuários admin e guest efetuem login via SSH, adicione <kbd>AllowUsers</kbd> no final do arquivo
 
