@@ -18,7 +18,7 @@ O SSH <kbd>(Secure Socket Shell)</kbd> é normalmente o principal meio para aces
 Para alterar e fortalecer as configurações do servidor SSH, você precisa editar o arquivo de configuração principal do OpenSSH <kbd>/etc/ssh/sshd_config.</kbd> Cada linha não comentada no arquivo representa uma configuração ativa que você pode definir para corresponder às suas preferências.
 
 > Antes de fazer alterações na configuração do servidor SSH, faça backup do arquivo
-{: .prompt-warning }
+{: .prompt-info }
 
 ```bash
 $ sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.old
