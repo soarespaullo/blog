@@ -81,7 +81,7 @@ $ ssh admin@127.0.0.1
 ```
 {: .nolineno }
 
-# Medidas de segurança no serviço SSH
+# Dicas de segurança para o SSH
 
 Para alterar e fortalecer as configurações do servidor SSH, você precisa editar o arquivo de configuração principal do OpenSSH <kbd>/etc/ssh/sshd_config</kbd>. Cada linha não comentada no arquivo representa uma configuração ativa que você pode definir para corresponder às suas preferências.
 
@@ -126,8 +126,6 @@ $ sudo sed -i 's/#MaxAuthTries 6/MaxAuthTries 5/' /etc/ssh/sshd_config
 
 O parâmetro <kbd>PermitEmptyPasswords</kbd> especifica se o servidor SSH vai permitir o login de contas com sequências de senha vazias.
 
-Para evitar o acesso remoto do shell por contas que possuem uma senha vazia, é preciso modificar o parâmetro da configuração, reduzindo as chances de acesso não autorizado ao sistema.
-
 Procure no arquivo de configuração o parâmetro <kbd>PermitEmptyPasswords</kbd> e defina como <kbd>“no“.</kbd>
 
 ```bash
@@ -155,9 +153,10 @@ AllowUsers admin guest
 ```
 {: .nolineno }
  
-A regra acima permite admin e guest a fazer login a partir de qualquer endereço IP
+> A regra acima permite `ADMIN` e `GUEST` a fazer login a partir de qualquer endereço `IP`
+{: .prompt-warning }
 
-Para permitir que usuários específicos efetuem login apenas a partir de endereços IP específicos, adicione a seguinte diretiva
+Para permitir que usuários específicos efetuem login apenas a partir de endereços IP específicos, adicione o seguinte.
 
 ```bash
 AllowUsers admin@127.0.0.1 guest@127.0.0.2 
@@ -166,7 +165,7 @@ AllowUsers admin@127.0.0.1 guest@127.0.0.2
 
 ### Limitar o número de sessões ativas por usuário
 
-Às vezes, usuários SSH podem abrir no máximo 5 conexões SSH, dependendo das operações em andamento. No entanto, às vezes, invasores podem iniciar sessões extras durante ataques <kbd>MITM (Man in the Middle).</kbd> Para aumentar a segurança do seu servidor, limite o número de sessões ativas por usuários.
+Às vezes, usuários SSH podem abrir no máximo 5 conexões SSH, dependendo das operações em andamento. No entanto, às vezes, invasores podem iniciar sessões extras durante ataques <kbd>MITM (Man in the Middle)</kbd>. Para aumentar a segurança do seu servidor, limite o número de sessões ativas por usuários.
 
 ```bash
 $ sudo sed -i 's/#MaxSessions 10/MaxSessions 5/' /etc/ssh/sshd_config
@@ -177,7 +176,7 @@ $ sudo sed -i 's/#MaxSessions 10/MaxSessions 5/' /etc/ssh/sshd_config
 
 Em comparação com as chaves SSH, os invasores usam força bruta em servidores SSH usando senhas. Desabilite logins baseados em senha para todos os usuários do sistema.
 
-Para desabilitar logins baseados em senha e aceitar apenas chaves SSH, encontre a seguinte linha <kbd>PasswordAuthentication yes</kbd>. Por padrão, ele é definido como yes, altere para <kbd>"no".</kbd>
+Para desabilitar logins baseados em senha e aceitar apenas chaves SSH, encontre a seguinte linha <kbd>PasswordAuthentication yes</kbd>. Por padrão, ele é definido como <kbd>yes</kbd>, altere para <kbd>"no".</kbd>
  
 ```bash
 $ sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
