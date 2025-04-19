@@ -4,7 +4,7 @@ description: Aumentando a Segurança do Servidor SSH
 author: soarespaullo
 date: 2025-04-18 14:50:00
 categories: [Linux, SysAdmin]
-tags: [Tutoriais, Servidor, SysAdmin, SSH, Porta]
+tags: [Tutoriais, Servidor, SysAdmin, SSH]
 math: true
 mermaid: true
 image:
@@ -25,18 +25,65 @@ $ sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.old
 ```
 {: .nolineno }
 
+O primeiro passo para configurar a autenticação de chaves SSH para seu servidor é gerar um par de chaves SSH no seu computador local.
+
+Para fazer isso, podemos usar um utilitário especial chamado <kbd>ssh-keygen</kbd>, que vem incluso com o conjunto padrão de ferramentas do <kbd>OpenSSH.</kbd>
+
+```bash
+$ ssh-keygen -t rsa -b 4096
+```
+{: .nolineno }
+
+# Criando o arquivo authorized_keys no Servidor
+
+Dentro da pasta .ssh crie o arquivo authorized_keys. Esse arquivo mantem as chaves publicas autorizadas a fazerem o login.
+
+```bash
+$ touch ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys
+```
+{: .nolineno }
+
+# Copiando a chave da Máquina Local para o Servidor
+
+```bash
+$ ssh-copy-id -p 5050 admin@127.0.0.1
+```
+{: .nolineno }
+
+# Usando SCP para copiar a chave para o Servidor
+
+```bash
+$ scp -v -P 5050 ~/.ssh/id_rsa.pub root@127.0.0.1:/home/cloud/id_rsa.pub
+```
+{: .nolineno }
+
+Você pode adicionar o conteúdo do seu arquivo <kbd>id_rsa.pub</kbd> ao final do arquivo <kbd>authorized_keys</kbd>, usando este comando
+
+```bash
+$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+```
+{: .nolineno }
+
+Reiniciando o Serviço do SSH
+
+Salve e feche o arquivo quando você terminar. Para realmente implementar as alterações que acabamos de fazer, reinicie o serviço.
+
+```bash
+$ sudo systemctl restart ssh
+```
+{: .nolineno }
+
 # Alterando a Porta padrão do SSH
 
-A porta padrão do SSH é a 22 e por conta disso muitos ataques vão direto nela, para mitigar esse problema iremos mudar para a porta 5050 (sugestão, podendo ser qualquer outra porta).
+A porta padrão do SSH é a 22 e por conta disso muitos ataques são direcionado a ela, para mitigar esse problema, iremos mudar para a porta 5050.
 
-> Observação: Essa medida não fará com que a porta nunca seja descoberta, e isso é facilmente demonstrado com um scan. Porém essa alteração já faz com que uma boa parte dos ataques sejam evitados.
+> Essa medida não fará com que a porta nunca seja descoberta, e isso é facilmente demonstrado com um scanner de porta.
 {: .prompt-warning }
 
 ```bash
 $ sudo sed -i 's/#Port 22/Port 5050/' /etc/ssh/sshd_config
 ```
 {: .nolineno }
-
 
 # Desative o login como ROOT
 
@@ -122,56 +169,6 @@ $ sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh
 ```
 {: .nolineno }
 
-# Criando o arquivo authorized_keys no Servidor
-
-Dentro da pasta .ssh crie o arquivo authorized_keys. Esse arquivo mantem as chaves publicas autorizadas a fazerem o login.
-
-```bash
-$ touch ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys
-```
-{: .nolineno }
-
-# Desabilite totalmente o acesso por senhas
-
-O primeiro passo para configurar a autenticação de chaves SSH para seu servidor é gerar um par de chaves SSH no seu computador local.
-
-Para fazer isso, podemos usar um utilitário especial chamado <kbd>ssh-keygen</kbd>, que vem incluso com o conjunto padrão de ferramentas do <kbd>OpenSSH.</kbd>
-
-```bash
-$ ssh-keygen -t rsa -b 4096
-```
-{: .nolineno }
-
-# Copiando a chave da Máquina Local para o Servidor
-
-```bash
-$ ssh-copy-id -p 5050 admin@127.0.0.1
-```
-{: .nolineno }
-
-# Usando SCP para copiar a chave para o Servidor
-
-```bash
-$ scp -v -P 5050 ~/.ssh/id_rsa.pub root@127.0.0.1:/home/cloud/id_rsa.pub
-```
-{: .nolineno }
-
-Você pode adicionar o conteúdo do seu arquivo <kbd>id_rsa.pub</kbd> ao final do arquivo <kbd>authorized_keys</kbd>, usando este comando
-
-```bash
-$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-```
-{: .nolineno }
-
-# Reiniciando o Serviço do SSH
-
-Salve e feche o arquivo quando você terminar. Para realmente implementar as alterações que acabamos de fazer, reinicie o serviço.
-
-```bash
-$ sudo systemctl restart ssh
-```
-{: .nolineno }
-
 # Autenticar-se em seu servidor usando chaves SSH
 
 Se tiver completado todos os procedimentos acima, você deve conseguir fazer login no host remoto sem a senha da conta.
@@ -183,7 +180,7 @@ $ ssh admin@127.0.0.1
 
 # Bash Aliases
 
-Um alias no Bash (e na maioria dos shells) é uma maneira de executar um comando longo usando um curto.
+Um alias no Bash é uma maneira de executar um comando longo usando um curto.
 
 ```bash
 $ echo 'alias sh="ssh -p 5050 root@127.0.0.1"' >> ~/.bashrc
