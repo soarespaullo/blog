@@ -15,6 +15,16 @@ image:
 
 O SSH <kbd>(Secure Socket Shell)</kbd> é normalmente o principal meio para acesso aos servidores, especialmente aqueles ambientes que rodam sistemas Unix-like. Apesar de ter um nível de segurança agradável, é necessário o ajuste de alguns parâmetros.
 
+Para alterar e fortalecer as configurações do servidor SSH, você precisa editar o arquivo de configuração principal do OpenSSH <kbd>/etc/ssh/sshd_config.</kbd> Cada linha não comentada no arquivo representa uma configuração ativa que você pode definir para corresponder às suas preferências.
+
+> Antes de fazer alterações na configuração do servidor SSH, faça backup do arquivo
+{: .prompt-warning }
+
+```bash
+$ sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.old
+```
+{: .nolineno }
+
 # Alterando a Porta padrão do SSH
 
 A porta padrão do SSH é a 22 e por conta disso muitos ataques vão direto nela, para mitigar esse problema iremos mudar para a porta 5050 (sugestão, podendo ser qualquer outra porta).
