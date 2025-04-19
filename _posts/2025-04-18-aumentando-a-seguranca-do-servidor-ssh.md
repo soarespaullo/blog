@@ -81,7 +81,30 @@ $ ssh admin@127.0.0.1
 ```
 {: .nolineno }
 
-# Dicas de segurança para o SSH
+### Bash Aliases
+
+Um alias Bash é um atalho para substituir comandos longos por comandos mais curtos, economizando tempo e evitando digitação repetitiva. Em um ambiente shell, você deve armazenar os aliases Bash no <bkd>.bashrc</kbd> arquivo sob o diretório inicial do usuário.
+
+```bash
+$ echo 'alias sh="ssh -p 5050 root@127.0.0.1"' >> ~/.bashrc
+```
+{: .nolineno }
+
+Recarregar as configurações do <kbd>.bashrc</kbd> sem sair do sistema.
+
+```bash
+$ source ~/.bashrc
+```
+{: .nolineno }
+
+Conecte-se ao SSH com o aliases criado
+
+```bash
+$ sh
+```
+{: .nolineno }
+
+# Dicas de segurança para o servidor SSH
 
 Para alterar e fortalecer as configurações do servidor SSH, você precisa editar o arquivo de configuração principal do OpenSSH <kbd>/etc/ssh/sshd_config</kbd>. Cada linha não comentada no arquivo representa uma configuração ativa que você pode definir para corresponder às suas preferências.
 
@@ -183,25 +206,4 @@ $ sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh
 ```
 {: .nolineno }
 
-### Bash Aliases
-
-Um alias no Bash é uma maneira de executar um comando longo usando um curto.
-
-```bash
-$ echo 'alias sh="ssh -p 5050 root@127.0.0.1"' >> ~/.bashrc
-```
-{: .nolineno }
-
-Recarregar as configurações do <kbd>.bashrc</kbd> sem sair do sistema.
-
-```bash
-$ source ~/.bashrc
-```
-{: .nolineno }
-
-Conecte-se ao SSH com o aliases criado
-
-```bash
-$ sh
-```
-{: .nolineno }
+Neste artigo, você reforçou seu servidor SSH usando recursos avançados do OpenSSH.
