@@ -25,7 +25,7 @@ $ sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.old
 ```
 {: .nolineno }
 
-O primeiro passo para configurar a autenticação de chaves SSH para seu servidor é gerar um par de chaves SSH no seu computador local.
+O primeiro passo para configurar a autenticação de chaves SSH para seu servidor é gerar um par de chaves SSH no seu **computador local**.
 
 Para fazer isso, podemos usar um utilitário especial chamado <kbd>ssh-keygen</kbd>, que vem incluso com o conjunto padrão de ferramentas do <kbd>OpenSSH.</kbd>
 
@@ -34,26 +34,17 @@ $ ssh-keygen -t rsa -b 4096
 ```
 {: .nolineno }
 
-# Criando o arquivo authorized_keys no Servidor
+Para adicionar sua chave SSH às chaves autorizadas, crie-a <kbd>.ssh</kbd> se ela não estiver criada em seu **servidor**
 
-Dentro da pasta .ssh crie o arquivo authorized_keys. Esse arquivo mantem as chaves publicas autorizadas a fazerem o login.
+```bash
+ $ mkdir -p ~/.ssh
+ ```
+{: .nolineno }
+
+Dentro da pasta <kbd>.ssh</kbd> crie o arquivo <kbd>authorized_keys</kbd>. Esse arquivo mantem as chaves publicas autorizadas a fazerem o login.
 
 ```bash
 $ touch ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys
-```
-{: .nolineno }
-
-# Copiando a chave da Máquina Local para o Servidor
-
-```bash
-$ ssh-copy-id -p 5050 admin@127.0.0.1
-```
-{: .nolineno }
-
-# Usando SCP para copiar a chave para o Servidor
-
-```bash
-$ scp -v -P 5050 ~/.ssh/id_rsa.pub root@127.0.0.1:/home/cloud/id_rsa.pub
 ```
 {: .nolineno }
 
@@ -64,9 +55,21 @@ $ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ```
 {: .nolineno }
 
-Reiniciando o Serviço do SSH
+Copiando a chave da máquina local para o servidor
 
-Salve e feche o arquivo quando você terminar. Para realmente implementar as alterações que acabamos de fazer, reinicie o serviço.
+```bash
+$ ssh-copy-id -p 5050 admin@127.0.0.1
+```
+{: .nolineno }
+
+Outra alternativa para copiar a chave é usando o comando scp
+
+```bash
+$ scp -v -P 5050 ~/.ssh/id_rsa.pub root@127.0.0.1:/home/cloud/id_rsa.pub
+```
+{: .nolineno }
+
+Para realmente implementar as alterações que acabamos de fazer, reinicie o serviço.
 
 ```bash
 $ sudo systemctl restart ssh
@@ -77,7 +80,7 @@ $ sudo systemctl restart ssh
 
 A porta padrão do SSH é a 22 e por conta disso muitos ataques são direcionado a ela, para mitigar esse problema, iremos mudar para a porta 5050.
 
-> Essa medida não fará com que a porta nunca seja descoberta, e isso é facilmente demonstrado com um scanner de porta.
+> Essa medida não fará com que a porta nunca seja descoberta, e isso é facilmente demonstrado com um Port Scanner.
 {: .prompt-warning }
 
 ```bash
