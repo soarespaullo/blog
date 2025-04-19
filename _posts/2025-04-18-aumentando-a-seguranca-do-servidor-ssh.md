@@ -197,7 +197,7 @@ $ source ~/.bashrc
 ```
 {: .nolineno }
 
-# Basta executar "SH" no terminal que sua sessão iniciará
+Conecte-se ao SSH com o aliases criado
 
 ```bash
 $ sh
