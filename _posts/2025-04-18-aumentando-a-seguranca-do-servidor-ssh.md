@@ -15,8 +15,6 @@ image:
 
 O SSH <kbd>(Secure Shell)</kbd> é normalmente o principal meio para acesso aos servidores, especialmente aqueles ambientes que rodam sistemas Unix-like. Apesar de ter um nível de segurança agradável, é necessário o ajuste de alguns parâmetros.
 
-Para alterar e fortalecer as configurações do servidor SSH, você precisa editar o arquivo de configuração principal do OpenSSH <kbd>/etc/ssh/sshd_config</kbd>. Cada linha não comentada no arquivo representa uma configuração ativa que você pode definir para corresponder às suas preferências.
-
 > Antes de fazer alterações na configuração do servidor SSH, faça `backup` do arquivo: `/etc/ssh/sshd_config`.
 {: .prompt-info }
 
@@ -83,7 +81,14 @@ $ ssh admin@127.0.0.1
 ```
 {: .nolineno }
 
-## Alterando a porta padrão do SSH
+# Medidas de segurança no serviço SSH
+
+Para alterar e fortalecer as configurações do servidor SSH, você precisa editar o arquivo de configuração principal do OpenSSH <kbd>/etc/ssh/sshd_config</kbd>. Cada linha não comentada no arquivo representa uma configuração ativa que você pode definir para corresponder às suas preferências.
+
+> Antes de fazer alterações na configuração do servidor SSH, faça `backup` do arquivo: `/etc/ssh/sshd_config`.
+{: .prompt-info }
+
+### Alterando a porta padrão do SSH
 
 A porta padrão do SSH é a 22 e por conta disso muitos ataques são direcionado a ela, para mitigar esse problema, iremos mudar para a porta 5050.
 
@@ -95,7 +100,7 @@ $ sudo sed -i 's/#Port 22/Port 5050/' /etc/ssh/sshd_config
 ```
 {: .nolineno }
 
-## Desative o login como root
+### Desative o login como root
 
 Impeça que o usuário root consiga fazer o login via SSH, tome como boa prática a utilização de um usuário sem privilégio administrativo para acessar o servidor.
 
@@ -106,7 +111,7 @@ $ sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin no/' /etc/ss
 ```
 {: .nolineno }
 
-## Definindo o número máximo das tentativas de acesso
+### Definindo o número máximo das tentativas de acesso
 
 Durante um ataque de força bruta é normal que várias tentativas de acesso sejam feitas, para mitigar esse problema vamos definir como 5. Fique à vontade para definir o número de tentativas que quiser.
 
@@ -117,7 +122,7 @@ $ sudo sed -i 's/#MaxAuthTries 6/MaxAuthTries 5/' /etc/ssh/sshd_config
 ```
 {: .nolineno }
 
-## Bloqueando o login de um usuário sem senha
+### Bloqueando o login de um usuário sem senha
 
 O parâmetro <kbd>PermitEmptyPasswords</kbd> especifica se o servidor SSH vai permitir o login de contas com sequências de senha vazias.
 
@@ -130,7 +135,7 @@ $ sudo sed -i 's/#PermitEmptyPasswords no/PermitEmptyPasswords no/' /etc/ssh/ssh
 ```
 {: .nolineno }
 
-## Desabilite o X11Forwarding
+### Desabilite o X11Forwarding
 
 O <kbd>X11Forwarding</kbd> permite a execução de programas em modo gráfico via SSH, e dependendo da configuração o acesso com permissão ilimitada pode acontecer, se você não tem necessidade de usar, desabilite.
 
@@ -141,7 +146,7 @@ $ sudo sed -i 's/#X11Forwarding no/X11Forwarding no/' /etc/ssh/sshd_config
 ```
 {: .nolineno }
 
-## Conceder acesso SSH a usuários autorizados
+### Conceder acesso SSH a usuários autorizados
 
 Para permitir apenas os usuários admin e guest efetuem login via SSH, adicione <kbd>AllowUsers</kbd> no final do arquivo
 
@@ -159,7 +164,7 @@ AllowUsers admin@127.0.0.1 guest@127.0.0.2
 ```
 {: .nolineno }
 
-## Limitar o número de sessões ativas por usuário
+### Limitar o número de sessões ativas por usuário
 
 Às vezes, usuários SSH podem abrir no máximo 5 conexões SSH, dependendo das operações em andamento. No entanto, às vezes, invasores podem iniciar sessões extras durante ataques <kbd>MITM (Man in the Middle).</kbd> Para aumentar a segurança do seu servidor, limite o número de sessões ativas por usuários.
 
@@ -168,7 +173,7 @@ $ sudo sed -i 's/#MaxSessions 10/MaxSessions 5/' /etc/ssh/sshd_config
 ```
 {: .nolineno }
 
-## Desativar logins com senha
+### Desativar logins com senha
 
 Em comparação com as chaves SSH, os invasores usam força bruta em servidores SSH usando senhas. Desabilite logins baseados em senha para todos os usuários do sistema.
 
@@ -179,7 +184,7 @@ $ sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh
 ```
 {: .nolineno }
 
-## Bash Aliases
+### Bash Aliases
 
 Um alias no Bash é uma maneira de executar um comando longo usando um curto.
 
