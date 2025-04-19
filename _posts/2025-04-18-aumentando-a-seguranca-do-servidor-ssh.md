@@ -21,7 +21,7 @@ Para alterar e fortalecer as configurações do servidor SSH, você precisa edit
 {: .prompt-info }
 
 ```bash
-$ sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.old
+$ sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bkp
 ```
 {: .nolineno }
 
@@ -48,24 +48,24 @@ $ touch ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys
 ```
 {: .nolineno }
 
-Você pode adicionar o conteúdo do seu arquivo <kbd>id_rsa.pub</kbd> ao final do arquivo <kbd>authorized_keys</kbd>, usando este comando
-
-```bash
-$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-```
-{: .nolineno }
-
-Copiando a chave da máquina local para o servidor
+Você pode usar o comando <kbd>ssh-copy-id</kbd> **(no Linux/macOS)** para transferir facilmente sua chave pública para o servidor.
 
 ```bash
 $ ssh-copy-id -p 5050 admin@127.0.0.1
 ```
 {: .nolineno }
 
-Outra alternativa para copiar a chave é usando o comando scp
+Se <kbd>ssh-copy-id</kbd> não estiver disponível, pode usar o comando <kbd>scp</kbd> **(Secure Copy)** para transferir o arquivo da chave pública para o servidor e, em seguida, adicionar a chave ao arquivo <kbd>~/.ssh/authorized_keys</kbd> no servidor.
 
 ```bash
 $ scp -v -P 5050 ~/.ssh/id_rsa.pub root@127.0.0.1:/home/cloud/id_rsa.pub
+```
+{: .nolineno }
+
+Você pode adicionar o conteúdo do seu arquivo <kbd>id_rsa.pub</kbd> ao final do arquivo <kbd>authorized_keys</kbd>, usando este comando
+
+```bash
+$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ```
 {: .nolineno }
 
