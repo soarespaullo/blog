@@ -46,17 +46,18 @@ $ touch ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys
 ```
 {: .nolineno }
 
-Você pode usar o comando <kbd>ssh-copy-id</kbd> **(no Linux/macOS)** para transferir facilmente sua chave pública para o servidor.
+Você pode usar o comando ssh-copy-id **(no Linux/macOS)** para transferir facilmente sua chave pública para o <kbd>servidor</kbd>.
+Caso voce tenha mudado a porta padrão do ssh, use o parâmetro -p seguido da porta 5050.
 
 ```bash
-$ ssh-copy-id -p 5050 admin@127.0.0.1
+$ ssh-copy-id -p 5050 srv@127.0.0.1
 ```
 {: .nolineno }
 
 Se <kbd>ssh-copy-id</kbd> não estiver disponível, use o comando <kbd>scp</kbd> **(Secure Copy)** para transferir o arquivo da chave pública para o servidor e, em seguida, adicionar a chave ao arquivo <kbd>~/.ssh/authorized_keys</kbd> no servidor.
 
 ```bash
-$ scp -v -P 5050 ~/.ssh/id_rsa.pub root@127.0.0.1:/home/cloud/id_rsa.pub
+$ scp -v -P 5050 ~/.ssh/id_rsa.pub srv@127.0.0.1:/home/srv/id_rsa.pub
 ```
 {: .nolineno }
 
@@ -77,7 +78,7 @@ $ sudo systemctl restart ssh
 Se tiver completado todos os procedimentos acima, você deve conseguir fazer login no host remoto sem a senha da conta.
 
 ```bash
-$ ssh admin@127.0.0.1
+$ ssh srv@127.0.0.1
 ```
 {: .nolineno }
 
@@ -86,7 +87,7 @@ $ ssh admin@127.0.0.1
 Um alias Bash é um atalho para substituir comandos longos por comandos mais curtos, economizando tempo e evitando digitação repetitiva. Em um ambiente shell, você deve armazenar os <kbd>aliases Bash</kbd> no <kbd>.bashrc</kbd> arquivo sob o diretório inicial do usuário.
 
 ```bash
-$ echo 'alias sh="ssh -p 5050 root@127.0.0.1"' >> ~/.bashrc
+$ echo 'alias sh="ssh -p 5050 srv@127.0.0.1"' >> ~/.bashrc
 ```
 {: .nolineno }
 
@@ -163,7 +164,7 @@ O <kbd>X11Forwarding</kbd> permite a execução de programas em modo gráfico vi
 Procure no arquivo de configuração o parâmetro <kbd>X11Forwarding</kbd> e defina como <kbd>“no“.</kbd>
 
 ```bash
-$ sudo sed -i 's/#X11Forwarding no/X11Forwarding no/' /etc/ssh/sshd_config
+$ sudo sed -i 's/#X11Forwarding yes/X11Forwarding no/' /etc/ssh/sshd_config
 ```
 {: .nolineno }
 
@@ -206,4 +207,4 @@ $ sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh
 ```
 {: .nolineno }
 
-Neste artigo, você reforçou seu servidor SSH usando recursos avançados do OpenSSH.
+Neste artigo, abordamos as etapas importantes necessárias para aumentar a segurança do sistema e configurar a autenticação de chave pública entre um computador local e um servidor remoto. Também vimos como podemos desabilitar a autenticação tradicional baseada em senha para proteger nosso servidor remoto de ataques de força bruta.
