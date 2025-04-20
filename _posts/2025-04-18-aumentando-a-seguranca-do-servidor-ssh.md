@@ -57,7 +57,7 @@ $ ssh-copy-id -p 5050 srv@127.0.0.1
 Se <kbd>ssh-copy-id</kbd> não estiver disponível, use o comando <kbd>scp</kbd> **(Secure Copy)** para transferir o arquivo da chave pública para o servidor e, em seguida, adicionar a chave ao arquivo <kbd>~/.ssh/authorized_keys</kbd> no servidor.
 
 ```bash
-$ scp -v -P 5050 ~/.ssh/id_rsa.pub srv@127.0.0.1:/home/srv/id_rsa.pub
+$ scp -v -P 5050 ~/.ssh/id_rsa.pub srv@127.0.0.1:/home/srv/.ssh/id_rsa.pub
 ```
 {: .nolineno }
 
@@ -75,7 +75,7 @@ $ sudo systemctl restart ssh
 ```
 {: .nolineno }
 
-Se tiver completado todos os procedimentos acima, você deve conseguir fazer login no host remoto sem a senha da conta.
+Se tiver completado todos os procedimentos acima, você deve conseguir fazer login no `host remoto` sem a senha da conta.
 
 ```bash
 $ ssh srv@127.0.0.1
