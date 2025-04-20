@@ -124,6 +124,26 @@ $ sudo sed -i 's/#Port 22/Port 5050/' /etc/ssh/sshd_config
 ```
 {: .nolineno }
 
+### Desativar logins com senha
+
+Em comparação com as chaves SSH, os invasores usam força bruta em servidores SSH usando senhas. Desabilite logins baseados em senha para todos os usuários do sistema.
+
+Para desabilitar logins baseados em senha e aceitar apenas chaves SSH, encontre a seguinte linha <kbd>PasswordAuthentication yes</kbd>. Por padrão, ele é definido como <kbd>yes</kbd>, altere para <kbd>"no".</kbd>
+ 
+```bash
+$ sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
+```
+{: .nolineno }
+
+### Habilitando autenticação de chave pública SSH
+
+No servidor, verifique se a configuração do SSH permite autenticação por chave pública. Edite o arquivo de configuração do SSH <kbd>/etc/ssh/sshd_config</kbd>
+
+```bash
+$ sudo sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config
+```
+{: .nolineno }
+
 ### Desative o login como root
 
 Impeça que o usuário root consiga fazer o login via SSH, tome como boa prática a utilização de um usuário sem privilégio administrativo para acessar o servidor.
@@ -164,7 +184,7 @@ O <kbd>X11Forwarding</kbd> permite a execução de programas em modo gráfico vi
 Procure no arquivo de configuração o parâmetro <kbd>X11Forwarding</kbd> e defina como <kbd>“no“.</kbd>
 
 ```bash
-$ sudo sed -i 's/#X11Forwarding yes/X11Forwarding no/' /etc/ssh/sshd_config
+$ sudo sed -i 's/X11Forwarding yes/X11Forwarding no/' /etc/ssh/sshd_config
 ```
 {: .nolineno }
 
@@ -193,17 +213,6 @@ AllowUsers admin@127.0.0.1 guest@127.0.0.2
 
 ```bash
 $ sudo sed -i 's/#MaxSessions 10/MaxSessions 5/' /etc/ssh/sshd_config
-```
-{: .nolineno }
-
-### Desativar logins com senha
-
-Em comparação com as chaves SSH, os invasores usam força bruta em servidores SSH usando senhas. Desabilite logins baseados em senha para todos os usuários do sistema.
-
-Para desabilitar logins baseados em senha e aceitar apenas chaves SSH, encontre a seguinte linha <kbd>PasswordAuthentication yes</kbd>. Por padrão, ele é definido como <kbd>yes</kbd>, altere para <kbd>"no".</kbd>
- 
-```bash
-$ sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
 ```
 {: .nolineno }
 
