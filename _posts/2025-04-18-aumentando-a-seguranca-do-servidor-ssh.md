@@ -13,7 +13,7 @@ image:
 
 ---
 
-O SSH <kbd>(Secure Shell)</kbd> é normalmente o principal meio para acesso aos servidores, especialmente aqueles ambientes que rodam sistemas Unix-like. Apesar de ter um nível de segurança agradável, é necessário o ajuste de alguns parâmetros.
+O SSH <kbd>(Secure Shell)</kbd> é normalmente o principal meio para acesso aos servidores, especialmente aqueles ambientes que rodam sistemas **Unix-like**. Apesar de ter um nível de segurança agradável, é necessário o ajuste de alguns parâmetros.
 
 > Antes de fazer alterações na configuração do servidor SSH, faça `backup` do arquivo: `/etc/ssh/sshd_config`.
 {: .prompt-info }
@@ -104,6 +104,16 @@ Conecte-se ao SSH com o aliases criado
 $ sh
 ```
 {: .nolineno }
+
+# Criando SSH Keys no Windows
+
+No Windows você vai precisar do [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) para gerar seu par de chaves pública e privada.
+
+Baixe o instalador com extensão <kbd>.msi</kbd> e instale no seu computador.
+
+Depois de instalado, pressione simultaneamente as teclas <kbd>Windows + R</kbd> e digite <kbd>%programfiles%\Putty</kbd>
+
+Dentro da pasta do PuTTY, abra o arquivo <kbd>puttygen.exe</kbd>. Clique em <kbd>Generate</kbd> e mova o mouse próximo a barrinha de carregamento até terminar.
 
 ## Dicas de segurança para o servidor SSH
 
