@@ -122,6 +122,20 @@ Na imagem abaixo detalho o que você precisa fazer dentro do `PuTTYgen`
 
 ![Desktop View](/assets/img/img-blog/ssh-key/putty.png)
 
+Se <kbd>ssh-copy-id</kbd> não estiver disponível, use o comando <kbd>scp</kbd> **(Secure Copy)** para transferir o arquivo da chave pública para o servidor e, em seguida, adicionar a chave ao arquivo <kbd>~/.ssh/authorized_keys</kbd> no **servidor**.
+
+```bash
+$ scp -v -P 5050 ~/.ssh/id_rsa.pub srv@127.0.0.1:/home/srv/.ssh/id_rsa.pub
+```
+{: .nolineno }
+
+Você pode adicionar o conteúdo do seu arquivo <kbd>id_rsa.pub</kbd> ao final do arquivo <kbd>authorized_keys</kbd>, usando este comando.
+
+```bash
+$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+```
+{: .nolineno }
+
 ## Dicas de segurança para o servidor SSH
 
 Para alterar e fortalecer as configurações do servidor SSH, você precisa editar o arquivo de configuração principal do OpenSSH <kbd>/etc/ssh/sshd_config</kbd>. Cada linha não comentada no arquivo representa uma configuração ativa que você pode definir para corresponder às suas preferências.
