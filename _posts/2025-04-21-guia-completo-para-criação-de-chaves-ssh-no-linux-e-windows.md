@@ -53,7 +53,7 @@ $ scp -v -P 5050 ~/.ssh/id_rsa.pub srv@127.0.0.1:/home/srv/.ssh/id_rsa.pub
 ```
 {: .nolineno }
 
-Você pode adicionar o conteúdo do seu arquivo <kbd>rsa-key.txt</kbd> ao final do arquivo <kbd>authorized_keys</kbd>, usando este comando.
+Você pode adicionar o conteúdo do seu arquivo <kbd>id_rsa.pub</kbd> ao final do arquivo <kbd>authorized_keys</kbd>, usando este comando.
 
 ```bash
 $ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
@@ -121,7 +121,7 @@ $ scp -v -P 5050 "C:\Users\User\Desktop\rsa-key.txt" srv@127.0.0.1:/home/srv/.ss
 ```
 {: .nolineno }
 
-Você pode adicionar o conteúdo do seu arquivo <kbd>id_rsa.pub</kbd> ao final do arquivo <kbd>authorized_keys</kbd>, usando este comando.
+Você pode adicionar o conteúdo do seu arquivo <kbd>rsa-key.txt</kbd> ao final do arquivo <kbd>authorized_keys</kbd>, usando este comando.
 
 ```bash
 $ cat ~/.ssh/rsa-key.txt >> ~/.ssh/authorized_keys
