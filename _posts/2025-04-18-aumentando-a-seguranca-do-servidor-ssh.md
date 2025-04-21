@@ -105,7 +105,7 @@ $ sh
 ```
 {: .nolineno }
 
-# Criando SSH Keys no Windows
+# Gerando chaves SSH no Windows - Putty
 
 No Windows você vai precisar do [**Putty**](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html){:target="_blank"} para gerar seu par de chaves pública e privada.
 
@@ -113,7 +113,10 @@ Baixe o instalador com extensão <kbd>.msi</kbd> e instale no seu computador.
 
 Depois de instalado, pressione simultaneamente as teclas <kbd>Windows + R</kbd> e digite <kbd>%programfiles%\Putty</kbd>
 
-Dentro da pasta do `PuTTY`, abra o arquivo <kbd>puttygen.exe</kbd>. Clique em <kbd>Generate</kbd> e movimente o mouse dentro do programa próximo a barrinha de carregamento até terminar.
+> Por padrão a chave privada é gerada com a versão de arquivo `PPK` definida para 3, se for necessário, altere para a versão 2.
+{: .prompt-info }
+
+Dentro da pasta do `PuTTY`, abra o arquivo <kbd>puttygen.exe</kbd>. Selecione `RSA` como o tipo de chave para gerar, e digite `4096` clique em <kbd>Generate</kbd> e movimente o mouse dentro do programa próximo a barrinha de carregamento até terminar.
 
 Na imagem abaixo detalho o que você precisa fazer dentro do `PuTTYgen`
 
