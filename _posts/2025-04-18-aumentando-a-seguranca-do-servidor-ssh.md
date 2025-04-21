@@ -57,14 +57,14 @@ $ ssh-copy-id -p 5050 srv@127.0.0.1
 Se <kbd>ssh-copy-id</kbd> não estiver disponível, use o comando <kbd>scp</kbd> **(Secure Copy)** para transferir o arquivo da chave pública para o servidor e, em seguida, adicionar a chave ao arquivo <kbd>~/.ssh/authorized_keys</kbd> no servidor.
 
 ```bash
-$ scp -v -P 5050 "C:\Users\User\Desktop\rsa-key.txt" srv@127.0.0.1:/home/srv/.ssh/rsa-key.txt
+$ scp -v -P 5050 ~/.ssh/id_rsa.pub srv@127.0.0.1:/home/srv/.ssh/id_rsa.pub
 ```
 {: .nolineno }
 
 Você pode adicionar o conteúdo do seu arquivo <kbd>rsa-key.txt</kbd> ao final do arquivo <kbd>authorized_keys</kbd>, usando este comando.
 
 ```bash
-$ cat ~/.ssh/rsa-key.txt >> ~/.ssh/authorized_keys
+$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ```
 {: .nolineno }
 
@@ -125,14 +125,14 @@ Na imagem abaixo detalho o que você precisa fazer dentro do `PuTTYgen`
 Se <kbd>ssh-copy-id</kbd> não estiver disponível, use o comando <kbd>scp</kbd> **(Secure Copy)** para transferir o arquivo da chave pública para o servidor e, em seguida, adicionar a chave ao arquivo <kbd>~/.ssh/authorized_keys</kbd> no **servidor**.
 
 ```bash
-$ scp -v -P 5050 ~/.ssh/id_rsa.pub srv@127.0.0.1:/home/srv/.ssh/id_rsa.pub
+$ scp -v -P 5050 "C:\Users\User\Desktop\rsa-key.txt" srv@127.0.0.1:/home/srv/.ssh/rsa-key.txt
 ```
 {: .nolineno }
 
 Você pode adicionar o conteúdo do seu arquivo <kbd>id_rsa.pub</kbd> ao final do arquivo <kbd>authorized_keys</kbd>, usando este comando.
 
 ```bash
-$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+$ cat ~/.ssh/rsa-key.txt >> ~/.ssh/authorized_keys
 ```
 {: .nolineno }
 
