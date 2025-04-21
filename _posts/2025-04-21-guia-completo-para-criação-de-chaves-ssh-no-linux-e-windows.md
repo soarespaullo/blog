@@ -103,6 +103,9 @@ No Windows você vai precisar do [**Putty**](https://www.chiark.greenend.org.uk/
 
 Baixe o instalador com extensão <kbd>.msi</kbd> e instale no seu computador.
 
+**Primary!** This paragraph of text has been emphasized with the `{: .notice--primary}` class.
+{: .notice--primary}
+
 Depois de instalado, pressione simultaneamente as teclas <kbd>Windows + R</kbd> e digite <kbd>%programfiles%\Putty</kbd>
 
 > Por padrão a chave privada é gerada com a versão de arquivo `PPK` definida para 3, se for necessário, altere para a versão 2.
@@ -112,7 +115,7 @@ Dentro da pasta do `PuTTY`, abra o arquivo <kbd>puttygen.exe</kbd>. Selecione `R
 
 Na imagem abaixo detalho o que você precisa fazer dentro do `PuTTYgen`
 
-![Desktop View](/assets/img/img-blog/ssh-key/putty.png){: .align-center width="972" height="589" }
+![Desktop View](/assets/img/img-blog/ssh-key/putty.png){: .align-center style="width: 250px;" }
 _Gerarando chaves com o PuttyGen_
 
 Depois que o <kbd>PuTTYgen</kbd> gerar a chave, selecione toda a área criptografada e dê um <kbd>CTRL + C</kbd> para copiar a chave pública. Anote-a em um bloco de notas.
