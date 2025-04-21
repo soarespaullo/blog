@@ -107,13 +107,17 @@ $ sh
 
 # Criando SSH Keys no Windows
 
-No Windows você vai precisar do [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) para gerar seu par de chaves pública e privada.
+No Windows você vai precisar do [**Putty**](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html){:target="_blank"} para gerar seu par de chaves pública e privada.
 
 Baixe o instalador com extensão <kbd>.msi</kbd> e instale no seu computador.
 
 Depois de instalado, pressione simultaneamente as teclas <kbd>Windows + R</kbd> e digite <kbd>%programfiles%\Putty</kbd>
 
-Dentro da pasta do PuTTY, abra o arquivo <kbd>puttygen.exe</kbd>. Clique em <kbd>Generate</kbd> e mova o mouse próximo a barrinha de carregamento até terminar.
+Dentro da pasta do `PuTTY`, abra o arquivo <kbd>puttygen.exe</kbd>. Clique em <kbd>Generate</kbd> e movimente o mouse dentro do programa próximo a barrinha de carregamento até terminar.
+
+Na imagem abaixo detalho o que você precisa fazer dentro do `PuTTYgen`
+
+![Desktop View](/assets/img/img-blog/ssh-key/putty.png)
 
 ## Dicas de segurança para o servidor SSH
 
