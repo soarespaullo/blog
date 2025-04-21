@@ -15,16 +15,6 @@ image:
 
 # Gerando chaves SSH no GNU/Linux
 
-O SSH <kbd>(Secure Shell)</kbd> é normalmente o principal meio para acesso aos servidores, especialmente aqueles ambientes que rodam sistemas **Unix-like**. Apesar de ter um nível de segurança agradável, é necessário o ajuste de alguns parâmetros.
-
-> Antes de fazer alterações na configuração do servidor SSH, faça `backup` do arquivo: `/etc/ssh/sshd_config`.
-{: .prompt-info }
-
-```bash
-$ sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bkp
-```
-{: .nolineno }
-
 O primeiro passo para configurar a autenticação de chaves SSH para seu servidor é gerar um par de chaves SSH no seu <kbd>computador local</kbd>.
 
 Para fazer isso, podemos usar um utilitário especial chamado <kbd>ssh-keygen</kbd>, que vem incluso com o conjunto padrão de ferramentas do <kbd>OpenSSH</kbd>.
