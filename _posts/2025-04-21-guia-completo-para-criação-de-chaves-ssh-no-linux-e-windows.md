@@ -150,4 +150,8 @@ Defina os dados de acesso de acordo com suas configurações do `Servidor`
 
 ![Desktop View](/assets/img/img-blog/ssh-key/ssh.png)
 
+Digite sua senha SSH e pressione Enter novamente. Por motivos de segurança, a tela não vai mostrar a senha, mas vai registrar o que você digita
+
+![Desktop View](/assets/img/img-blog/ssh-key/ssh.png)
+
 Parabéns! Você acabou de criar sua chave e realizar o acesso `SSH` via `Putty`.
