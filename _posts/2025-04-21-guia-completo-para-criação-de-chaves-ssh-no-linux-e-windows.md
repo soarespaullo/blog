@@ -112,12 +112,12 @@ Dentro da pasta do `PuTTY`, abra o arquivo <kbd>puttygen.exe</kbd>. Selecione `R
 
 Na imagem abaixo detalho o que você precisa fazer dentro do `PuTTYgen`
 
-![Desktop View](/assets/img/img-blog/ssh-key/putty.png){: width="972" height="589" .normal}
+![Desktop View](/assets/img/img-blog/ssh-key/putty.png){: width="972" height="589" .w-100 .normal}
 _Gerarando chaves com o PuttyGen_
 
-Depois que o <kbd>PuTTYgen</kbd> gerar a chave, selecione toda a área criptografada e dê um <kbd>CTRL + C</kbd> para copiar tudo e anote-a em um bloco de notas.
+Depois que o <kbd>PuTTYgen</kbd> gerar a chave, selecione toda a área criptografada e dê um <kbd>CTRL + C</kbd> para copiar a chave pública. Anote-a em um bloco de notas.
 
-Além disso, clique no botão <kbd>Save Private Key</kbd> para salvar a chave gerada. (Clique em Yes na pop-up que surgir.)
+Além disso, clique no botão <kbd>Save private key</kbd> para salvar a chave gerada. **(Clique em Yes no pop-up que surgir)**.
 Salve a chave em um local seguro, ela será importante posteriormente.
 
 Se <kbd>ssh-copy-id</kbd> não estiver disponível, use o comando <kbd>scp</kbd> **(Secure Copy)** para transferir o arquivo da chave pública para o servidor e, em seguida, adicionar a chave ao arquivo <kbd>~/.ssh/authorized_keys</kbd> no **servidor**.
@@ -133,3 +133,19 @@ Você pode adicionar o conteúdo do seu arquivo <kbd>rsa-key.txt</kbd> ao final 
 $ cat ~/.ssh/rsa-key.txt >> ~/.ssh/authorized_keys
 ```
 {: .nolineno }
+
+### Configurando o Putty com chave de criptografia
+
+Em SSH -> Auth -> Credentials, na opção `Private key file for authentication` insira a chave salva na configuração do `puTTYgen`.
+
+![Desktop View](/assets/img/img-blog/ssh-key/cred.png){: width="972" height="589" .w-100 .normal}
+
+Defina os dados de acesso de acordo com suas configurações do `Servidor`
+
+![Desktop View](/assets/img/img-blog/ssh-key/ssh.png){: width="972" height="589" .w-100 .normal}
+
+No menu Connection -> Data, defina o nome de usuário do `Servidor` que está sendo configurado.
+
+![Desktop View](/assets/img/img-blog/ssh-key/user.png){: width="972" height="589" .w-100 .normal}
+
+Parabéns! Você acabou de criar sua chave e realizar o acesso `SSH` via `Putty`.
