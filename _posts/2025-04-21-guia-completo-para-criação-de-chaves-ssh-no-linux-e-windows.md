@@ -140,15 +140,15 @@ $ cat ~/.ssh/rsa-key.txt >> ~/.ssh/authorized_keys
 
 Em <kbd>SSH -> Auth -> Credentials</kbd>, na opção `Private key file for authentication` insira a chave salva na configuração do `puTTYgen`.
 
-![Desktop View](/assets/img/img-blog/ssh-key/cred.png)
+![Desktop View](/assets/img/img-blog/ssh-key/cred.png){: .align-right }
 
 No menu <kbd>Connection -> Data</kbd>, defina o nome de usuário do `Servidor` que está sendo configurado.
 
-![Desktop View](/assets/img/img-blog/ssh-key/user.png)
+![Desktop View](/assets/img/img-blog/ssh-key/user.png){: .align-center width: 50%;}
 
 Defina os dados de acesso de acordo com suas configurações do `Servidor`
 
-![Desktop View](/assets/img/img-blog/ssh-key/ssh.png)
+![Desktop View](/assets/img/img-blog/ssh-key/ssh.png){: .align-left }
 
 Digite sua senha SSH e pressione Enter novamente. Por motivos de segurança, a tela não vai mostrar a senha, mas vai registrar o que você digita
 
