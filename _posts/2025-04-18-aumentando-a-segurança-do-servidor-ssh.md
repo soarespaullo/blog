@@ -13,10 +13,17 @@ image:
 
 ---
 
-Para alterar e fortalecer as configurações do servidor SSH, você precisa editar o arquivo de configuração principal do OpenSSH <kbd>/etc/ssh/sshd_config</kbd>. Cada linha não comentada no arquivo representa uma configuração ativa que você pode definir para corresponder às suas preferências.
+O SSH <kbd>(Secure Shell)</kbd> é normalmente o principal meio para acesso aos servidores, especialmente aqueles ambientes que rodam sistemas **Unix-like**. Apesar de ter um nível de segurança agradável, é necessário o ajuste de alguns parâmetros.
 
 > Antes de fazer alterações na configuração do servidor SSH, faça `backup` do arquivo: `/etc/ssh/sshd_config`.
 {: .prompt-info }
+
+```bash
+$ sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bkp
+```
+{: .nolineno }
+
+Para alterar e fortalecer as configurações do servidor SSH, você precisa editar o arquivo de configuração principal do OpenSSH <kbd>/etc/ssh/sshd_config</kbd>. Cada linha não comentada no arquivo representa uma configuração ativa que você pode definir para corresponder às suas preferências.
 
 ### Alterando a porta padrão do SSH
 
