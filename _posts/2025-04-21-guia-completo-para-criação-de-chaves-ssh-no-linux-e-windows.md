@@ -146,6 +146,6 @@ Defina os dados de acesso de acordo com suas configurações do `Servidor`
 
 No menu <kbd>Connection -> Data</kbd>, defina o nome de usuário do `Servidor` que está sendo configurado.
 
-![Desktop View](/assets/img/img-blog/ssh-key/user.png){: .align-center style="width: 550px;" }
+![Desktop View](/assets/img/img-blog/ssh-key/user.png){: style="width: 550px;" }
 
 Parabéns! Você acabou de criar sua chave e realizar o acesso `SSH` via `Putty`.
