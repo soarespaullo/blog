@@ -112,7 +112,7 @@ Dentro da pasta do `PuTTY`, abra o arquivo <kbd>puttygen.exe</kbd>. Selecione `R
 
 Na imagem abaixo detalho o que você precisa fazer dentro do `PuTTYgen`
 
-![Desktop View](/assets/img/img-blog/ssh-key/putty.png){: .align-center style="width: 650px;" }
+![Desktop View](/assets/img/img-blog/ssh-key/putty.png){: .align-center style="width: 550px;" }
 _Gerarando chaves com o PuttyGen_
 
 Depois que o <kbd>PuTTYgen</kbd> gerar a chave, selecione toda a área criptografada e dê um <kbd>CTRL + C</kbd> para copiar a chave pública. Anote-a em um bloco de notas.
@@ -138,14 +138,14 @@ $ cat ~/.ssh/rsa-key.txt >> ~/.ssh/authorized_keys
 
 Em <kbd>SSH -> Auth -> Credentials</kbd>, na opção `Private key file for authentication` insira a chave salva na configuração do `puTTYgen`.
 
-![Desktop View](/assets/img/img-blog/ssh-key/cred.png){: width="972" height="589" .w-100 .normal}
+![Desktop View](/assets/img/img-blog/ssh-key/cred.png){: .align-center style="width: 550px;" }
 
 Defina os dados de acesso de acordo com suas configurações do `Servidor`
 
-![Desktop View](/assets/img/img-blog/ssh-key/ssh.png){: width="972" height="589" .w-100 .normal}
+![Desktop View](/assets/img/img-blog/ssh-key/ssh.png){: .align-center style="width: 550px;" }
 
 No menu <kbd>Connection -> Data</kbd>, defina o nome de usuário do `Servidor` que está sendo configurado.
 
-![Desktop View](/assets/img/img-blog/ssh-key/user.png){: width="972" height="589" .w-100 .normal}
+![Desktop View](/assets/img/img-blog/ssh-key/user.png){: .align-center style="width: 550px;" }
 
 Parabéns! Você acabou de criar sua chave e realizar o acesso `SSH` via `Putty`.
