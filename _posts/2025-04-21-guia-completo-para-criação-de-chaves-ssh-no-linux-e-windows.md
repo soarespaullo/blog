@@ -142,12 +142,12 @@ Em <kbd>SSH -> Auth -> Credentials</kbd>, na opção `Private key file for authe
 
 ![Desktop View](/assets/img/img-blog/ssh-key/cred.png)
 
-Defina os dados de acesso de acordo com suas configurações do `Servidor`
-
-![Desktop View](/assets/img/img-blog/ssh-key/ssh.png)
-
 No menu <kbd>Connection -> Data</kbd>, defina o nome de usuário do `Servidor` que está sendo configurado.
 
 ![Desktop View](/assets/img/img-blog/ssh-key/user.png)
+
+Defina os dados de acesso de acordo com suas configurações do `Servidor`
+
+![Desktop View](/assets/img/img-blog/ssh-key/ssh.png)
 
 Parabéns! Você acabou de criar sua chave e realizar o acesso `SSH` via `Putty`.
