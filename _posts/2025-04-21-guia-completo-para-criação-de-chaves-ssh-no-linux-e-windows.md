@@ -108,6 +108,8 @@ Depois de instalado, pressione simultaneamente as teclas <kbd>Windows + R</kbd> 
 > Por padrão a chave privada é gerada com a versão de arquivo `PPK` definida para 3, se for necessário, altere para a versão 2.
 {: .prompt-info }
 
+![Desktop View](/assets/img/img-blog/ssh-key/ppk.png){: style="width: 550px;" }
+
 Dentro da pasta do `PuTTY`, abra o arquivo <kbd>puttygen.exe</kbd>. Selecione `RSA` como o tipo de chave para gerar, e digite `4096` clique em <kbd>Generate</kbd> e movimente o mouse dentro do programa próximo a barrinha de carregamento até terminar.
 
 Na imagem abaixo detalho o que você precisa fazer dentro do `PuTTYgen`
