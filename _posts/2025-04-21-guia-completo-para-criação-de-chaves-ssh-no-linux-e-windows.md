@@ -105,16 +105,16 @@ Baixe o instalador com extensão <kbd>.msi</kbd> e instale no seu computador.
 
 Depois de instalado, pressione simultaneamente as teclas <kbd>Windows + R</kbd> e digite <kbd>%programfiles%\Putty</kbd>
 
-> Por padrão a chave privada é gerada com a versão de arquivo `PPK` definida para 3, se for necessário, altere para a versão 2.
+Dentro da pasta do `PuTTY`, abra o arquivo <kbd>puttygen.exe</kbd>. Selecione `RSA` como o tipo de chave para gerar, e digite `4096` clique em <kbd>Generate</kbd> e movimente o mouse dentro do programa próximo a barrinha de carregamento até terminar.
+
+> Por padrão a chave privada é gerada com a versão de arquivo `PPK` definida para 3, se for necessário, altere para a versão 2 em `key -> Parameters for saving key files`.
 {: .prompt-info }
 
-![Desktop View](/assets/img/img-blog/ssh-key/ppk.png){: style="width: 550px;" }
-
-Dentro da pasta do `PuTTY`, abra o arquivo <kbd>puttygen.exe</kbd>. Selecione `RSA` como o tipo de chave para gerar, e digite `4096` clique em <kbd>Generate</kbd> e movimente o mouse dentro do programa próximo a barrinha de carregamento até terminar.
+![Desktop View](/assets/img/img-blog/ssh-key/ppk.png)
 
 Na imagem abaixo detalho o que você precisa fazer dentro do `PuTTYgen`
 
-![Desktop View](/assets/img/img-blog/ssh-key/putty.png){: style="width: 550px;" }
+![Desktop View](/assets/img/img-blog/ssh-key/putty.png)
 _Gerarando chaves com o PuttyGen_
 
 Depois que o <kbd>PuTTYgen</kbd> gerar a chave, selecione toda a área criptografada e dê um <kbd>CTRL + C</kbd> para copiar a chave pública. Anote-a em um bloco de notas.
@@ -140,14 +140,14 @@ $ cat ~/.ssh/rsa-key.txt >> ~/.ssh/authorized_keys
 
 Em <kbd>SSH -> Auth -> Credentials</kbd>, na opção `Private key file for authentication` insira a chave salva na configuração do `puTTYgen`.
 
-![Desktop View](/assets/img/img-blog/ssh-key/cred.png){: style="width: 550px;" }
+![Desktop View](/assets/img/img-blog/ssh-key/cred.png)
 
 Defina os dados de acesso de acordo com suas configurações do `Servidor`
 
-![Desktop View](/assets/img/img-blog/ssh-key/ssh.png){: style="width: 550px;" }
+![Desktop View](/assets/img/img-blog/ssh-key/ssh.png)
 
 No menu <kbd>Connection -> Data</kbd>, defina o nome de usuário do `Servidor` que está sendo configurado.
 
-![Desktop View](/assets/img/img-blog/ssh-key/user.png){: style="width: 550px;" }
+![Desktop View](/assets/img/img-blog/ssh-key/user.png)
 
 Parabéns! Você acabou de criar sua chave e realizar o acesso `SSH` via `Putty`.
