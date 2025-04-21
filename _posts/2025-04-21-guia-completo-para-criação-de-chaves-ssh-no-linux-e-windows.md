@@ -1,6 +1,6 @@
 ---
 title: Guia Completo para Criação de Chaves SSH (no Linux e Windows)
-description: Configuração de Chaves SSH (no Linux e Windows)
+description: Guia Completo para Criação de Chaves SSH (no Linux e Windows)
 author: soarespaullo
 date: 2025-04-18 14:50:00
 categories: [Linux, SysAdmin]
@@ -9,7 +9,7 @@ math: true
 mermaid: true
 image:
   path: /assets/img/img-blog/ssh-key/ssh-keey.png
-  alt: Aumentando a Segurança do Servidor SSH
+  alt: Guia Completo para Criação de Chaves SSH (no Linux e Windows)
 
 ---
 
@@ -112,7 +112,7 @@ Dentro da pasta do `PuTTY`, abra o arquivo <kbd>puttygen.exe</kbd>. Selecione `R
 
 Na imagem abaixo detalho o que você precisa fazer dentro do `PuTTYgen`
 
-![Desktop View](/assets/img/img-blog/ssh-key/putty.png)
+![Desktop View](/assets/img/img-blog/ssh-key/putty.png){: width="972" height="589" .w-75 .normal}
 
 Se <kbd>ssh-copy-id</kbd> não estiver disponível, use o comando <kbd>scp</kbd> **(Secure Copy)** para transferir o arquivo da chave pública para o servidor e, em seguida, adicionar a chave ao arquivo <kbd>~/.ssh/authorized_keys</kbd> no **servidor**.
 
