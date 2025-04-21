@@ -112,7 +112,13 @@ Dentro da pasta do `PuTTY`, abra o arquivo <kbd>puttygen.exe</kbd>. Selecione `R
 
 Na imagem abaixo detalho o que você precisa fazer dentro do `PuTTYgen`
 
-![Desktop View](/assets/img/img-blog/ssh-key/putty.png){: width="972" height="589" .w-75 .normal}
+![Desktop View](/assets/img/img-blog/ssh-key/putty.png){: width="972" height="589"}
+_Gerar chaves com o PuttyGen_
+
+Depois que o <kbd>PuTTYgen</kbd> gerar a chave, selecione toda a área criptografada e dê um <kbd>CTRL + C</kbd> para copiar tudo e anote-a em um bloco de notas.
+
+Além disso, clique no botão <kbd>Save Private Key</kbd> para salvar a chave gerada. (Clique em Yes na pop-up que surgir.)
+Salve a chave em um local seguro, ela será importante posteriormente.
 
 Se <kbd>ssh-copy-id</kbd> não estiver disponível, use o comando <kbd>scp</kbd> **(Secure Copy)** para transferir o arquivo da chave pública para o servidor e, em seguida, adicionar a chave ao arquivo <kbd>~/.ssh/authorized_keys</kbd> no **servidor**.
 
