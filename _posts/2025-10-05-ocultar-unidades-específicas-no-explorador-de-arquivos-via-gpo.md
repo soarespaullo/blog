@@ -15,16 +15,16 @@ image:
 
 No Windows, um administrador pode ocultar uma unidade específica (partição de disco) no Explorador de Arquivos e impedir que outros usuários a acessem.
 
-1. No servidor, pressione Win + R, digite gpmc.msc e pressione Enter.
+1. No servidor, pressione <kbd>Win + R</kbd>, digite <kbd>gpmc.msc</kbd> e pressione Enter.
 
-2. No painel esquerdo, expanda seu domínio. Clique com o botão direito na (OU - Unidade Organizacional) desejada (ex: ts) e selecione "Criar um GPO neste domínio e fornecer um link para ele aqui…"
+2. No painel esquerdo, expanda seu domínio. Clique com o botão direito na `(OU - Unidade Organizacional)` desejada (ex: ts) e selecione `"Criar um GPO neste domínio e fornecer um link para ele aqui…"`
 
-3. Nomeie a GPO (ex: GPO - Ocultar Unidade D:)
+3. Nomeie a GPO `ex: GPO - Ocultar Unidade D:)`
 
-4. Clique com o botão direito na GPO criada e Editar
+4. Clique com o botão direito na GPO criada e `Editar`
 
-5. Navegue até <kbd>Configuração do Usuário -> Modelos Administrativos -> Componentes do Windows -> Explorador de Arquivos
-Abra as configurações da opção Ocultar estas unidades especificadas em Meu Computador</kbd>.
+5. Navegue até `Configuração do Usuário -> Modelos Administrativos -> Componentes do Windows -> Explorador de Arquivos
+Abra as configurações da opção Ocultar estas unidades especificadas em Meu Computador`.
 
 Com esta opção de GPO, você pode ocultar unidades específicas (A, B, C, D) ou todas as unidades de uma só vez. Por exemplo, escolhi ocultar apenas a unidade D:.
 
@@ -38,11 +38,11 @@ Salve as alterações. As configurações da Política de Grupo serão aplicadas
 
 ![Desktop View](/assets/img/img-blog/windows-server/disco.png)
 
-No entanto, os usuários ainda podem abrir este disco digitando seu endereço (letra da unidade) na barra de endereços do Explorer manualmente.
+No entanto, os usuários ainda podem abrir este disco digitando seu endereço `(letra da unidade)` na barra de endereços do Explorer manualmente.
 
 ![Desktop View](/assets/img/img-blog/windows-server/explorer.png)
 
-Na mesma seção GPO, há outra opção: Impedir acesso a unidades de Meu Computador. Habilitar esta opção de GPO e escolher uma unidade específica nas configurações impedirá que os usuários acessem o disco (visualizando seu conteúdo no Explorador de Arquivos).
+Na mesma seção GPO, há outra opção: `Impedir acesso a unidades de Meu Computador. Habilitar esta opção de GPO e escolher uma unidade específica nas configurações impedirá que os usuários acessem o disco (visualizando seu conteúdo no Explorador de Arquivos)`.
 
 ![Desktop View](/assets/img/img-blog/windows-server/restringir.png)
 
